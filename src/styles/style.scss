@@ -3,6 +3,8 @@
 
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body{
@@ -10,11 +12,97 @@ body{
     background-color: #f5f5f5 !important;
 }
 
+//scroll button
+.scroll-container{
+    width: 50px;
+    height: 50px;
+    position: sticky;
+    bottom: 50%;
+    left: 90%;
+}
+
+.scroll-container.hidden{
+   visibility: hidden;
+}
+
+.scroll-container__button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 25px;
+    height: 50px;
+    background-color:  rgba(0, 0, 0, 0.306);
+    border-radius: 30px;
+    animation: button-animation 2s alternate infinite;
+    border: 1px solid #f5f5f580;
+}
+
+.scroll-container__button span{
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 50%;
+    background-color:#f5f5f5 ;
+    animation: point-animation 1s alternate infinite;
+}
+
+.scroll-container__arrow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 25px;
+    height: 50px;
+}
+
+.scroll-container__arrow span{
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.483);
+    border-right: 2px solid rgba(0, 0, 0, 0.483);
+    animation: arrow-animation 1s alternate infinite;
+}
+
+
+
+@keyframes button-animation {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes point-animation {
+    0%{
+        transform: translateY(-10px);
+    }
+    
+    100%{
+        transform: translateY(10px);
+    }
+    
+}
+
+@keyframes arrow-animation {
+    0%{
+        transform: translateY(-10px) rotate(45deg);
+    }
+    
+    100%{
+        transform:  translateY(0px) rotate(45deg);
+    }
+}
 //navigation
 .navigation.navbar{
     padding: 20px 30px;
     background-color: rgba(0, 0, 0, 0.171);
     z-index: 95;
+    position: absolute;
+    min-width: 100vw;
 }
 
 .navigation__nav-link{
@@ -53,7 +141,6 @@ button.navbar-toggler{
 }
 .jumbotron-slider{
     position: relative;
-    bottom: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,6 +186,7 @@ button.navbar-toggler{
         min-height:500px;  
 }
 
+
 //jumbotron animation
 .jumbotron-slider__animation-first {
     font-weight: 200;
@@ -127,6 +215,63 @@ button.navbar-toggler{
     line-height: 1em;
     text-align: center;
   }
+
+  //header-jumbotron
+.header-jumbotron-container{
+    background-color: #f5f5f5;
+}
+.header-jumbotron-slider{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+    color: #f5f5f5;
+}
+
+.header-jumbotron-slider__text-container{
+    position: absolute;
+    padding-top: 50px;
+}
+
+.header-jumbotron-slider__image{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width:100vw;
+        max-height:500px;  
+}
+
+
+//header-jumbotron animation
+.header-jumbotron-slider__animation-first {
+    font-weight: 200;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    text-align: center;
+  }
+  
+  .header-jumbotron-slider__animation-first .letter {
+    display: inline-block;
+    line-height: 1em;
+    text-align: center;
+  }
+
+  .header-jumbotron-slider__animation-second {
+    font-weight: 200;
+    font-size: 1.4em;
+    text-transform: lowercase;
+    letter-spacing: 0.5em;
+    text-align: center;
+  }
+  
+  .header-jumbotron-slider__animation-second .letter {
+    display: inline-block;
+    line-height: 1em;
+    text-align: center;
+  }
+
 
 //menu short
 .menu-short-container{
@@ -185,7 +330,14 @@ button.navbar-toggler{
     padding-bottom: 100px;
 }
 
+.about-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 .about__card-header{
+    width: 50%;
     display: block;
     justify-content: center;
     align-items: center;
@@ -226,6 +378,8 @@ button.navbar-toggler{
 }
 
 //about animation
+
+
 .ml9 {
     position: relative;
     font-weight: 200;

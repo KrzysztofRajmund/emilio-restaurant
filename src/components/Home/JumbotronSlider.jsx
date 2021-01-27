@@ -1,9 +1,10 @@
-import { StopRounded } from "@material-ui/icons";
 import React, { useEffect } from "react";
 //assets
 import JumbotronImageDiscover from "../../assets/jumbotron1.jpg";
 //anime
 import anime from 'animejs';
+//components
+import Navigation from './Navigation';
 
 const JumbotronSlider = () => {
 
@@ -69,6 +70,7 @@ const JumbotronSlider = () => {
 
   return (
     <div className="jumbotron-container">
+      <Navigation/>
     <div className="jumbotron-slider">
       <div className="jumbotron-slider__text-container">   
       <h1 className="jumbotron-slider__animation-first">Emilio Restaurant</h1>

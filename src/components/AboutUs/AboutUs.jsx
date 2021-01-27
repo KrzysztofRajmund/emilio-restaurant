@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 //components
 import Gallery from "./Gallery";
+import HeaderJumbotron from "../Home/HeaderJumbotron";
 //assets
 import Logo from "../../assets/logo.png";
 import RestaurantImage from "../../assets/restaurantImage.jpg";
@@ -12,64 +13,69 @@ import "aos/dist/aos.css";
 
 const AboutUs = () => {
 
-  const box = document.getElementById("letters");
+  // const box = document.getElementById("about");
+  // const [loading, setLoading] = useState(false);
 
-  const [loading, setLoading] = useState(false);
-  const [animateLoad, setAnimateLoad] = useState(false);
 
   useEffect(()=>{
-    setLoading(true);
-  },[loading])
-
-  if (loading){
-    function isInView (box) {
-      const bounding = box.getBoundingClientRect();
-console.log("bounding", bounding)
-      return (
-        bounding.top >= 0 &&
-        bounding.left >= 0 &&
-        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-    
-      )
-    };
-
-    window.addEventListener("scroll", ()=>{
-      if (isInView(box)){
-        setLoading(false);
-       animate();
-      }
-    })
-
-  }
-
-
-  function animate() {
-    var textWrapper = document.querySelector(".ml9 .letters");
-    textWrapper.innerHTML = textWrapper.textContent.replace(
-      /\S/g,
-      "<span class='letter'>$&</span>"
-    );
-
-    anime.timeline({ loop: false }).add({
-      targets: ".ml9 .letter",
-      scale: [0, 1],
-      duration: 2000,
-      elasticity: 600,
-      delay: (el, i) => 75 * (i + 1),
-    });
-  }
-
-  useEffect(() => {
+    // setLoading(true);
     AOS.init({
-      offset: 400,
+      offset: 300,
       duration: 800,
     });
-  }, []);
+  },[])
+
+ // second method!!! for trigeering animation in specific point of scroll
+
+//   if (loading){
+//     function isInView (box) {
+//       const bounding = box.getBoundingClientRect();
+// console.log("bounding", bounding)
+//       if ( bounding.top >= 800 && bounding.top <= 850)
+//        {
+//           return true;
+//       }
+
+//    };
+
+//     window.addEventListener("scroll", ()=>{
+//       if (isInView(box)){
+//         setLoading(false);
+//           animate();
+//       }
+//     })
+
+//   }
+
+document.addEventListener('aos:in', () => {
+  animate();
+});
+
+  
+  function animate() {
+
+      var textWrapper = document.querySelector(".ml9 .letters");
+      textWrapper.innerHTML = textWrapper.textContent.replace(
+        /\S/g,
+        "<span class='letter'>$&</span>"
+      );
+  
+      anime.timeline({ loop: false }).add({
+        targets: ".ml9 .letter",
+        scale: [0, 1],
+        duration: 2000,
+        elasticity: 600,
+        delay: (el, i) => 85 * (i + 1),
+      });
+ 
+  }
 
   return (
     <React.Fragment>
-      <div className="about" data-aos="fade-left" id="about">
-        <div className="about__card-header" id="box">
+      {window.location.pathname === "/onas" ?  <HeaderJumbotron/> : "" }
+      <div className="about" id="about">
+        <div className="about-container">
+        <div className="about__card-header" id="box" data-aos="fade-left">
           <img src={Logo} alt="logo" width="90px" height="auto" />
           <h5>Rodzinna kuchnia włoska</h5>
           <h1 class="ml9">
@@ -78,7 +84,8 @@ console.log("bounding", bounding)
             </span>
           </h1>
         </div>
-        <div className="about__card-container">
+        </div>
+        <div className="about__card-container" data-aos="zoom-in">
           <div className="about__card-text">
             <h4>
               Fue sus puertas al público en su antiguo local de la calle

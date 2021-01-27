@@ -3,9 +3,9 @@ import React from "react";
 import JumbotronSlider from "./JumbotronSlider";
 import MenuShort from './../Menu/MenuShort';
 import AboutUs from './../AboutUs/AboutUs';
-import AboutUs2 from './../AboutUs/AboutUs2';
 import ReservationForm from './../ReservationForm/ReservationForm';
 import Contact from './../Contact/Contact';
+import ScrollButton from "./ScrollButton";
 
 
 
@@ -15,9 +15,9 @@ const LandingPage = () => {
       <JumbotronSlider />
       <MenuShort />
       <AboutUs />
-      {/* <AboutUs2 /> */}
       <ReservationForm />
       <Contact />
+      <ScrollButton/>
     </React.Fragment>
   );
 };
