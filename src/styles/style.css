@@ -696,8 +696,17 @@ button.navbar-toggler:focus {
   border: transparent;
 }
 
-.footer-container__card span {
-  padding-left: 10px;
+.footer-container__card .footer-container__card--social-media {
+  padding: 0px 0px 0px 10px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  text-align: center;
+}
+
+.footer-container__card .footer-container__card--social-media img:hover {
+  text-decoration: none;
+  color: transparent;
 }
 
 .footer-container__card p:last-child a {

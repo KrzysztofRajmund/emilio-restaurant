@@ -34,12 +34,12 @@ const Navigation = () => {
         <Link className="navigation__nav-link" to="/kontakt" onClick={scrollTop}>
             Kontakt
         </Link>
-        <Link className="navigation__nav-link" to="/kontakt">
-        <img width="30px" height="30px" src={Facebook} alt="facebook"/>
-        </Link>
-        <Link className="navigation__nav-link" to="/kontakt">
-        <img width="30px" height="30px" src={Instagram} alt="instagram"/>
-        </Link>
+        <a className="navigation__nav-link" href="https://www.facebook.com/EmilioRestaurantSzczecin" target="_blank">
+        <img width="25px" height="25px" src={Facebook} alt="facebook"/>
+        </a>
+        <a className="navigation__nav-link" href="https://www.instagram.com/restauracja.emilio.szczecin/" target="_blank">
+        <img width="25px" height="25px" src={Instagram} alt="instagram"/>
+        </a>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

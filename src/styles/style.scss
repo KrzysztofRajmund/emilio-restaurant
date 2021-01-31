@@ -292,6 +292,7 @@ button.navbar-toggler{
 
 .menu-short-container__title{
     color: #604d45;
+    // font-family: "sectra_display_regular", helvetica, arial, sans-serif;
 }
 
 .menu-short-container__image{
@@ -557,9 +558,18 @@ button.navbar-toggler{
         }
     }
 
-    span{
-        padding-left: 10px;
+}
+
+.footer-container__card .footer-container__card--social-media{
+    padding: 0px 0px 0px 10px;
+    display:inline-flex;
+    text-align: center;
+    img{
+        &:hover{
+            text-decoration: none;
+            color: transparent; 
     }
+}
 }
 
 .footer-container__card p:last-child{
