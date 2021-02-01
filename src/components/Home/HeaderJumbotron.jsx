@@ -1,15 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 //assets
 import JumbotronImageDiscover from "../../assets/jumbotron1.jpg";
 //anime
 import anime from 'animejs';
 //components
 import Navigation from './Navigation';
+import ThemeContext from "./ThemeContext";
+
+
+
 
 const HeaderJumbotron = () => {
 
- const [loading, setLoading] = useState(false)
+  const value = useContext(ThemeContext);
+ const [loading, setLoading] = useState(false);
 
+ 
+ const filterValue = value.items.filter( x => x.title === window.location.pathname.substring(1) )
+
+ console.log(filterValue, "filterValue")
   useEffect(()=>{
     setLoading(true);
   },[])
@@ -64,7 +73,7 @@ const HeaderJumbotron = () => {
       <Navigation/>
     <div className="header-jumbotron-slider">
       <div className="header-jumbotron-slider__text-container">   
-      <h1 className="header-jumbotron-slider__animation-first">Emilio Restaurant</h1>
+      <h1 className="header-jumbotron-slider__animation-first">{filterValue[0].title}</h1>
       <h2 className="header-jumbotron-slider__animation-second">Rodzinna kuchnia włoska</h2>
       </div>
       <img className="header-jumbotron-slider__image" src={JumbotronImageDiscover} alt="image" />

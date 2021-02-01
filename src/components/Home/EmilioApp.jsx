@@ -9,17 +9,16 @@ import AboutUs from './../AboutUs/AboutUs';
 import Contact from './../Contact/Contact';
 import Menu from './../Menu/Menu';
 import ReservationForm from './../ReservationForm/ReservationForm';
-import ThemeContext from './ThemeContext';
+import ThemeContext from "./ThemeContext";
 //json
 import tileData from "../../tileData";
 
-const themes = {
-    data: tileData.items
-  }
+const themes = tileData
+  console.log(themes.items, "themes.items")
 
 const EmilioApp = () => {
   return (
-    <ThemeContext.Provider value={themes.data}>
+    <ThemeContext.Provider value={themes}>
     <Router>
       {/* <Navigation /> */}
       <Switch>

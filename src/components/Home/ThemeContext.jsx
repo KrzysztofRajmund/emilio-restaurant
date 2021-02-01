@@ -1,10 +1,5 @@
 import React from "react";
-//json
-import tileData from "../../tileData";
 
-const themes = {
-    data: tileData.items
-  }
-const ThemeContext = React.createContext(themes.data)
+const ThemeContext = React.createContext();
 
 export default ThemeContext;
