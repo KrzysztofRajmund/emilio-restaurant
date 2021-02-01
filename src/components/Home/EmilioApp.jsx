@@ -9,10 +9,17 @@ import AboutUs from './../AboutUs/AboutUs';
 import Contact from './../Contact/Contact';
 import Menu from './../Menu/Menu';
 import ReservationForm from './../ReservationForm/ReservationForm';
+import ThemeContext from './ThemeContext';
+//json
+import tileData from "../../tileData";
 
+const themes = {
+    data: tileData.items
+  }
 
 const EmilioApp = () => {
   return (
+    <ThemeContext.Provider value={themes.data}>
     <Router>
       {/* <Navigation /> */}
       <Switch>
@@ -34,6 +41,7 @@ const EmilioApp = () => {
       </Switch>
       <FooterComponent />
     </Router>
+    </ThemeContext.Provider>
   );
 };
 

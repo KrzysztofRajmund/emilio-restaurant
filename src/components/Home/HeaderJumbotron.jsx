@@ -6,7 +6,7 @@ import anime from 'animejs';
 //components
 import Navigation from './Navigation';
 
-const JumbotronSlider = () => {
+const HeaderJumbotron = () => {
 
  const [loading, setLoading] = useState(false)
 
@@ -73,4 +73,4 @@ const JumbotronSlider = () => {
   );
 };
 
-export default JumbotronSlider;
+export default HeaderJumbotron;

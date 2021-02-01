@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 //components
 import Gallery from "./Gallery";
 import HeaderJumbotron from "../Home/HeaderJumbotron";
@@ -10,8 +10,11 @@ import anime from "animejs";
 //AOS
 import AOS from "aos";
 import "aos/dist/aos.css";
+//context
+
 
 const AboutUs = () => {
+
 
   // const box = document.getElementById("about");
   // const [loading, setLoading] = useState(false);
@@ -69,6 +72,7 @@ document.addEventListener('aos:in', () => {
       });
  
   }
+
 
   return (
     <React.Fragment>
