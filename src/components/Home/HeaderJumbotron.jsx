@@ -2,7 +2,6 @@ import React, { useEffect, useState, useContext } from "react";
 //components
 import Navigation from "./Navigation";
 import ThemeContext from "./ThemeContext";
-import ScrollButton from "./ScrollButton";
 //assets
 import JumbotronImageDiscover from "../../assets/jumbotron1.jpg";
 //anime
@@ -80,7 +79,6 @@ const HeaderJumbotron = () => {
       });
   }
   return (
-    <React.Fragment>
     <div className="header-jumbotron-container">
       <Navigation />
       <div className="header-jumbotron-slider">
@@ -99,8 +97,6 @@ const HeaderJumbotron = () => {
         />
       </div>
     </div>
-       <ScrollButton/>
-       </React.Fragment>
   );
 };
 

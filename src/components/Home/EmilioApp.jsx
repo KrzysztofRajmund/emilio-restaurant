@@ -1,14 +1,14 @@
 import React from "react";
 //router
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 //components
-import Navigation from './Navigation';
 import FooterComponent from "./FooterComponent";
 import LandingPage from './LandingPage';
 import AboutUs from './../AboutUs/AboutUs';
 import Contact from './../Contact/Contact';
 import Menu from './../Menu/Menu';
 import ReservationForm from './../ReservationForm/ReservationForm';
+import ScrollButton from "./ScrollButton";
 import ThemeContext from "./ThemeContext";
 //json
 import tileData from "../../tileData";
@@ -20,7 +20,6 @@ const EmilioApp = () => {
   return (
     <ThemeContext.Provider value={themes}>
     <Router>
-      {/* <Navigation /> */}
       <Switch>
         <Route path="/onas">
           <AboutUs />
@@ -38,6 +37,7 @@ const EmilioApp = () => {
           <LandingPage />
         </Route>
       </Switch>
+      <ScrollButton/>
       <FooterComponent />
     </Router>
     </ThemeContext.Provider>
