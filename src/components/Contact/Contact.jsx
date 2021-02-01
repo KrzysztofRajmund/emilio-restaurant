@@ -1,8 +1,12 @@
 import React from "react";
+//components
 import MapContact from "./MapContact";
+import HeaderJumbotron from "../Home/HeaderJumbotron";
 
 const Contact = () => {
   return (
+    <React.Fragment>
+    {window.location.pathname === "/kontakt" ?  <HeaderJumbotron/> : "" }
     <div className="contact">
       <div className="contact__card-content">
         <div className="contact__content">
@@ -18,6 +22,7 @@ const Contact = () => {
         </div>
       </div>
     </div>
+    </React.Fragment>
   );
 };
 

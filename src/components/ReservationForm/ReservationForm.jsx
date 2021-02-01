@@ -1,4 +1,7 @@
 import React from "react";
+//components
+import HeaderJumbotron from "../Home/HeaderJumbotron";
+//material-ui
 import TextField from "@material-ui/core/TextField";
 import { ThemeProvider } from "@material-ui/styles";
 import { makeStyles,createMuiTheme } from "@material-ui/core/styles";
@@ -49,6 +52,8 @@ const ReservationForm = () => {
     setSelectedDate(date);
   };
   return (
+    <React.Fragment>
+    {window.location.pathname === "/rezerwacja" ?  <HeaderJumbotron/> : "" }
     <div className="form-container">
       <div className="form-container__input">
         <form className={classes.root} noValidate autoComplete="off"> 
@@ -193,6 +198,7 @@ const ReservationForm = () => {
       </div>
       </div>
     </div>
+    </React.Fragment>
   );
 };
 
