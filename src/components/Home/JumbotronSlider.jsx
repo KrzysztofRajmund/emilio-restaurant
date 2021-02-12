@@ -1,23 +1,52 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 //assets
-import JumbotronImageDiscover from '../../assets/1 (1).jpg';
+import JumbotronImageDiscover1 from '../../assets/jumbotron1.jpg';
+import JumbotronImageDiscover2 from '../../assets/jumbotron2.jpg';
+import JumbotronImageDiscover3 from '../../assets/jumbotron3.jpg';
+import JumbotronImageDiscover4 from '../../assets/jumbotron4.jpg';
 //anime
 import anime from 'animejs';
 //components
 import Navigation from './Navigation';
 
 const JumbotronSlider = () => {
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
+    setLoading(true);
+  }, []);
+
+  if (loading) {
+    //button discover
     const discover = document.getElementById('discover');
     const image = document.getElementById('image-jumbotron');
 
     discover.addEventListener('mouseover', () => {
-      image.style.backgroundImage = `url(${JumbotronImageDiscover})`;
+      image.style.backgroundImage = `url(${JumbotronImageDiscover2})`;
     });
     discover.addEventListener('mouseleave', () => {
-      image.style.backgroundImage = null;
+      image.style.backgroundImage = `url(${JumbotronImageDiscover1})`;
+    });
+    //button menu
+    const menu = document.getElementById('menu');
+
+    menu.addEventListener('mouseover', () => {
+      image.style.backgroundImage = `url(${JumbotronImageDiscover3})`;
+    });
+    menu.addEventListener('mouseleave', () => {
+      image.style.backgroundImage = `url(${JumbotronImageDiscover1})`;
+    });
+    //button visit
+    const visit = document.getElementById('visit');
+
+    visit.addEventListener('mouseover', () => {
+      image.style.backgroundImage = `url(${JumbotronImageDiscover4})`;
+    });
+    menu.addEventListener('mouseleave', () => {
+      image.style.backgroundImage = `url(${JumbotronImageDiscover1})`;
     });
 
+    //animation
     var textWrapper = document.querySelector(
       '.jumbotron-slider__animation-first'
     );
@@ -75,7 +104,7 @@ const JumbotronSlider = () => {
         duration: 1600,
         delay: (el, i) => 1200 + 30 * i,
       });
-  }, []);
+  }
 
   return (
     <div className='jumbotron-container'>

@@ -1,89 +1,80 @@
-import React from "react";
+import React, { useState } from 'react';
 //assets
-import MenuShortImage1 from "../../assets/menuShort1.jpg";
-//font-awesome
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
-//material ui
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    width: '100%',
-    backgroundColor:'#f5f5f5',
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-    backgroundColor: 'transparent',
-    borderRadius: 'none'
-  },
-}));
+import MenuShortImage1 from '../../assets/1 (35).jpg';
+import MenuShortImage2 from '../../assets/1 (43).jpg';
+import MenuShortImage3 from '../../assets/1 (47).jpg';
+//react-bootstrap
+import { Carousel } from 'react-bootstrap';
+//anime
+import anime from 'animejs';
 
 const MenuShort = () => {
+  const [index, setIndex] = useState(0);
 
-  const classes = useStyles();
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
 
-  
+  function animate() {
+    var textWrapper = document.querySelector('.ml9 .letters');
+    textWrapper.innerHTML = textWrapper.textContent.replace(
+      /\S/g,
+      "<span class='letter'>$&</span>"
+    );
+
+    anime.timeline({ loop: false }).add({
+      targets: '.ml9 .letter',
+      scale: [0, 1],
+      duration: 2000,
+      elasticity: 600,
+      delay: (el, i) => 85 * (i + 1),
+    });
+  }
+
   return (
-    <div className="menu-short-container">
-          <div className={classes.root}>
-    <Grid container spacing={0}>
-      <Grid item sm={12} md={4}>
-        <Paper className={classes.paper} square  elevation={0}>
-        <a href="/menu" className="menu-short-container__card">
-        <div className="menu-short-container__title">
-          <h1>Makarony</h1>
-        </div>
-        <div className="menu-short-container__image">
-          <img src={MenuShortImage1} alt="image-makarony" width="180px" height="180px"/>
-        </div>
-        <div className="menu-short-container__subtitle">
-          <h5>Makarony najlepsze w Szczecinie</h5>
-          <span>Menu <FontAwesomeIcon icon={faAngleDoubleRight} /></span>
-        </div>
-     </a>
-        </Paper>
-      </Grid>
-      <Grid item sm={12} md={4}>
-        <Paper className={classes.paper} square  elevation={0}>
-        <a href="/menu" className="menu-short-container__card">
-        <div className="menu-short-container__title">
-        <h1>Makarony</h1>
-        </div>
-        <div className="menu-short-container__image">
-          <img src={MenuShortImage1} alt="image-makarony" width="180px" height="180px"/>
-        </div>
-        <div className="menu-short-container__subtitle">
-          <h5>Makarony najlepsze w Szczecinie</h5>
-          <span>Menu <FontAwesomeIcon icon={faAngleDoubleRight} /></span>
-        </div>
-     </a>
-        </Paper>
-      </Grid>
-      <Grid item sm={12} md={4}>
-        <Paper className={classes.paper} square  elevation={0}>
-        <a href="/menu" className="menu-short-container__card">
-        <div className="menu-short-container__title">
-        <h1>Makarony</h1>
-        </div>
-        <div className="menu-short-container__image">
-          <img src={MenuShortImage1} alt="image-makarony" width="180px" height="180px"/>
-        </div>
-        <div className="menu-short-container__subtitle">
-          <h5>Makarony najlepsze w Szczecinie</h5>
-          <span>Menu <FontAwesomeIcon icon={faAngleDoubleRight} /></span>
-        </div>
-     </a>
-        </Paper>
-      </Grid>
-    </Grid>
-  </div>
-    </div>
+    <section className='menuShort'>
+      <article className='menuShort__title'>
+        <h1 class='ml9'>
+          <span class='text-wrapper'>
+            <span class='letters' id='letters'>
+              Menu
+            </span>
+          </span>
+        </h1>
+      </article>
+      <Carousel activeIndex={index} onSelect={handleSelect} indicators={false}>
+        <Carousel.Item>
+          <img
+            className='d-block w-100'
+            src={MenuShortImage1}
+            alt='First slide'
+          />
+          <Carousel.Caption>
+            <h4>Główne menu</h4>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className='d-block w-100'
+            src={MenuShortImage2}
+            alt='Second slide'
+          />
+          <Carousel.Caption>
+            <h4>Desery</h4>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className='d-block w-100'
+            src={MenuShortImage3}
+            alt='Third slide'
+          />
+          <Carousel.Caption>
+            <h4>Wina</h4>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
+    </section>
   );
 };
 
