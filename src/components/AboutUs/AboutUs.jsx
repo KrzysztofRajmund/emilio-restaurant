@@ -5,65 +5,17 @@ import HeaderJumbotron from '../Home/HeaderJumbotron';
 //assets
 import Logo from '../../assets/logo.png';
 import RestaurantImage from '../../assets/1 (53-1).jpg';
-//anime
-import anime from 'animejs';
 //AOS
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const AboutUs = () => {
-  // const box = document.getElementById("about");
-  // const [loading, setLoading] = useState(false);
-
   useEffect(() => {
-    // setLoading(true);
     AOS.init({
       offset: 300,
       duration: 800,
     });
   }, []);
-
-  // second method!!! for trigeering animation in specific point of scroll
-
-  //   if (loading){
-  //     function isInView (box) {
-  //       const bounding = box.getBoundingClientRect();
-  // console.log("bounding", bounding)
-  //       if ( bounding.top >= 800 && bounding.top <= 850)
-  //        {
-  //           return true;
-  //       }
-
-  //    };
-
-  //     window.addEventListener("scroll", ()=>{
-  //       if (isInView(box)){
-  //         setLoading(false);
-  //           animate();
-  //       }
-  //     })
-
-  //   }
-
-  document.addEventListener('aos:in', () => {
-    animate();
-  });
-
-  function animate() {
-    var textWrapper = document.querySelector('.ml9 .letters');
-    textWrapper.innerHTML = textWrapper.textContent.replace(
-      /\S/g,
-      "<span class='letter'>$&</span>"
-    );
-
-    anime.timeline({ loop: false }).add({
-      targets: '.ml9 .letter',
-      scale: [0, 1],
-      duration: 2000,
-      elasticity: 600,
-      delay: (el, i) => 85 * (i + 1),
-    });
-  }
 
   return (
     <React.Fragment>
@@ -73,13 +25,7 @@ const AboutUs = () => {
           <div className='about__card-header' id='box' data-aos='fade-left'>
             <img src={Logo} alt='logo' width='90px' height='auto' />
             <h5>Rodzinna kuchnia włoska</h5>
-            <h1 class='ml9'>
-              <span class='text-wrapper'>
-                <span class='letters' id='letters'>
-                  Nasza historia
-                </span>
-              </span>
-            </h1>
+            <h1>Nasza historia</h1>
           </div>
         </div>
         <div className='about__card-container' data-aos='zoom-in'>
