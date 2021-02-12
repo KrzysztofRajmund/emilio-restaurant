@@ -14,43 +14,11 @@
   position: sticky;
   bottom: 50%;
   left: 90%;
+  background-color: transparent;
 }
 
 .scroll-container.hidden {
   visibility: hidden;
-}
-
-.scroll-container__button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 25px;
-  height: 50px;
-  background-color: rgba(0, 0, 0, 0.306);
-  border-radius: 30px;
-  -webkit-animation: button-animation 2s alternate infinite;
-          animation: button-animation 2s alternate infinite;
-  border: 1px solid #f5f5f580;
-}
-
-.scroll-container__button span {
-  width: 12px;
-  height: 12px;
-  border: none;
-  border-radius: 50%;
-  background-color: #f5f5f5;
-  -webkit-animation: point-animation 1s alternate infinite;
-          animation: point-animation 1s alternate infinite;
 }
 
 .scroll-container__arrow {
@@ -69,18 +37,22 @@
           flex-direction: column;
   width: 25px;
   height: 50px;
+  background-color: transparent;
 }
 
 .scroll-container__arrow span {
-  width: 10px;
-  height: 10px;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.483);
-  border-right: 2px solid rgba(0, 0, 0, 0.483);
-  -webkit-animation: arrow-animation 1s alternate infinite;
-          animation: arrow-animation 1s alternate infinite;
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border-bottom: 6px solid white;
+  border-right: 6px solid white;
+  -webkit-box-shadow: 5px 5px #1d1d1d47;
+          box-shadow: 5px 5px #1d1d1d47;
+  -webkit-animation: jump-animation 1.5s alternate infinite, opacity-animation 1.5s alternate infinite;
+          animation: jump-animation 1.5s alternate infinite, opacity-animation 1.5s alternate infinite;
 }
 
-@-webkit-keyframes button-animation {
+@-webkit-keyframes opacity-animation {
   0% {
     opacity: 0;
   }
@@ -89,7 +61,7 @@
   }
 }
 
-@keyframes button-animation {
+@keyframes opacity-animation {
   0% {
     opacity: 0;
   }
@@ -98,29 +70,7 @@
   }
 }
 
-@-webkit-keyframes point-animation {
-  0% {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
-  }
-  100% {
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
-  }
-}
-
-@keyframes point-animation {
-  0% {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
-  }
-  100% {
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
-  }
-}
-
-@-webkit-keyframes arrow-animation {
+@-webkit-keyframes jump-animation {
   0% {
     -webkit-transform: translateY(-10px) rotate(45deg);
             transform: translateY(-10px) rotate(45deg);
@@ -131,7 +81,7 @@
   }
 }
 
-@keyframes arrow-animation {
+@keyframes jump-animation {
   0% {
     -webkit-transform: translateY(-10px) rotate(45deg);
             transform: translateY(-10px) rotate(45deg);
@@ -239,7 +189,7 @@ button.navbar-toggler:focus {
   -webkit-transition: background-image 0.4s;
   transition: background-image 0.4s;
   width: 100vw;
-  min-height: 500px;
+  height: 100vh;
 }
 
 .jumbotron-slider__animation-first {
@@ -346,26 +296,37 @@ button.navbar-toggler:focus {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  padding: 50px 0px 50px 0px;
+  padding: 70px 0px 50px 0px;
 }
 
 .carousel.slide {
   width: 80%;
-  border-radius: 1%;
 }
 
-.carousel-inner {
-  border-radius: 1%;
+.carousel-control-next-icon {
+  background-image: url("../assets/nextIcon.png") !important;
+  width: 30px !important;
+  height: 30px !important;
+  position: absolute;
+  right: -40px;
 }
 
-.menuShort__title {
-  color: #000;
+.carousel-control-prev-icon {
+  background-image: url("../assets/prevIcon.png") !important;
+  width: 30px !important;
+  height: 30px !important;
+  position: absolute;
+  left: -40px;
+}
+
+.shortMenu__title {
+  padding-bottom: 80px;
 }
 
 .about {
   max-width: 100%;
   height: 900px;
-  background-color: #f5f5f5;
+  background-color: #fff;
   padding-top: 100px;
   padding-bottom: 100px;
 }
@@ -384,7 +345,7 @@ button.navbar-toggler:focus {
 }
 
 .about__card-header {
-  width: 50%;
+  width: 100%;
   display: block;
   -webkit-box-pack: center;
       -ms-flex-pack: center;

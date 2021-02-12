@@ -10,7 +10,6 @@ import anime from 'animejs';
 //AOS
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-//context
 
 const AboutUs = () => {
   // const box = document.getElementById("about");

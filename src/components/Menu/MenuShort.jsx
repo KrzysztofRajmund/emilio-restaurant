@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 //assets
 import MenuShortImage1 from '../../assets/1 (35).jpg';
 import MenuShortImage2 from '../../assets/1 (43).jpg';
@@ -7,6 +7,9 @@ import MenuShortImage3 from '../../assets/1 (47).jpg';
 import { Carousel } from 'react-bootstrap';
 //anime
 import anime from 'animejs';
+//AOS
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const MenuShort = () => {
   const [index, setIndex] = useState(0);
@@ -14,6 +17,18 @@ const MenuShort = () => {
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
+
+  useEffect(() => {
+    // setLoading(true);
+    AOS.init({
+      offset: 300,
+      duration: 800,
+    });
+  }, []);
+
+  document.addEventListener('aos:in', () => {
+    animate();
+  });
 
   function animate() {
     var textWrapper = document.querySelector('.ml9 .letters');
@@ -30,19 +45,28 @@ const MenuShort = () => {
       delay: (el, i) => 85 * (i + 1),
     });
   }
-
   return (
     <section className='menuShort'>
-      <article className='menuShort__title'>
-        <h1 class='ml9'>
-          <span class='text-wrapper'>
-            <span class='letters' id='letters'>
-              Menu
-            </span>
-          </span>
-        </h1>
-      </article>
-      <Carousel activeIndex={index} onSelect={handleSelect} indicators={false}>
+      <div className='shortMenu__title'>
+        <article className='about-container'>
+          <div className='about__card-header' id='box' data-aos='fade-left'>
+            <h1 class='ml9'>
+              <span class='text-wrapper'>
+                <span class='letters' id='letters'>
+                  Menu
+                </span>
+              </span>
+            </h1>
+            <h5>Z najlepszych produktów</h5>
+          </div>
+        </article>
+      </div>
+      <Carousel
+        activeIndex={index}
+        onSelect={handleSelect}
+        indicators={false}
+        data-aos='fade-right'
+      >
         <Carousel.Item>
           <img
             className='d-block w-100'
@@ -50,7 +74,7 @@ const MenuShort = () => {
             alt='First slide'
           />
           <Carousel.Caption>
-            <h4>Główne menu</h4>
+            <h4>Główne menu {`>>`}</h4>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -60,7 +84,7 @@ const MenuShort = () => {
             alt='Second slide'
           />
           <Carousel.Caption>
-            <h4>Desery</h4>
+            <h4>Desery {`>>`}</h4>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -70,7 +94,7 @@ const MenuShort = () => {
             alt='Third slide'
           />
           <Carousel.Caption>
-            <h4>Wina</h4>
+            <h4>Wina {`>>`}</h4>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
