@@ -7,6 +7,10 @@
   font-family: 'Titillium Web', sans-serif;
 }
 
+body {
+  background-color: #f5f5f5 !important;
+}
+
 .scroll-container {
   width: 50px;
   height: 50px;
@@ -297,6 +301,7 @@ button.navbar-toggler:focus {
           align-items: center;
   text-align: center;
   padding: 70px 0px 50px 0px;
+  background-color: #fff;
 }
 
 .carousel.slide {
@@ -501,35 +506,56 @@ button.navbar-toggler:focus {
   width: 100%;
 }
 
-.modal {
-  display: none;
-  position: relative;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.modalContainer {
+  z-index: 80;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  left: 0px;
+  top: 0px;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.557);
+  background-color: rgba(0, 0, 0, 0.605);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.modal .modalExit {
+.modalCard {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.modalCard .modalExit {
   position: absolute;
   top: 5%;
-  right: 5%;
+  right: 3%;
   width: 30px;
   height: 30px;
   margin: 10px;
   z-index: 90;
 }
 
-.modal .modalImage {
-  width: 70%;
+.modalCard .modalImage {
+  width: 80%;
   height: auto;
-  text-align: center;
-  padding: 10px;
+  padding: 50px 50px 50px 50px;
 }
 
 .form-container {
@@ -540,13 +566,14 @@ button.navbar-toggler:focus {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0px;
+  min-height: 800px;
 }
 
 .form-container__card {
-  background-image: url("../assets/bg-about.jpg");
+  background-image: url("../assets/reservation.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: inherit;
   background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -554,30 +581,44 @@ button.navbar-toggler:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-flex: 40%;
-      -ms-flex: 40%;
-          flex: 40%;
-  background-color: #dce4e7;
-  padding: 50px;
-  color: #212529;
-}
-
-.form-container__input {
-  background-image: url("../assets/bg-input.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
   -webkit-box-flex: 60%;
       -ms-flex: 60%;
           flex: 60%;
-  background-color: #d5dddb;
   padding: 50px;
+  color: #f5f5f5;
+}
+
+.form-container__input {
+  -webkit-box-flex: 40%;
+      -ms-flex: 40%;
+          flex: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 50px;
+  background-color: #fff;
+  border-right: 2px solid #1d1d1d;
+}
+
+.form__content a {
+  color: #700000;
+}
+
+.form__content a:hover {
+  text-decoration: none;
+  color: #700000;
+  font-weight: bolder;
 }
 
 .map {
   position: relative;
-  width: 400px;
+  width: 100vw;
   height: 400px;
 }
 
@@ -585,25 +626,27 @@ button.navbar-toggler:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 50px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0px 0px 0px 0px;
+  background-color: #fff;
 }
 
 .contact__card-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-flex: 40%;
-      -ms-flex: 40%;
-          flex: 40%;
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
   height: 400px;
 }
 
@@ -617,10 +660,10 @@ button.navbar-toggler:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-flex: 60%;
-      -ms-flex: 60%;
-          flex: 60%;
-  padding-right: 50px;
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+  border-top: 1px solid #1d1d1d;
 }
 
 .footer-container {

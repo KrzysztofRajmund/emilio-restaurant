@@ -7,10 +7,9 @@
   font-family: 'Titillium Web', sans-serif;
 }
 
-// body {
-//   //   font-family: 'Titillium Web', sans-serif;
-//   //   background-color: #f5f5f5 !important;
-// }
+body {
+  background-color: #f5f5f5 !important;
+}
 
 //scroll-button
 .scroll-container {
@@ -293,6 +292,7 @@ button.navbar-toggler {
   align-items: center;
   text-align: center;
   padding: 70px 0px 50px 0px;
+  background-color: #fff;
 }
 
 .carousel.slide {
@@ -465,19 +465,30 @@ button.navbar-toggler {
 }
 
 //modal
-
-.modal {
-  display: none;
-  position: relative;
-  justify-content: center;
+.modalContainer {
+  z-index: 80;
+  position: fixed;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  left: 0px;
+  top: 0px;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.557);
+  background-color: rgba(0, 0, 0, 0.605);
+  transition: 0.3s;
+}
+.modalCard {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
   .modalExit {
     position: absolute;
     top: 5%;
-    right: 5%;
+    right: 3%;
     width: 30px;
     height: 30px;
     margin: 10px;
@@ -485,10 +496,9 @@ button.navbar-toggler {
   }
 
   .modalImage {
-    width: 70%;
+    width: 80%;
     height: auto;
-    text-align: center;
-    padding: 10px;
+    padding: 50px 50px 50px 50px;
   }
 }
 
@@ -497,52 +507,62 @@ button.navbar-toggler {
   display: flex;
   justify-content: center;
   margin: 0px;
+  min-height: 800px;
 }
 
 .form-container__card {
-  background-image: url('../assets/bg-about.jpg');
+  background-image: url('../assets/reservation.jpg');
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: inherit;
   background-size: cover;
   display: flex;
   align-items: center;
-  flex: 40%;
-  background-color: #dce4e7;
+  flex: 60%;
   padding: 50px;
-  color: #212529;
+  color: #f5f5f5;
 }
 
 .form-container__input {
-  background-image: url('../assets/bg-input.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  flex: 60%;
-  background-color: #d5dddb;
+  flex: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 50px;
+  background-color: #fff;
+  border-right: 2px solid #1d1d1d;
+  // border: 0.1px solid #1d1d1d30;
+}
+
+.form__content a {
+  color: rgb(112, 0, 0);
+  &:hover {
+    text-decoration: none;
+    color: rgb(112, 0, 0);
+    font-weight: bolder;
+  }
 }
 
 //contact
 
 .map {
   position: relative;
-  width: 400px;
+  width: 100vw;
   height: 400px;
 }
 
 .contact {
   display: flex;
-  justify-content: center;
-  margin: 50px;
+  flex-direction: column;
+  padding: 0px 0px 0px 0px;
+  background-color: #fff;
 }
 
 .contact__card-content {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
-  flex: 40%;
+  flex: 100%;
   height: 400px;
 }
 
@@ -550,8 +570,8 @@ button.navbar-toggler {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 60%;
-  padding-right: 50px;
+  flex: 100%;
+  border-top: 1px solid #1d1d1d;
 }
 
 //footer

@@ -8,25 +8,19 @@ import 'aos/dist/aos.css';
 import Xicon from '../../assets/x-icon.png';
 
 export default function Gallery() {
-  const [modal, setModal] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  const modalElement = document.getElementById('modal');
+  const [showModal, setShowModal] = useState(false);
+  const [image, setImage] = useState();
 
   useEffect(() => {
     AOS.init({
       offset: 300,
       duration: 800,
     });
-    setLoading(true);
   }, []);
 
-  const openModal = () => {
-    modalElement.style.display = 'block';
-  };
-
-  const closeModal = () => {
-    modalElement.style.display = 'none';
+  const displayImage = (image) => {
+    setShowModal(true);
+    setImage(image);
   };
 
   return (
@@ -46,19 +40,29 @@ export default function Gallery() {
           <div
             key={image.id}
             className='gallery__col'
-            onClick={() => openModal()}
+            onClick={() => displayImage(image)}
           >
             <img src={image.url} />
-            <section id='modal' class='modal' onClick={() => closeModal()}>
+          </div>
+        ))}
+        {showModal ? (
+          <div
+            id='modalContainer'
+            className='modalContainer'
+            onClick={() => setShowModal(false)}
+          >
+            <section class='modalCard'>
               <img className='modalImage' src={image.url} />
               <img
                 className='modalExit'
                 src={Xicon}
-                onClick={() => closeModal()}
+                onClick={() => setShowModal(false)}
               />
             </section>
           </div>
-        ))}
+        ) : (
+          ''
+        )}
       </div>
     </div>
   );

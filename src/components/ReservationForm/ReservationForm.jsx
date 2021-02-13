@@ -1,203 +1,49 @@
-import React from "react";
+import React, { useEffect } from 'react';
 //components
-import HeaderJumbotron from "../Home/HeaderJumbotron";
-//material-ui
-import TextField from "@material-ui/core/TextField";
-import { ThemeProvider } from "@material-ui/styles";
-import { makeStyles,createMuiTheme } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import DateFnsUtils from "@date-io/date-fns";
-import {
-  MuiPickersUtilsProvider,
-  KeyboardTimePicker,
-  KeyboardDatePicker,
-} from "@material-ui/pickers";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    justifyContent: "center",
-    "& .MuiFormLabel-root": {
-      color: "rgba(0, 0, 0, 0.24)",
-      textTransform: "uppercase",
-      fontWeight: "500"
-    },
-    "& .Mui-focused":{
-      color: "#ebe9e6"
-    },
-  },
-  textField: {
-    margin: 5,
-    color: 'white',
-  },
-  input:{
-    color:'#212529',
-    '&::after':{
-      borderBottom: "2px solid #dce4e7",
-    },
-  },
-  textFieldFull: {
-    margin: 5,
-    // width: "100ch",
-  },
-}));
-
-
+import HeaderJumbotron from '../Home/HeaderJumbotron';
+//AOS
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ReservationForm = () => {
-  const classes = useStyles();
-  const [selectedDate, setSelectedDate] = React.useState(new Date());
+  useEffect(() => {
+    AOS.init({
+      offset: 300,
+      duration: 800,
+    });
+  }, []);
 
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
   return (
     <React.Fragment>
-    {window.location.pathname === "/rezerwacja" ?  <HeaderJumbotron/> : "" }
-    <div className="form-container">
-      <div className="form-container__input">
-        <form className={classes.root} noValidate autoComplete="off"> 
-          <Grid container spacing={1}>
-            <Grid item xs={6}>
-              <TextField
-                fullWidth
-                className={classes.textField}
-                id="filled-basic"
-                label="Imię"
-                variant="filled"
-                InputProps={{
-                  className: classes.input,
-              }}
-              floatingLabelFocusStyle={{
-                className: classes.floatingLabelFocusStyle,
-            }}
-              />
-            </Grid>
-            <Grid item xs={6}>
-              <TextField
-                fullWidth
-                className={classes.textField}
-                id="filled-basic"
-                label="Nazwisko"
-                variant="filled"
-                InputProps={{
-                  className: classes.input,
-              }}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                className={classes.textField}
-                id="filled-basic"
-                label="Email "
-                variant="filled"
-                InputProps={{
-                  className: classes.input,
-              }}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                className={classes.textField}
-                id="filled-basic"
-                label="Telefon "
-                variant="filled"
-                InputProps={{
-                  className: classes.input,
-              }}
-              />
-            </Grid>       
-                <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                <Grid item xs={6}>
-                  <KeyboardDatePicker
-                    margin="normal"
-                    id="date-picker-dialog"
-                    label="Data"
-                    format="dd/MM/yyyy"
-                    value={selectedDate}
-                    onChange={handleDateChange}
-                    KeyboardButtonProps={{
-                      "aria-label": "change date",
-                    }}
-                    InputProps={{
-                      className: classes.input,
-                  }}
-                  />
-                    </Grid>
-                    <Grid item xs={6}>
-                  <KeyboardTimePicker
-                    margin="normal"
-                    id="time-picker"
-                    label="Godzina"
-                    value={selectedDate}
-                    onChange={handleDateChange}
-                    KeyboardButtonProps={{
-                      "aria-label": "change time",
-                    }}
-                    InputProps={{
-                      className: classes.input,
-                  }}
-                  />
-                  </Grid>
-                </MuiPickersUtilsProvider>
-                <Grid item xs={12}>
-                <TextField
-                  fullWidth
-                  className={classes.textField}
-                  id="filled-basic"
-                  label="Data"
-                  variant="filled"
-                  value={selectedDate}
-                  InputProps={{
-                    className: classes.input,
-                }}
-                />
-                   </Grid>
-         
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                className={classes.textField}
-                id="filled-basic"
-                label="Ilość osób "
-                variant="filled"
-                type="number"
-                InputProps={{
-                  className: classes.input,
-              }}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                id="outlined-full-width"
-                className={classes.textFieldFull}
-                label="Wiadomość "
-                variant="filled"
-                helperText="Napisz jak możemy pomóc"
-                multiline
-                rows={3}
-                fullWidth
-                InputProps={{
-                  className: classes.input,
-              }}
-              />
-            </Grid>
-          </Grid>
-        </form>
+      {window.location.pathname === '/rezerwacja' ? <HeaderJumbotron /> : ''}
+      <div className='form-container'>
+        <div className='form-container__input' data-aos='fade-left'>
+          <form>
+            <address className='form__content'>
+              <h1>Zadzwoń</h1>
+              <h5>
+                <a href='tel:048-508-224-177'>+48 508 224 177</a>
+              </h5>
+              <h1>Napisz</h1>
+              <h5>
+                <a href='mailto:info@restauracjaemilio.pl?&subject=Emilio Rezerwacja&body=Jak możemy pomóc?'>
+                  info@restauracjaemilio.pl
+                </a>
+              </h5>
+            </address>
+          </form>
+        </div>
+        <div className='form-container__card' data-aos='fade-right'>
+          <div className='form-container__text'>
+            <h1>Rezerwacja</h1>
+            <h5>
+              For parties of six or more, we recommend making reservations at
+              least two weeks in advance. For walk-ins, we only seat parties on
+              a first come, first served basis.
+            </h5>
+          </div>
+        </div>
       </div>
-      <div className="form-container__card">
-      <div className="form-container__text">
-        <h1>Rezerwacja</h1>
-        <h5>
-          For parties of six or more, we recommend making reservations at least
-          two weeks in advance. For walk-ins, we only seat parties on a first
-          come, first served basis.
-        </h5>
-      </div>
-      </div>
-    </div>
     </React.Fragment>
   );
 };
