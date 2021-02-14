@@ -42,7 +42,7 @@ const JumbotronSlider = () => {
     visit.addEventListener('mouseover', () => {
       image.style.backgroundImage = `url(${JumbotronImageDiscover4})`;
     });
-    menu.addEventListener('mouseleave', () => {
+    visit.addEventListener('mouseleave', () => {
       image.style.backgroundImage = `url(${JumbotronImageDiscover1})`;
     });
 

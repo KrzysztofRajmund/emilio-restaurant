@@ -24,14 +24,18 @@ const MenuShort = () => {
 
   return (
     <section className='menuShort'>
-      <div className='shortMenu__title'>
-        <article className='about-container'>
-          <div className='about__card-header' id='box' data-aos='fade-left'>
-            <h1>Menu</h1>
-            <h5>Z najlepszych produktów</h5>
-          </div>
-        </article>
-      </div>
+      <article className='titles-container'>
+        <div
+          className='titles-container__animation'
+          id='box'
+          data-aos='fade-left'
+        >
+          <h1 className='titles-container__title'>Menu</h1>
+          <h5 className='titles-container__subtitle'>
+            Z najlepszych produktów
+          </h5>
+        </div>
+      </article>
       <Carousel
         activeIndex={index}
         onSelect={handleSelect}

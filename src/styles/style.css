@@ -160,7 +160,7 @@ button.navbar-toggler:focus {
 
 .jumbotron-slider__text-container {
   position: absolute;
-  padding-top: 50px;
+  padding: 30px 5px 50px 5px;
 }
 
 .jumbotron-slider__text-container strong {
@@ -216,6 +216,7 @@ button.navbar-toggler:focus {
   text-transform: lowercase;
   letter-spacing: 0.5em;
   text-align: center;
+  padding-bottom: 30px;
 }
 
 .jumbotron-slider__animation-second .letter {
@@ -253,7 +254,7 @@ button.navbar-toggler:focus {
   background-size: cover;
   background-position: center;
   width: 100vw;
-  max-height: 500px;
+  max-height: 900px;
 }
 
 .header-jumbotron-slider__animation-first {
@@ -300,12 +301,12 @@ button.navbar-toggler:focus {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  padding: 70px 0px 50px 0px;
+  padding: 50px 0px 50px 0px;
   background-color: #fff;
 }
 
 .carousel.slide {
-  width: 80%;
+  width: 70%;
 }
 
 .carousel-control-next-icon {
@@ -324,47 +325,51 @@ button.navbar-toggler:focus {
   left: -40px;
 }
 
-.shortMenu__title {
-  padding-bottom: 80px;
+.titles-container {
+  padding: 50px 0px 50px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.titles-container .titles-container__title {
+  font-size: 50px;
+  letter-spacing: 3px;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.titles-container .titles-container__subtitle {
+  font-style: italic;
+  font-size: 18px;
+  color: #1d1d1d;
+}
+
+.description {
+  letter-spacing: 1px;
+  font-size: 24px;
 }
 
 .about {
   max-width: 100%;
-  height: 900px;
   background-color: #fff;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding: 50px 50px 50px 50px;
 }
 
-.about-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-}
-
-.about__card-header {
-  width: 100%;
-  display: block;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  padding-bottom: 0px;
-}
-
-.about__card-header h5 {
-  font-style: italic;
-  font-size: 16px;
+.about h2 {
+  text-transform: uppercase;
+  padding-top: 15px;
 }
 
 .about__card-container {
@@ -374,7 +379,6 @@ button.navbar-toggler:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 50px;
 }
 
 .about__card-text {
@@ -395,41 +399,34 @@ button.navbar-toggler:focus {
 
 .about__card-text h4 {
   color: #700000;
-  padding: 0px 50px 50px 0px;
+  padding: 0px 50px 0px 50px;
 }
 
 .about__card-image {
   -webkit-box-flex: 40%;
       -ms-flex: 40%;
           flex: 40%;
-  text-align: center;
+  text-align: right;
 }
 
 .about__card-image img {
-  width: 450px;
+  width: auto;
   height: 450px;
 }
 
-.ml9 {
+.restaurant-gallery {
+  display: block;
   position: relative;
-  font-weight: 200;
-  font-size: 4em;
-}
-
-.ml9 .text-wrapper {
-  position: relative;
-  display: inline-block;
-  padding-top: 0.2em;
-  padding-right: 0.05em;
-  padding-bottom: 0.1em;
-  overflow: hidden;
-}
-
-.ml9 .letter {
-  -webkit-transform-origin: 50% 100%;
-          transform-origin: 50% 100%;
-  display: inline-block;
-  line-height: 1em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: url("../assets/bg-gallery.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  padding: 100px 50px 50px 50px;
 }
 
 .gallery {
@@ -438,15 +435,13 @@ button.navbar-toggler:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 0px;
   background-image: url("../assets/bg-gallery.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   width: 100%;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding: 50px 50px 50px 50px;
 }
 
 .gallery__card-title {
@@ -461,20 +456,6 @@ button.navbar-toggler:focus {
   padding-bottom: 0px;
 }
 
-.gallery__card-title h1 {
-  text-align: center;
-  margin-bottom: 60px;
-  color: #a6dfdd;
-  text-transform: uppercase;
-  padding: 0px;
-  margin: 0px;
-}
-
-.gallery__card-title h5 {
-  font-style: italic;
-  font-size: 16px;
-}
-
 .gallery__row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -487,7 +468,6 @@ button.navbar-toggler:focus {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 50px 50px;
 }
 
 .gallery__col {
@@ -606,16 +586,6 @@ button.navbar-toggler:focus {
   border-right: 2px solid #1d1d1d;
 }
 
-.form__content a {
-  color: #700000;
-}
-
-.form__content a:hover {
-  text-decoration: none;
-  color: #700000;
-  font-weight: bolder;
-}
-
 .map {
   position: relative;
   width: 100vw;
@@ -644,10 +614,11 @@ button.navbar-toggler:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
   -webkit-box-flex: 100%;
       -ms-flex: 100%;
           flex: 100%;
-  height: 400px;
+  padding: 50px 0px 50px 0px;
 }
 
 .contact__card-map {
@@ -664,6 +635,20 @@ button.navbar-toggler:focus {
       -ms-flex: 100%;
           flex: 100%;
   border-top: 1px solid #1d1d1d;
+}
+
+.contact__content a {
+  color: #700000;
+}
+
+.contact__content a:hover {
+  text-decoration: none;
+  color: #700000;
+  font-weight: bolder;
+}
+
+.contact__content a span:first-of-type {
+  padding-right: 15px;
 }
 
 .footer-container {

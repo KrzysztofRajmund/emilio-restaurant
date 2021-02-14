@@ -25,16 +25,18 @@ export default function Gallery() {
 
   return (
     <div className='gallery'>
-      <div
-        className='gallery__card-title'
-        id='box'
-        data-aos='flip-left'
-        data-aos-easing='ease-out-cubic'
-        data-aos-duration='2000'
-      >
-        <h1> Galeria</h1>
-        <h5>Nasza historia</h5>
-      </div>
+      <article className='titles-container'>
+        <div
+          className='titles-container__animation'
+          id='box'
+          data-aos='flip-left'
+          data-aos-easing='ease-out-cubic'
+          data-aos-duration='2000'
+        >
+          <h1 className='titles-container__title'> Galeria</h1>
+          <h5 className='titles-container__subtitle'>Nasza historia</h5>
+        </div>
+      </article>
       <div className='gallery__row' data-aos='fade-up' data-aos-duration='3000'>
         {tileData.items.map((image) => (
           <div

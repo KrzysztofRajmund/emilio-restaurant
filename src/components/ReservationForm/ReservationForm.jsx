@@ -19,7 +19,7 @@ const ReservationForm = () => {
       <div className='form-container'>
         <div className='form-container__input' data-aos='fade-left'>
           <form>
-            <address className='form__content'>
+            <address className='contact__content'>
               <h1>Zadzwoń</h1>
               <h5>
                 <a href='tel:048-508-224-177'>+48 508 224 177</a>

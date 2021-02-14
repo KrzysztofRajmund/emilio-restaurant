@@ -21,16 +21,22 @@ const AboutUs = () => {
     <React.Fragment>
       {window.location.pathname === '/onas' ? <HeaderJumbotron /> : ''}
       <div className='about' id='about'>
-        <div className='about-container'>
-          <div className='about__card-header' id='box' data-aos='fade-left'>
+        <article className='titles-container'>
+          <div
+            className='titles-container__animation'
+            id='box'
+            data-aos='fade-left'
+          >
             <img src={Logo} alt='logo' width='90px' height='auto' />
-            <h5>Rodzinna kuchnia włoska</h5>
-            <h1>Nasza historia</h1>
+            <h2>Nasza historia</h2>
+            <h5 className='titles-container__subtitle'>
+              Rodzinna kuchnia włoska
+            </h5>
           </div>
-        </div>
+        </article>
         <div className='about__card-container' data-aos='zoom-in'>
           <div className='about__card-text'>
-            <h4>
+            <h4 className='description'>
               Fue sus puertas al público en su antiguo local de la calle
               Cantuarias en Miraflores. Hoy, en tiempos de quedarnos en casa,
               hemos preparado una selección de los platos que fueron parte de la
