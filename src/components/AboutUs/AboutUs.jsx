@@ -4,7 +4,7 @@ import Gallery from './Gallery';
 import HeaderJumbotron from '../Home/HeaderJumbotron';
 //assets
 import Logo from '../../assets/logo.png';
-import RestaurantImage from '../../assets/1 (53-1).jpg';
+import RestaurantImage from '../../assets/restaurant-image.jpg';
 //AOS
 import AOS from 'aos';
 import 'aos/dist/aos.css';

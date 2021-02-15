@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 //assets
-import MenuShortImage1 from '../../assets/1 (35).jpg';
-import MenuShortImage2 from '../../assets/1 (43).jpg';
-import MenuShortImage3 from '../../assets/1 (47).jpg';
+import MenuShortImage1 from '../../assets/dinner-image.jpg';
+import MenuShortImage2 from '../../assets/dessert-image.jpg';
+import MenuShortImage3 from '../../assets/wine-image.jpg';
 //react-bootstrap
 import { Carousel } from 'react-bootstrap';
 //AOS
