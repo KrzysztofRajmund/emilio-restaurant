@@ -6,8 +6,11 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 //assets
 import Xicon from '../../assets/x-icon.png';
+import prevIconWhite from '../../assets/prev-icon-white.png';
+import nextIconWhite from '../../assets/next-icon-white.png';
 
-export default function Gallery() {
+const Gallery = () => {
+  const [data, setData] = useState(tileData.items);
   const [showModal, setShowModal] = useState(false);
   const [image, setImage] = useState();
 
@@ -21,6 +24,18 @@ export default function Gallery() {
   const displayImage = (image) => {
     setShowModal(true);
     setImage(image);
+  };
+
+  const prevImage = (index) => {
+    if (index >= 0) {
+      setImage(data[index]);
+    }
+  };
+
+  const nextImage = (index) => {
+    if (index < data.length) {
+      setImage(data[index]);
+    }
   };
 
   return (
@@ -38,7 +53,7 @@ export default function Gallery() {
         </div>
       </article>
       <div className='gallery__row' data-aos='fade-up' data-aos-duration='3000'>
-        {tileData.items.map((image) => (
+        {data.map((image) => (
           <div
             key={image.id}
             className='gallery__col'
@@ -48,16 +63,30 @@ export default function Gallery() {
           </div>
         ))}
         {showModal ? (
-          <div
-            id='modalContainer'
-            className='modalContainer'
-            onClick={() => setShowModal(false)}
-          >
+          <div className='modalContainer'>
             <section class='modalCard'>
-              <img className='modalImage' src={image.url} />
+              <img
+                className='modalImage'
+                src={image.url}
+                alt={image.id}
+                onClick={() => nextImage(data.indexOf(image) + 1)}
+              />
+              <img
+                className='modalPrev'
+                src={prevIconWhite}
+                alt='prev'
+                onClick={() => prevImage(data.indexOf(image) - 1)}
+              />
+              <img
+                className='modalNext'
+                src={nextIconWhite}
+                alt='next'
+                onClick={() => nextImage(data.indexOf(image) + 1)}
+              />
               <img
                 className='modalExit'
                 src={Xicon}
+                alt='exit'
                 onClick={() => setShowModal(false)}
               />
             </section>
@@ -68,4 +97,6 @@ export default function Gallery() {
       </div>
     </div>
   );
-}
+};
+
+export default Gallery;

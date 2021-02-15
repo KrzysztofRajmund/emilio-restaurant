@@ -320,7 +320,7 @@ button.navbar-toggler {
 // }
 
 .carousel-control-next-icon {
-  background-image: url('../assets/nextIcon.png') !important;
+  background-image: url('../assets/next-icon.png') !important;
   width: 30px !important;
   height: 30px !important;
   position: absolute;
@@ -328,7 +328,7 @@ button.navbar-toggler {
 }
 
 .carousel-control-prev-icon {
-  background-image: url('../assets/prevIcon.png') !important;
+  background-image: url('../assets/prev-icon.png') !important;
   width: 30px !important;
   height: 30px !important;
   position: absolute;
@@ -509,16 +509,38 @@ button.navbar-toggler {
     position: absolute;
     top: 5%;
     right: 3%;
-    width: 30px;
-    height: 30px;
-    margin: 10px;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
     z-index: 90;
   }
 
+  .modalPrev {
+    position: absolute;
+    top: 42%;
+    left: 5%;
+    width: 50px;
+    height: 90px;
+    z-index: 90;
+    opacity: 0.7;
+    padding: 30px 10px 30px 10px;
+  }
+
+  .modalNext {
+    position: absolute;
+    top: 42%;
+    right: 5%;
+    width: 50px;
+    height: 90px;
+    z-index: 90;
+    opacity: 0.7;
+    padding: 30px 10px 30px 10px;
+  }
+
   .modalImage {
-    width: 80%;
+    width: 70%;
     height: auto;
-    padding: 50px 50px 50px 50px;
+    margin: 50px 50px 50px 50px;
   }
 }
 
