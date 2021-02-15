@@ -4,6 +4,7 @@ import JumbotronImageDiscover1 from '../../assets/jumbotron1.jpg';
 import JumbotronImageDiscover2 from '../../assets/jumbotron2.jpg';
 import JumbotronImageDiscover3 from '../../assets/jumbotron3.jpg';
 import JumbotronImageDiscover4 from '../../assets/jumbotron4.jpg';
+import Underline from '../../assets/underline.png';
 //anime
 import anime from 'animejs';
 //components
@@ -117,12 +118,15 @@ const JumbotronSlider = () => {
           <h2 className='jumbotron-slider__animation-second'>
             Rodzinna kuchnia włoska
           </h2>
-          <strong id='discover'>Discover</strong>
-          <strong id='menu'>Menu</strong>
-          <strong id='visit'>​Odwiedź nas</strong>
+          <div>
+            <strong id='discover'>Discover</strong>
+            <strong id='menu'>Menu</strong>
+            <strong id='visit'>​Odwiedź nas</strong>
+          </div>
           <div className='contact-info'>
-            <h5>tel. 508 224 177</h5>
-            <small>Jana Pawla II 43, Szczecin 70-415 PL</small>
+            <img src={Underline} alt='underline' />
+            <p>Szczecin, ul. Jana Pawła II 43</p>
+            <p>tel. 508 224 177</p>
           </div>
         </div>
         <img id='image-jumbotron' />
