@@ -49,9 +49,13 @@ const MenuShort = () => {
             alt='First slide'
           />
           <Carousel.Caption>
-            <h4>Główne menu {`>>`}</h4>
+            <a href='/menu'>
+              {' '}
+              <h4>Główne menu</h4>
+            </a>
           </Carousel.Caption>
         </Carousel.Item>
+
         <Carousel.Item>
           <img
             className='d-block w-100'
@@ -59,7 +63,10 @@ const MenuShort = () => {
             alt='Second slide'
           />
           <Carousel.Caption>
-            <h4>Desery {`>>`}</h4>
+            <a href='/menu'>
+              {' '}
+              <h4>Desery</h4>
+            </a>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -69,7 +76,10 @@ const MenuShort = () => {
             alt='Third slide'
           />
           <Carousel.Caption>
-            <h4>Wina {`>>`}</h4>
+            <a href='/menu'>
+              {' '}
+              <h4>Wina</h4>
+            </a>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

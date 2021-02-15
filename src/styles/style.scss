@@ -323,26 +323,45 @@ button.navbar-toggler {
 
 .carousel.slide {
   width: 70%;
+
   .carousel-indicators {
     margin-bottom: 5px;
     li {
       height: 15px;
       width: 15px;
-      // background-color: transparent;
-      // border: 3px solid #f5f5f5;
-      // border-radius: 100%;
       margin: 0px 7px 15px 7px;
     }
   }
+}
 
-  h4 {
-    padding-bottom: 30px;
+.carousel-caption {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+    color: #f5f5f5;
+    min-width: 200px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #f5f5f5;
+    background-color: rgba(0, 0, 0, 0.171);
+    &:hover {
+      text-decoration: none;
+      color: #f5f5f5;
+      background-color: #1d1d1d;
+    }
+
+    h4 {
+      padding: 0px;
+      margin: 0px;
+    }
   }
 }
 
-// .carousel-inner {
-//   border-radius: 1%;
-// }
+.carousel-inner {
+  background-color: #000;
+}
 
 .carousel-control-next-icon {
   background-image: url('../assets/next-icon.png') !important;
