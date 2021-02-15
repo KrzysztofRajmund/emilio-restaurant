@@ -141,7 +141,7 @@ button.navbar-toggler:focus {
 }
 
 .jumbotron-container {
-  background-color: #f5f5f5;
+  background-color: #191919;
 }
 
 .jumbotron-slider {
@@ -219,8 +219,8 @@ button.navbar-toggler:focus {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  -webkit-transition: background-image 0.4s;
-  transition: background-image 0.4s;
+  -webkit-transition: background-image 0.4s linear;
+  transition: background-image 0.4s linear;
   width: 100vw;
   height: 100vh;
 }

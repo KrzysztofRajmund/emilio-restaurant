@@ -18,10 +18,9 @@ const JumbotronSlider = () => {
   }, []);
 
   if (loading) {
+    const image = document.getElementById('image-jumbotron');
     //button discover
     const discover = document.getElementById('discover');
-    const image = document.getElementById('image-jumbotron');
-
     discover.addEventListener('mouseover', () => {
       image.style.backgroundImage = `url(${JumbotronImageDiscover2})`;
     });
@@ -129,7 +128,7 @@ const JumbotronSlider = () => {
             <p>tel. 508 224 177</p>
           </div>
         </div>
-        <img id='image-jumbotron' />
+        <section id='image-jumbotron'></section>
       </div>
     </div>
   );

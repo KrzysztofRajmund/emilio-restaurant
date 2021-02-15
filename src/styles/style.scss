@@ -109,7 +109,9 @@ button.navbar-toggler {
 
 //jumbotron
 .jumbotron-container {
-  background-color: $secondaryBackgroundColor;
+  background-color: #191919;
+  // background-color: red;
+  // background-image: url('../assets/jumbotron1.jpg');
 }
 .jumbotron-slider {
   position: relative;
@@ -169,7 +171,7 @@ button.navbar-toggler {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  transition: background-image 0.4s;
+  transition: background-image 0.4s linear;
   width: 100vw;
   height: 100vh;
 }
