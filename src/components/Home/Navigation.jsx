@@ -23,7 +23,7 @@ const Navigation = () => {
   return (
     <Navbar id='nav' className='navigation' expand='lg'>
       <Navbar.Brand className='navigation__brand' href='/'>
-        <img src={Logo} alt='logo' width='60px' height='auto' />
+        <img src={Logo} alt='logo' width='100px' height='auto' />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls='basic-navbar-nav' onClick={changeColor}>
         <img width='30px' height='30px' src={Burger} alt='burger' />

@@ -105,6 +105,11 @@ body {
   min-width: 100%;
 }
 
+a.navigation__brand {
+  padding: 0px;
+  margin: 0px;
+}
+
 .navigation.navbar.colorNav {
   background-color: #1d1d1d;
 }
@@ -118,6 +123,10 @@ body {
   text-decoration: none;
   color: #f5f5f544;
   font-weight: 700;
+}
+
+.navigation__nav-link img:hover {
+  opacity: 0.4;
 }
 
 .navbar-toggler.collapsed {
@@ -813,15 +822,15 @@ button.navbar-toggler:focus {
   color: #313131;
 }
 
-.footer-container__card .footer-container__card--social-media {
-  padding: 0px 0px 0px 10px;
+.footer-container__card--social-media {
+  padding: 0px 10px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   text-align: center;
 }
 
-.footer-container__card .footer-container__card--social-media img:hover {
+.footer-container__card--social-media img:hover {
   text-decoration: none;
   color: transparent;
 }
@@ -879,7 +888,7 @@ button.navbar-toggler:focus {
   .navigation__nav-link {
     max-width: 150px;
     text-align: center;
-    margin: 25px;
+    margin: 20px;
     padding: 5px;
   }
 }
