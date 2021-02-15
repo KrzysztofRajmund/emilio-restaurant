@@ -39,7 +39,7 @@ const MenuShort = () => {
       <Carousel
         activeIndex={index}
         onSelect={handleSelect}
-        indicators={false}
+        indicators={true}
         data-aos='fade-right'
       >
         <Carousel.Item>

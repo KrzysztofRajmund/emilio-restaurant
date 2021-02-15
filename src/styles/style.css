@@ -309,6 +309,20 @@ button.navbar-toggler:focus {
   width: 70%;
 }
 
+.carousel.slide .carousel-indicators {
+  margin-bottom: 5px;
+}
+
+.carousel.slide .carousel-indicators li {
+  height: 15px;
+  width: 15px;
+  margin: 0px 7px 15px 7px;
+}
+
+.carousel.slide h4 {
+  padding-bottom: 30px;
+}
+
 .carousel-control-next-icon {
   background-image: url("../assets/nextIcon.png") !important;
   width: 30px !important;
