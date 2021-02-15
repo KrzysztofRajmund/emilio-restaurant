@@ -2,7 +2,7 @@ import React from 'react';
 //bootstrap
 import { Nav, Navbar } from 'react-bootstrap';
 //router
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 //assets
 import Logo from '../../assets/logo-white.png';
 import Burger from '../../assets/burger.png';
@@ -30,33 +30,66 @@ const Navigation = () => {
       </Navbar.Toggle>
       <Navbar.Collapse id='basic-navbar-nav'>
         <Nav className='ml-auto navigation__nav-container'>
-          <Link className='navigation__nav-link' to='/menu' onClick={scrollTop}>
+          <NavLink
+            className='navigation__nav-link'
+            to='/menu'
+            onClick={scrollTop}
+            activeStyle={{
+              borderBottom: '2px solid #73aea59a',
+              fontWeight: 'bold',
+              color: '#73aea5',
+            }}
+          >
             Menu
-          </Link>
-          <Link className='navigation__nav-link' to='/onas' onClick={scrollTop}>
+          </NavLink>
+          <NavLink
+            className='navigation__nav-link'
+            to='/onas'
+            onClick={scrollTop}
+            activeStyle={{
+              borderBottom: '2px solid #73aea59a',
+              fontWeight: 'bold',
+              color: '#73aea5',
+            }}
+          >
             O Nas
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             className='navigation__nav-link'
             to='/rezerwacja'
             onClick={scrollTop}
+            activeStyle={{
+              borderBottom: '2px solid #73aea59a',
+              fontWeight: 'bold',
+              color: '#73aea5',
+            }}
           >
             Rezerwacja
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             className='navigation__nav-link'
             to='/galeria'
             onClick={scrollTop}
+            activeStyle={{
+              borderBottom: '2px solid #73aea59a',
+              fontWeight: 'bold',
+              color: '#73aea5',
+            }}
           >
             Galeria
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             className='navigation__nav-link'
             to='/kontakt'
             onClick={scrollTop}
+            activeStyle={{
+              borderBottom: '2px solid #73aea59a',
+              fontWeight: 'bold',
+              color: '#73aea5',
+            }}
           >
             Kontakt
-          </Link>
+          </NavLink>
           <a
             className='navigation__nav-link'
             href='https://www.facebook.com/EmilioRestaurantSzczecin'
