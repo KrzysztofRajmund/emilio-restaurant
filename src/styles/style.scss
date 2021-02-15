@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import './variables';
+@import './functions';
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: $primaryFont;
 }
 
 body {
-  background-color: #f5f5f5 !important;
+  background-color: $secondaryBackgroundColor;
 }
 
 //scroll-button
@@ -80,14 +80,14 @@ body {
 
 .navigation__nav-link {
   padding-left: 50px;
-  color: #f5f5f5;
+  color: $primaryTextColor;
   &:hover {
     text-decoration: none;
     color: #f5f5f544;
     font-weight: 700;
   }
   &:active {
-    color: #005300;
+    color: $supplementaryTextColor;
   }
 }
 
@@ -109,7 +109,7 @@ button.navbar-toggler {
 
 //jumbotron
 .jumbotron-container {
-  background-color: #f5f5f5;
+  background-color: $secondaryBackgroundColor;
 }
 .jumbotron-slider {
   position: relative;
@@ -117,7 +117,7 @@ button.navbar-toggler {
   justify-content: center;
   align-items: center;
   margin-bottom: 0px;
-  color: #f5f5f5;
+  color: $primaryTextColor;
 }
 
 .jumbotron-slider__text-container {
@@ -128,12 +128,12 @@ button.navbar-toggler {
   position: absolute;
   padding: 30px 5px 50px 5px;
   text-align: center;
-  font-family: 'Source Sans Pro', sans-serif;
-  color: #f5f5f5;
+  font-family: $secondaryFont;
+  color: $primaryTextColor;
 }
 
 .jumbotron-slider__text-container strong {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $secondaryFont;
   font-size: 42px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -182,8 +182,8 @@ button.navbar-toggler {
   letter-spacing: 0.5em;
   text-align: center;
   color: #73aea5;
-  text-shadow: 1px 1px 3px #f5f5f574;
-  font-family: 'Source Sans Pro', sans-serif;
+  text-shadow: 1px 1px 2px #f5f5f574;
+  font-family: $secondaryFont;
 }
 
 .jumbotron-slider__animation-first .letter {
@@ -201,7 +201,7 @@ button.navbar-toggler {
   padding-bottom: 30px;
   color: #f5f5dc;
   text-shadow: 1px 1px 3px #f5f5f574;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $secondaryFont;
 }
 
 .jumbotron-slider__animation-second .letter {
@@ -212,7 +212,7 @@ button.navbar-toggler {
 
 //header-jumbotron
 .header-jumbotron-container {
-  background-color: #f5f5f5;
+  background-color: $secondaryBackgroundColor;
 }
 .header-jumbotron-slider {
   position: relative;
@@ -220,13 +220,13 @@ button.navbar-toggler {
   justify-content: center;
   align-items: center;
   margin-bottom: 0px;
-  color: #f5f5f5;
+  color: $primaryTextColor;
 }
 
 .header-jumbotron-slider__text-container {
   position: absolute;
   text-align: center;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $secondaryFont;
   text-transform: uppercase;
   letter-spacing: 0.5em;
   img {
@@ -319,7 +319,7 @@ button.navbar-toggler {
   align-items: center;
   text-align: center;
   padding: 50px 0px 50px 0px;
-  background-color: #fff;
+  background-color: $primaryBackgroundColor;
 }
 
 .carousel.slide {
@@ -341,7 +341,7 @@ button.navbar-toggler {
   justify-content: center;
   align-items: center;
   a {
-    color: #f5f5f5;
+    color: $primaryTextColor;
     min-width: 200px;
     padding: 10px;
     margin-bottom: 20px;
@@ -349,7 +349,7 @@ button.navbar-toggler {
     background-color: rgba(0, 0, 0, 0.171);
     &:hover {
       text-decoration: none;
-      color: #f5f5f5;
+      color: $primaryTextColor;
       background-color: #1d1d1d;
     }
 
@@ -390,22 +390,18 @@ button.navbar-toggler {
   align-items: center;
   text-align: center;
   .titles-container__title {
-    // font-size: 50px;
-    // letter-spacing: 3px;
-    // color: #000;
-    // text-transform: uppercase;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: $secondaryFont;
     font-size: 50px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: 800;
+    color: $secondaryTextColor;
   }
   .titles-container__subtitle {
-    // font-style: italic;
     text-transform: uppercase;
     letter-spacing: 0.09em;
     font-size: 18px;
-    color: #1d1d1d;
+    color: $secondaryTextColor;
   }
 }
 
@@ -422,15 +418,16 @@ button.navbar-toggler {
   //   background-repeat: no-repeat;
   //   background-attachment: fixed;
   //   background-size: cover;
-  background-color: #fff;
+  background-color: $primaryBackgroundColor;
   padding: 50px 50px 50px 50px;
   h2 {
     padding-top: 15px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: $secondaryFont;
     font-size: 36px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: 800;
+    color: $secondaryTextColor;
   }
 }
 
@@ -446,7 +443,7 @@ button.navbar-toggler {
   flex: 60%;
   text-align: center;
   h4 {
-    color: rgb(112, 0, 0);
+    color: $supplementaryTextColor;
     padding: 0px 50px 0px 50px;
   }
 }
@@ -618,7 +615,7 @@ button.navbar-toggler {
   align-items: center;
   flex: 60%;
   padding: 50px;
-  color: #f5f5f5;
+  color: $primaryTextColor;
 }
 
 .form-container__input {
@@ -627,9 +624,9 @@ button.navbar-toggler {
   align-items: center;
   justify-content: center;
   padding: 50px;
-  background-color: #fff;
-  border-right: 2px solid #1d1d1d;
-  // border: 0.1px solid #1d1d1d30;
+  background-color: $primaryBackgroundColor;
+  border-right: 2px solid $supplementaryTextColor;
+  color: $secondaryTextColor;
 }
 
 //contact
@@ -644,7 +641,7 @@ button.navbar-toggler {
   display: flex;
   flex-direction: column;
   padding: 0px 0px 0px 0px;
-  background-color: #fff;
+  background-color: $primaryBackgroundColor;
 }
 
 .contact__card-content {
@@ -665,11 +662,9 @@ button.navbar-toggler {
 }
 
 .contact__content a {
-  color: rgb(112, 0, 0);
+  color: $supplementaryTextColor;
   &:hover {
-    text-decoration: none;
-    color: rgb(112, 0, 0);
-    font-weight: bolder;
+    @include hoverText($supplementaryTextColor, $hoverWeight, $hoverTransform);
   }
 
   span:first-of-type {
@@ -684,20 +679,13 @@ button.navbar-toggler {
   justify-content: center;
   width: 100%;
   height: auto;
-  background-color: #fff;
+  background-color: $primaryBackgroundColor;
 }
 
 .footer-container__card {
   flex: 33.33%;
   text-align: center;
   padding: 50px;
-  p {
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 6px;
-    color: rgb(49, 49, 49);
-  }
-
   h5 {
     letter-spacing: 0.2em;
     line-height: 1em;
@@ -706,6 +694,7 @@ button.navbar-toggler {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: $secondaryTextColor;
 
     hr {
       width: 70%;
@@ -714,6 +703,12 @@ button.navbar-toggler {
       background-color: rgba(116, 116, 116, 0.157);
       border: transparent;
     }
+  }
+  p {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: rgb(49, 49, 49);
   }
 }
 
@@ -731,17 +726,23 @@ button.navbar-toggler {
 
 .footer-container__card {
   p:last-child a {
-    color: rgba(116, 116, 116, 0.708);
+    color: $supplementaryTextColor;
     &:hover {
-      text-decoration: none;
-      color: rgba(0, 0, 0, 0.892);
+      @include hoverText(
+        $supplementaryTextColor,
+        $hoverWeight,
+        $hoverTransform
+      );
     }
   }
   p:first-of-type a {
     color: rgb(49, 49, 49);
     &:hover {
-      text-decoration: none;
-      color: rgba(116, 116, 116, 0.708);
+      @include hoverText(
+        $supplementaryTextColor,
+        $hoverWeight,
+        $hoverTransform
+      );
     }
   }
 }

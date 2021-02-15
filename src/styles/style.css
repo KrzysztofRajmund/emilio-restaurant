@@ -5,11 +5,11 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: "Titillium Web", sans-serif;
 }
 
 body {
-  background-color: #f5f5f5 !important;
+  background-color: #f5f5f5;
 }
 
 .scroll-container {
@@ -121,7 +121,7 @@ body {
 }
 
 .navigation__nav-link:active {
-  color: #005300;
+  color: #700000;
 }
 
 .navigation__nav-link:last-child {
@@ -176,12 +176,12 @@ button.navbar-toggler:focus {
   position: absolute;
   padding: 30px 5px 50px 5px;
   text-align: center;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   color: #f5f5f5;
 }
 
 .jumbotron-slider__text-container strong {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 42px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -232,8 +232,8 @@ button.navbar-toggler:focus {
   letter-spacing: 0.5em;
   text-align: center;
   color: #73aea5;
-  text-shadow: 1px 1px 3px #f5f5f574;
-  font-family: 'Source Sans Pro', sans-serif;
+  text-shadow: 1px 1px 2px #f5f5f574;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .jumbotron-slider__animation-first .letter {
@@ -251,7 +251,7 @@ button.navbar-toggler:focus {
   padding-bottom: 30px;
   color: #f5f5dc;
   text-shadow: 1px 1px 3px #f5f5f574;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .jumbotron-slider__animation-second .letter {
@@ -282,7 +282,7 @@ button.navbar-toggler:focus {
 .header-jumbotron-slider__text-container {
   position: absolute;
   text-align: center;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.5em;
 }
@@ -429,11 +429,12 @@ button.navbar-toggler:focus {
 }
 
 .titles-container .titles-container__title {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 50px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 800;
+  color: #1d1d1d;
 }
 
 .titles-container .titles-container__subtitle {
@@ -456,11 +457,12 @@ button.navbar-toggler:focus {
 
 .about h2 {
   padding-top: 15px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 36px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 800;
+  color: #1d1d1d;
 }
 
 .about__card-container {
@@ -696,7 +698,8 @@ button.navbar-toggler:focus {
           justify-content: center;
   padding: 50px;
   background-color: #fff;
-  border-right: 2px solid #1d1d1d;
+  border-right: 2px solid #700000;
+  color: #1d1d1d;
 }
 
 .map {
@@ -755,9 +758,9 @@ button.navbar-toggler:focus {
 }
 
 .contact__content a:hover {
-  text-decoration: none;
   color: #700000;
   font-weight: bolder;
+  text-decoration: none;
 }
 
 .contact__content a span:first-of-type {
@@ -785,13 +788,6 @@ button.navbar-toggler:focus {
   padding: 50px;
 }
 
-.footer-container__card p {
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 6px;
-  color: #313131;
-}
-
 .footer-container__card h5 {
   letter-spacing: 0.2em;
   line-height: 1em;
@@ -809,6 +805,7 @@ button.navbar-toggler:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #1d1d1d;
 }
 
 .footer-container__card h5 hr {
@@ -817,6 +814,13 @@ button.navbar-toggler:focus {
   text-align: center;
   background-color: rgba(116, 116, 116, 0.157);
   border: transparent;
+}
+
+.footer-container__card p {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #313131;
 }
 
 .footer-container__card .footer-container__card--social-media {
@@ -833,12 +837,13 @@ button.navbar-toggler:focus {
 }
 
 .footer-container__card p:last-child a {
-  color: rgba(116, 116, 116, 0.708);
+  color: #700000;
 }
 
 .footer-container__card p:last-child a:hover {
+  color: #700000;
+  font-weight: bolder;
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.892);
 }
 
 .footer-container__card p:first-of-type a {
@@ -846,8 +851,9 @@ button.navbar-toggler:focus {
 }
 
 .footer-container__card p:first-of-type a:hover {
+  color: #700000;
+  font-weight: bolder;
   text-decoration: none;
-  color: rgba(116, 116, 116, 0.708);
 }
 
 .footer-container__logo {
