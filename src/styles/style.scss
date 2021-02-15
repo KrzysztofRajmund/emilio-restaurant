@@ -138,7 +138,6 @@ button.navbar-toggler {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0px 30px;
-  width: 100px;
   &:hover {
     cursor: pointer;
     border-bottom-width: 2px;
@@ -226,7 +225,13 @@ button.navbar-toggler {
 
 .header-jumbotron-slider__text-container {
   position: absolute;
-  padding-top: 50px;
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  img {
+    width: 50%;
+  }
 }
 
 .header-jumbotron-slider__image {
@@ -234,30 +239,26 @@ button.navbar-toggler {
   background-size: cover;
   background-position: center;
   width: 100vw;
-  max-height: 900px;
+  max-height: 100vh;
 }
 
 //header-jumbotron animation
 .header-jumbotron-slider__animation-first {
-  font-weight: 200;
-  font-size: 1.8em;
-  text-transform: uppercase;
-  letter-spacing: 0.5em;
   text-align: center;
+  font-weight: 800;
+  font-size: 42px;
+  margin: 0px;
 }
 
 .header-jumbotron-slider__animation-first .letter {
   display: inline-block;
-  line-height: 1em;
   text-align: center;
 }
 
 .header-jumbotron-slider__animation-second {
-  font-weight: 200;
-  font-size: 1.4em;
-  text-transform: lowercase;
-  letter-spacing: 0.5em;
   text-align: center;
+  font-size: 30px;
+  margin: 0px;
 }
 
 .header-jumbotron-slider__animation-second .letter {
@@ -389,13 +390,20 @@ button.navbar-toggler {
   align-items: center;
   text-align: center;
   .titles-container__title {
+    // font-size: 50px;
+    // letter-spacing: 3px;
+    // color: #000;
+    // text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 50px;
-    letter-spacing: 3px;
-    color: #000;
     text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 800;
   }
   .titles-container__subtitle {
-    font-style: italic;
+    // font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
     font-size: 18px;
     color: #1d1d1d;
   }
@@ -417,8 +425,12 @@ button.navbar-toggler {
   background-color: #fff;
   padding: 50px 50px 50px 50px;
   h2 {
-    text-transform: uppercase;
     padding-top: 15px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 800;
   }
 }
 

@@ -9,7 +9,7 @@ const ReservationForm = () => {
   useEffect(() => {
     AOS.init({
       offset: 300,
-      duration: 800,
+      duration: 1800,
     });
   }, []);
 

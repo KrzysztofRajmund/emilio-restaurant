@@ -4,6 +4,7 @@ import Navigation from './Navigation';
 import ThemeContext from './ThemeContext';
 //assets
 import JumbotronImageDiscover from '../../assets/jumbotron1.jpg';
+import Underline from '../../assets/underline.png';
 //anime
 import anime from 'animejs';
 
@@ -29,25 +30,15 @@ const HeaderJumbotron = () => {
       "<span class='letter'>$&</span>"
     );
 
-    anime
-      .timeline({ loop: false })
-      .add({
-        targets: '.header-jumbotron-slider__animation-first .letter',
-        translateX: [40, 0],
-        translateZ: 0,
-        opacity: [0, 1],
-        easing: 'easeOutExpo',
-        duration: 1800,
-        delay: (el, i) => 500 + 30 * i,
-      })
-      .add({
-        targets: '.header-jumbotron-slider__animation-first .letter',
-        translateX: [0, -30],
-        opacity: [1, 0],
-        easing: 'easeInExpo',
-        duration: 1600,
-        delay: (el, i) => 100 + 30 * i,
-      });
+    anime.timeline({ loop: false }).add({
+      targets: '.header-jumbotron-slider__animation-first .letter',
+      translateX: [40, 0],
+      translateZ: 0,
+      opacity: [0, 1],
+      easing: 'easeOutExpo',
+      duration: 1800,
+      delay: (el, i) => 500 + 30 * i,
+    });
 
     var textWrapper = document.querySelector(
       '.header-jumbotron-slider__animation-second'
@@ -89,6 +80,7 @@ const HeaderJumbotron = () => {
           <h2 className='header-jumbotron-slider__animation-second'>
             {filterValue[0].subtitle}
           </h2>
+          <img src={Underline} alt='underline' />
         </div>
         <img
           className='header-jumbotron-slider__image'
