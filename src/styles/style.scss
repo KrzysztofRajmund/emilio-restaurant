@@ -606,10 +606,13 @@ button.navbar-toggler {
   }
 
   h5 {
-    margin-bottom: 24px;
     letter-spacing: 0.2em;
     line-height: 1em;
     font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     hr {
       width: 70%;
@@ -633,12 +636,19 @@ button.navbar-toggler {
   }
 }
 
-.footer-container__card p:last-child {
-  a {
+.footer-container__card {
+  p:last-child a {
     color: rgba(116, 116, 116, 0.708);
     &:hover {
       text-decoration: none;
       color: rgba(0, 0, 0, 0.892);
+    }
+  }
+  p:first-of-type a {
+    color: rgb(49, 49, 49);
+    &:hover {
+      text-decoration: none;
+      color: rgba(116, 116, 116, 0.708);
     }
   }
 }

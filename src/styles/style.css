@@ -680,10 +680,22 @@ button.navbar-toggler:focus {
 }
 
 .footer-container__card h5 {
-  margin-bottom: 24px;
   letter-spacing: 0.2em;
   line-height: 1em;
   font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .footer-container__card h5 hr {
@@ -714,6 +726,15 @@ button.navbar-toggler:focus {
 .footer-container__card p:last-child a:hover {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.892);
+}
+
+.footer-container__card p:first-of-type a {
+  color: #313131;
+}
+
+.footer-container__card p:first-of-type a:hover {
+  text-decoration: none;
+  color: rgba(116, 116, 116, 0.708);
 }
 
 .footer-container__logo {

@@ -14,11 +14,16 @@ const FooterComponent = () => {
               Kontakt
               <hr />
             </h5>
-            <p>Tel. 508 224 177</p>
-            <p>Jana Pawła II 43</p>
-            <p>Szczecin 70-415 PL</p>
             <p>
-              <a href='/'>emilio@gmail.com</a>
+              {' '}
+              <a href='tel:048-508-224-177'>+48 508 224 177</a>
+            </p>
+            <p>Jana Pawła II 43</p>
+            <p>Szczecin 70-415</p>
+            <p>
+              <a href='mailto:info@restauracjaemilio.pl?&subject=Emilio Rezerwacja&body=Jak możemy pomóc?'>
+                info@restauracjaemilio.pl
+              </a>
             </p>
           </address>
         </div>
@@ -50,9 +55,10 @@ const FooterComponent = () => {
               Godziny otwarcia
               <hr />
             </h5>
-            <p>Mon–Wed 6–11</p>
-            <p>Thu–Sat 4–12</p>
-            <p>Sun 3–10</p>
+            <p>Wt–Czw 12–19</p>
+            <p>Piat 12–20</p>
+            <p>Sob 13–20</p>
+            <p>Niedz 13–17</p>
             <p>
               <a href='/rezerwacja'>Rezerwuj stolik</a>
             </p>
