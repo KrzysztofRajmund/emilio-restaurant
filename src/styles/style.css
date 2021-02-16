@@ -921,6 +921,16 @@ button.navbar-toggler:focus {
     font-size: 30px;
     margin: 0px 25px;
   }
+  .footer-container__card {
+    padding: 50px 15px 30px 15px;
+  }
+  .footer-container__card h5 {
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  .footer-bottom__title {
+    padding-top: 20px;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -993,7 +1003,7 @@ button.navbar-toggler:focus {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 50px 0px;
+    padding: 55px 0px;
   }
   .footer-container__card {
     -webkit-box-flex: 100%;
@@ -1005,9 +1015,8 @@ button.navbar-toggler:focus {
     margin: 0px;
   }
   .footer-container__card h5 {
-    text-transform: uppercase;
-    font-size: 18px;
     padding-bottom: 15px;
+    font-size: 20px;
   }
   .footer-container__card h5 hr {
     display: none;
@@ -1019,7 +1028,10 @@ button.navbar-toggler:focus {
     display: none;
   }
   .footer-container__card--social-media {
-    padding: 0px 5px 0px 5px;
+    padding: 0px 5px 35px 5px;
+  }
+  .footer-container__logo {
+    padding-top: 35px;
   }
 }
 /*# sourceMappingURL=style.css.map */

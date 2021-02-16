@@ -32,14 +32,14 @@ const FooterComponent = () => {
             <img src={Logo} width='100px' height='auto' alt='logo' />
           </div>
           <a
-            className='footer-container__card footer-container__card--social-media'
+            className=' footer-container__card--social-media'
             href='https://www.facebook.com/EmilioRestaurantSzczecin'
             target='_blank'
           >
             <img src={Facebook} alt='facebook' width='30px' height='30px' />{' '}
           </a>
           <a
-            className='footer-container__card footer-container__card--social-media'
+            className=' footer-container__card--social-media'
             href='https://www.instagram.com/restauracja.emilio.szczecin/'
             target='_blank'
           >
