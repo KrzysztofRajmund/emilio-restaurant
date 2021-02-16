@@ -28,22 +28,75 @@ const AboutUs = () => {
             data-aos='fade-left'
           >
             <img src={Logo} alt='logo' width='90px' height='auto' />
-            <h2>Nasza historia</h2>
+            <h2>Rodzinna kuchnia włoska</h2>
             <h5 className='titles-container__subtitle'>
-              Rodzinna kuchnia włoska
+              La qualità è la nostra passione
             </h5>
           </div>
         </article>
         <div className='about__card-container' data-aos='zoom-in'>
           <div className='about__card-text'>
             <h4 className='description'>
-              Fue sus puertas al público en su antiguo local de la calle
-              Cantuarias en Miraflores. Hoy, en tiempos de quedarnos en casa,
-              hemos preparado una selección de los platos que fueron parte de la
-              historia nuestro restaurante a lo largo de los últimos 26 años.
-              Platos sabrosos que seguro despertarán la nostalgia en aquellos
-              que nos acompañaron durante nuestra vida, dedicada a intentar
-              hacerlos felices cada vez que nos visitaron.
+              <p>
+                La qualità è la nostra passione - Jakość to nasza pasja! Obok
+                Alei Fontann, tuż za plecami szczecińskiego Marynarza Sternika,
+                w samym sercu miasta, w ciągu spacerowym na odcinku od placu
+                Grunwaldzkiego do placu Lotników jest smaczne, kameralne i
+                przyjemnie urządzone miejsce – restauracja Emilio, gdzie jakość
+                włoskich przypraw, oliwy, chleba, wina oraz radość i zadowolenie
+                gości jest jedyną pasją, którą mają w życiu gospodarze tego
+                przepysznego i porywającego punktu na kulinarnej mapie
+                Szczecina. „Na gości, którzy zawitają do Emilio czekają
+                niebywałe doznania kulinarne. Nasza kuchnia opiera się głównie
+                na składnikach, które sprowadzamy do Szczecina prosto z
+                najróżniejszych włoskich regionów. Najwyższej jakości produkty i
+                nietuzinkowe połączenia smakowe są odzwierciedleniem pasji, z
+                jaką tworzone są nasze dania.”
+              </p>
+              <p>
+                <i>Iwona Szulc Emilio</i>
+              </p>
+              <p>
+                Powodów, dla których warto nas odwiedzić, nie brakuje. Na gości
+                czeka tu autorska i popisowa „Pasta alla forma”, czyli
+                tagliatelle w sosie truflowym, które mieszamy w samym środku
+                dużego kawałka oryginalnego Parmigiano Reggiano. Dzięki twardemu
+                włoskiemu serowi, danie to nabiera swojego niezwykłego
+                charakteru i wyrazistego smaku. Przekraczając progi naszego
+                włoskiego Domu, czeka na Was między innymi podróż do Piemontu,
+                podczas której przeniesiecie się do winnicy La Scolca, a
+                wszystko za sprawą degustacji doskonałych i głębokich w smaku i
+                tonacji win. Przed Wami również niepowtarzalna wyprawa do lasu w
+                Toskanii, po niezwykle cenne grzyby o wyjątkowym smaku i
+                aromacie. Mowa o truflach, po włosku „tartufo”. Te najdroższe
+                grzyby na świecie stanowią bardzo aromatyczny dodatek do naszych
+                dań. To wreszcie tu, przez cały rok możecie skosztować boskiego
+                smaku oliwy z oliwek, którą sprowadzamy do Szczecina prosto z
+                Sycylii.
+              </p>
+              <p>
+                „Okolica, w której jesteśmy otwarci jest tłumnie odwiedzana
+                przez turystów i mieszkańców Szczecina. Przyjeżdżają do nas
+                goście z całego świata oraz z różnych regionów Polski –
+                miłośnicy włoskich win i dań. Naszych gości przyciąga przede
+                wszystkim rozgłos, jakim cieszy się nasza kuchnia.”
+              </p>
+              <p>
+                <i>
+                  Dodaje założycielka, pomysłodawczyni i prawdziwa gospodyni
+                  tego miejsca, Iwona Szulc.
+                </i>
+              </p>
+              <p>
+                Co najważniejsze klimat tego miejsca tworzą ludzie, którzy
+                wyróżniają się pozytywnym nastawieniem do życia i drugiego
+                człowieka. Są rozśpiewani, radośni i wiecznie uśmiechnięci.
+                Przyjdź i dodaj do swoich ulubionych miejsc nasz adres. Chcemy
+                Ci poznać i sobą zainspirować.
+              </p>
+              <strong>
+                <i>Rodzina Emilio</i>
+              </strong>
             </h4>
           </div>
           <div className='about__card-image'>

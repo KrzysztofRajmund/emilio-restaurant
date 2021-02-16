@@ -409,6 +409,24 @@ button.navbar-toggler:focus {
   left: -40px;
 }
 
+.titles-container__food-container {
+  padding: 20px;
+}
+
+.titles-container__food-container .titles-container__food-name {
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #1d1d1d53;
+}
+
+.titles-container__food-container .titles-container__food-description {
+  color: #700000;
+}
+
+.titles-container__food-container .titles-container__food-price {
+  margin-top: 10px;
+}
+
 .titles-container {
   padding: 50px 0px 50px 0px;
   display: -webkit-box;

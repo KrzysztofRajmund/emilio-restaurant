@@ -1,0 +1,55 @@
+{
+    "items": [
+        {
+            "id": 1,
+            "category": "antipasti",
+            "title": "Bruschetta",
+            "description": "",
+            "price":"18 pln"
+        },
+        {
+            "id": 2,
+            "category": "antipasti",
+            "title": "Carpaccio di manzo",
+            "description": "carpaccio wołowe / beef carpaccio / Rindercarpaccio",
+            "price":"37 pln"
+        },
+        {
+            "id": 3,
+            "category": "antipasti",
+            "title": "Antipasti misto",
+            "description": "mieszane włoskie przystawki / mixed italian starter plate / gemischte italienische Vorspeisen",
+            "price":"48 pln"
+        },
+        {
+            "id": 4,
+            "category": "antipasti",
+            "title": "Gamberi al vino bianco",
+            "description": "krewetki na ciepło w sosie winnym / prawns in white wine / heiße Garnellenpfanne im Weißwein",
+            "price":"46 pln"
+        },
+        {
+            "id": 5,
+            "category": "antipasti",
+            "title": "Melanzane con pomodoro e mozzarella",
+            "description": "bakłażan z pomidorami zapiekany mozzarellą / aubergine with tomato and gratineed mozzarella / Aubergine mit Tomaten überbacken mit Mozzarella",
+            "price":"26 pln"
+        },
+        {
+            "id": 6,
+            "category": "insalate",
+            "title": "Insalata caesare con gamberi",
+            "description": "sałatka cezar z krewetkami / caesare salad with prawns / Caeser Salad mit Garnellen",
+            "price":"42 pln"
+        },
+           {
+            "id": 7,
+            "category": "insalate",
+            "title": "Insalata caesare con pollo",
+            "description": "sałatka cezar z kurczakiem / caesare salad with chicken / Caeser Salad mit Hähnchenbrust",
+            "price":"34 pln"
+        }
+        
+
+]
+}

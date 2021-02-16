@@ -385,6 +385,22 @@ button.navbar-toggler {
   left: -40px;
 }
 
+//menu main
+.titles-container__food-container {
+  padding: 20px;
+  .titles-container__food-name {
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #1d1d1d53;
+  }
+  .titles-container__food-description {
+    color: $supplementaryTextColor;
+  }
+  .titles-container__food-price {
+    margin-top: 10px;
+  }
+}
+
 //titles & subtitles & description for main components
 
 .titles-container {

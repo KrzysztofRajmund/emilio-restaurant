@@ -52,8 +52,7 @@ const RestaurantGallery = () => {
             data-aos-easing='ease-out-cubic'
             data-aos-duration='2000'
           >
-            <h1 className='titles-container__title'> Galeria</h1>
-            <h5 className='titles-container__subtitle'>Nasza historia</h5>
+            <h1 className='titles-container__title'> Album rodzinny</h1>
           </div>
         </article>
         <div

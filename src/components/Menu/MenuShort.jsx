@@ -32,7 +32,7 @@ const MenuShort = () => {
         >
           <h1 className='titles-container__title'>Menu</h1>
           <h5 className='titles-container__subtitle'>
-            Z najlepszych produktów
+            The best food - odkryj nasze smaki
           </h5>
         </div>
       </article>
