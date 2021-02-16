@@ -392,6 +392,7 @@ button.navbar-toggler {
     font-weight: 600;
     letter-spacing: 1px;
     color: #1d1d1d53;
+    text-transform: uppercase;
   }
   .titles-container__food-description {
     color: $supplementaryTextColor;
@@ -399,6 +400,11 @@ button.navbar-toggler {
   .titles-container__food-price {
     margin-top: 10px;
   }
+}
+
+.titles-container__food-description--polish {
+  text-transform: uppercase;
+  font-weight: 900;
 }
 
 //titles & subtitles & description for main components

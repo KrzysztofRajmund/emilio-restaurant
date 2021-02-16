@@ -417,6 +417,7 @@ button.navbar-toggler:focus {
   font-weight: 600;
   letter-spacing: 1px;
   color: #1d1d1d53;
+  text-transform: uppercase;
 }
 
 .titles-container__food-container .titles-container__food-description {
@@ -425,6 +426,11 @@ button.navbar-toggler:focus {
 
 .titles-container__food-container .titles-container__food-price {
   margin-top: 10px;
+}
+
+.titles-container__food-description--polish {
+  text-transform: uppercase;
+  font-weight: 900;
 }
 
 .titles-container {
