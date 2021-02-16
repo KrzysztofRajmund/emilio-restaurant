@@ -386,25 +386,50 @@ button.navbar-toggler {
 }
 
 //menu main
+.titles-container__nav-sticky {
+  position: sticky;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.171);
+  z-index: 90;
+}
+.titles-container__menu-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .titles-container__menu-nav-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .titles-container__subtitle {
+      margin: 0px 20px;
+    }
+  }
+}
+
 .titles-container__food-container {
   padding: 20px;
+  max-width: 70%;
   .titles-container__food-name {
     font-weight: 600;
     letter-spacing: 1px;
     color: #1d1d1d53;
     text-transform: uppercase;
+    padding-bottom: 10px;
   }
   .titles-container__food-description {
     color: $supplementaryTextColor;
+    opacity: 0.5;
   }
   .titles-container__food-price {
     margin-top: 10px;
   }
 }
 
-.titles-container__food-description--polish {
+.titles-container__food-description.titles-container__food-description--polish {
   text-transform: uppercase;
   font-weight: 900;
+  font-size: 20px;
+  opacity: 1;
 }
 
 //titles & subtitles & description for main components

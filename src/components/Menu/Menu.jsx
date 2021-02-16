@@ -17,6 +17,32 @@ const Menu = () => {
   return (
     <React.Fragment>
       {window.location.pathname === '/menu' ? <HeaderJumbotron /> : ''}
+      <article className='titles-container titles-container__nav-sticky'>
+        <div
+          className='titles-container__animation'
+          id='box'
+          data-aos='flip-left'
+          data-aos-easing='ease-out-cubic'
+          data-aos-duration='2000'
+        >
+          <div className='titles-container__menu-nav'>
+            <div className='titles-container__menu-nav-card'>
+              <h4 className='titles-container__subtitle'>antipasti</h4>
+              <h4 className='titles-container__subtitle'>insalate</h4>
+              <h4 className='titles-container__subtitle'>zuppa</h4>
+              <h4 className='titles-container__subtitle'>pasta</h4>
+              <h4 className='titles-container__subtitle'>pesce</h4>
+              <h4 className='titles-container__subtitle'>carne</h4>
+            </div>
+            <div className='titles-container__menu-nav-card'>
+              <h4 className='titles-container__subtitle'>dla dzieci</h4>
+              <h4 className='titles-container__subtitle'>dolci</h4>
+              <h4 className='titles-container__subtitle'>dania sezonowe</h4>
+              <h4 className='titles-container__subtitle'>dodatki</h4>
+            </div>
+          </div>
+        </div>
+      </article>
       <article className='titles-container'>
         <div
           className='titles-container__animation'
@@ -36,10 +62,12 @@ const Menu = () => {
               >
                 <h3 className='titles-container__food-name'>{product.title}</h3>
                 <h4 className='titles-container__food-description titles-container__food-description--polish'>
-                  {product.description.substring(
-                    0,
-                    product.description.indexOf('/')
-                  )}
+                  {product.description.includes('/')
+                    ? product.description.substring(
+                        0,
+                        product.description.indexOf('/')
+                      )
+                    : product.description}
                 </h4>
                 <h4 className='titles-container__food-description'>
                   {product.description.substring(
@@ -74,10 +102,12 @@ const Menu = () => {
               >
                 <h3 className='titles-container__food-name'>{product.title}</h3>
                 <h4 className='titles-container__food-description titles-container__food-description--polish'>
-                  {product.description.substring(
-                    0,
-                    product.description.indexOf('/')
-                  )}
+                  {product.description.includes('/')
+                    ? product.description.substring(
+                        0,
+                        product.description.indexOf('/')
+                      )
+                    : product.description}
                 </h4>
                 <h4 className='titles-container__food-description'>
                   {product.description.substring(
@@ -112,10 +142,12 @@ const Menu = () => {
               >
                 <h3 className='titles-container__food-name'>{product.title}</h3>
                 <h4 className='titles-container__food-description titles-container__food-description--polish'>
-                  {product.description.substring(
-                    0,
-                    product.description.indexOf('/')
-                  )}
+                  {product.description.includes('/')
+                    ? product.description.substring(
+                        0,
+                        product.description.indexOf('/')
+                      )
+                    : product.description}
                 </h4>
                 <h4 className='titles-container__food-description'>
                   {product.description.substring(
@@ -150,10 +182,12 @@ const Menu = () => {
               >
                 <h3 className='titles-container__food-name'>{product.title}</h3>
                 <h4 className='titles-container__food-description titles-container__food-description--polish'>
-                  {product.description.substring(
-                    0,
-                    product.description.indexOf('/')
-                  )}
+                  {product.description.includes('/')
+                    ? product.description.substring(
+                        0,
+                        product.description.indexOf('/')
+                      )
+                    : product.description}
                 </h4>
                 <h4 className='titles-container__food-description'>
                   {product.description.substring(
@@ -188,10 +222,12 @@ const Menu = () => {
               >
                 <h3 className='titles-container__food-name'>{product.title}</h3>
                 <h4 className='titles-container__food-description titles-container__food-description--polish'>
-                  {product.description.substring(
-                    0,
-                    product.description.indexOf('/')
-                  )}
+                  {product.description.includes('/')
+                    ? product.description.substring(
+                        0,
+                        product.description.indexOf('/')
+                      )
+                    : product.description}
                 </h4>
                 <h4 className='titles-container__food-description'>
                   {product.description.substring(
@@ -226,10 +262,12 @@ const Menu = () => {
               >
                 <h3 className='titles-container__food-name'>{product.title}</h3>
                 <h4 className='titles-container__food-description titles-container__food-description--polish'>
-                  {product.description.substring(
-                    0,
-                    product.description.indexOf('/')
-                  )}
+                  {product.description.includes('/')
+                    ? product.description.substring(
+                        0,
+                        product.description.indexOf('/')
+                      )
+                    : product.description}
                 </h4>
                 <h4 className='titles-container__food-description'>
                   {product.description.substring(
@@ -267,10 +305,12 @@ const Menu = () => {
               >
                 <h3 className='titles-container__food-name'>{product.title}</h3>
                 <h4 className='titles-container__food-description titles-container__food-description--polish'>
-                  {product.description.substring(
-                    0,
-                    product.description.indexOf('/')
-                  )}
+                  {product.description.includes('/')
+                    ? product.description.substring(
+                        0,
+                        product.description.indexOf('/')
+                      )
+                    : product.description}
                 </h4>
                 <h4 className='titles-container__food-description'>
                   {product.description.substring(
@@ -305,10 +345,12 @@ const Menu = () => {
               >
                 <h3 className='titles-container__food-name'>{product.title}</h3>
                 <h4 className='titles-container__food-description titles-container__food-description--polish'>
-                  {product.description.substring(
-                    0,
-                    product.description.indexOf('/')
-                  )}
+                  {product.description.includes('/')
+                    ? product.description.substring(
+                        0,
+                        product.description.indexOf('/')
+                      )
+                    : product.description}
                 </h4>
                 <h4 className='titles-container__food-description'>
                   {product.description.substring(
@@ -364,10 +406,12 @@ const Menu = () => {
               >
                 <h3 className='titles-container__food-name'>{product.title}</h3>
                 <h4 className='titles-container__food-description titles-container__food-description--polish'>
-                  {product.description.substring(
-                    0,
-                    product.description.indexOf('/')
-                  )}
+                  {product.description.includes('/')
+                    ? product.description.substring(
+                        0,
+                        product.description.indexOf('/')
+                      )
+                    : product.description}
                 </h4>
                 <h4 className='titles-container__food-description'>
                   {product.description.substring(
