@@ -106,7 +106,6 @@ button.navbar-toggler {
   border: none;
   &:focus {
     outline: none;
-    // outline-color: grey;
   }
 }
 
@@ -386,10 +385,13 @@ button.navbar-toggler {
 }
 
 //menu main
-.titles-container__nav-sticky {
+
+.titles-container.titles-container__nav-sticky {
+  padding: 30px 10px;
+  width: 100%;
   position: sticky;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.171);
+  background-color: #1d1d1d;
   z-index: 90;
 }
 .titles-container__menu-nav {
@@ -402,22 +404,50 @@ button.navbar-toggler {
     align-items: center;
     .titles-container__subtitle {
       margin: 0px 20px;
+      color: $primaryTextColor;
+      line-height: 1.5;
+      text-transform: uppercase;
+      font-size: 16px;
+      a {
+        &:hover {
+          &:hover {
+            text-decoration: none;
+            color: #f5f5f544;
+            font-weight: 700;
+          }
+          cursor: pointer;
+        }
+      }
+      .active {
+        border-bottom: 2px solid #73aea59a;
+        color: #73aea5;
+      }
     }
   }
+}
+
+.titles-container.titles-container__menu {
+  padding: 70px 0px 70px 0px;
+}
+
+.titles-container__menu:nth-child(even) {
+  background: $secondaryBackgroundColor;
 }
 
 .titles-container__food-container {
   padding: 20px;
   max-width: 70%;
+  // border-bottom: 0.3px solid #1d1d1d53;
   .titles-container__food-name {
-    font-weight: 600;
+    // font-weight: 600;
     letter-spacing: 1px;
     color: #1d1d1d53;
     text-transform: uppercase;
     padding-bottom: 10px;
+    border-bottom: 0.3px solid #1d1d1d53;
   }
   .titles-container__food-description {
-    color: $supplementaryTextColor;
+    color: $secondaryTextColor;
     opacity: 0.5;
   }
   .titles-container__food-price {
@@ -833,6 +863,14 @@ button.navbar-toggler {
 
   .about__card-text {
     padding: 0px 20px;
+  }
+
+  //nav menu
+  .titles-container__menu-nav {
+    flex-direction: column;
+    .titles-container__menu-nav-card {
+      flex: 100%;
+    }
   }
 }
 

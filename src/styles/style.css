@@ -409,11 +409,13 @@ button.navbar-toggler:focus {
   left: -40px;
 }
 
-.titles-container__nav-sticky {
+.titles-container.titles-container__nav-sticky {
+  padding: 30px 10px;
+  width: 100%;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.171);
+  background-color: #1d1d1d;
   z-index: 90;
 }
 
@@ -443,6 +445,33 @@ button.navbar-toggler:focus {
 
 .titles-container__menu-nav .titles-container__menu-nav-card .titles-container__subtitle {
   margin: 0px 20px;
+  color: #f5f5f5;
+  line-height: 1.5;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.titles-container__menu-nav .titles-container__menu-nav-card .titles-container__subtitle a:hover {
+  cursor: pointer;
+}
+
+.titles-container__menu-nav .titles-container__menu-nav-card .titles-container__subtitle a:hover:hover {
+  text-decoration: none;
+  color: #f5f5f544;
+  font-weight: 700;
+}
+
+.titles-container__menu-nav .titles-container__menu-nav-card .titles-container__subtitle .active {
+  border-bottom: 2px solid #73aea59a;
+  color: #73aea5;
+}
+
+.titles-container.titles-container__menu {
+  padding: 70px 0px 70px 0px;
+}
+
+.titles-container__menu:nth-child(even) {
+  background: #f5f5f5;
 }
 
 .titles-container__food-container {
@@ -451,15 +480,15 @@ button.navbar-toggler:focus {
 }
 
 .titles-container__food-container .titles-container__food-name {
-  font-weight: 600;
   letter-spacing: 1px;
   color: #1d1d1d53;
   text-transform: uppercase;
   padding-bottom: 10px;
+  border-bottom: 0.3px solid #1d1d1d53;
 }
 
 .titles-container__food-container .titles-container__food-description {
-  color: #700000;
+  color: #1d1d1d;
   opacity: 0.5;
 }
 
@@ -957,6 +986,17 @@ button.navbar-toggler:focus {
   }
   .about__card-text {
     padding: 0px 20px;
+  }
+  .titles-container__menu-nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .titles-container__menu-nav .titles-container__menu-nav-card {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
   }
 }
 

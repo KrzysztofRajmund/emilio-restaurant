@@ -6,6 +6,8 @@ import menuData from '../../menuData';
 //AOS
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+//react-scroll
+import { Link } from 'react-scroll';
 
 const Menu = () => {
   useEffect(() => {
@@ -21,29 +23,132 @@ const Menu = () => {
         <div
           className='titles-container__animation'
           id='box'
-          data-aos='flip-left'
-          data-aos-easing='ease-out-cubic'
-          data-aos-duration='2000'
+          // data-aos='flip-left'
+          // data-aos-easing='ease-out-cubic'
+          // data-aos-duration='2000'
         >
           <div className='titles-container__menu-nav'>
             <div className='titles-container__menu-nav-card'>
-              <h4 className='titles-container__subtitle'>antipasti</h4>
-              <h4 className='titles-container__subtitle'>insalate</h4>
-              <h4 className='titles-container__subtitle'>zuppa</h4>
-              <h4 className='titles-container__subtitle'>pasta</h4>
-              <h4 className='titles-container__subtitle'>pesce</h4>
-              <h4 className='titles-container__subtitle'>carne</h4>
+              <h4 className='titles-container__subtitle'>
+                <Link
+                  to='antipasti'
+                  duration={650}
+                  spy={true}
+                  smooth={true}
+                  offset={-120}
+                >
+                  antipasti
+                </Link>
+              </h4>
+              <h4 className='titles-container__subtitle'>
+                <Link
+                  to='insalate'
+                  duration={650}
+                  spy={true}
+                  smooth={true}
+                  offset={-120}
+                >
+                  insalate
+                </Link>
+              </h4>
+              <h4 className='titles-container__subtitle'>
+                <Link
+                  to='zuppa'
+                  duration={650}
+                  spy={true}
+                  smooth={true}
+                  offset={-120}
+                >
+                  zuppa
+                </Link>
+              </h4>
+              <h4 className='titles-container__subtitle'>
+                <Link
+                  to='pasta'
+                  duration={650}
+                  spy={true}
+                  smooth={true}
+                  offset={-120}
+                >
+                  pasta
+                </Link>
+              </h4>
+              <h4 className='titles-container__subtitle'>
+                <Link
+                  to='pesce'
+                  duration={650}
+                  spy={true}
+                  smooth={true}
+                  offset={-120}
+                >
+                  pesce
+                </Link>
+              </h4>
+              <h4 className='titles-container__subtitle'>
+                <Link
+                  to='carne'
+                  duration={650}
+                  spy={true}
+                  smooth={true}
+                  offset={-120}
+                >
+                  carne
+                </Link>
+              </h4>
             </div>
             <div className='titles-container__menu-nav-card'>
-              <h4 className='titles-container__subtitle'>dla dzieci</h4>
-              <h4 className='titles-container__subtitle'>dolci</h4>
-              <h4 className='titles-container__subtitle'>dania sezonowe</h4>
-              <h4 className='titles-container__subtitle'>dodatki</h4>
+              <h4 className='titles-container__subtitle'>
+                <Link
+                  to='forkids'
+                  duration={650}
+                  spy={true}
+                  smooth={true}
+                  offset={-120}
+                >
+                  dla dzieci
+                </Link>
+              </h4>
+              <h4 className='titles-container__subtitle'>
+                <Link
+                  to='dolci'
+                  duration={650}
+                  spy={true}
+                  smooth={true}
+                  offset={-120}
+                >
+                  dolci
+                </Link>
+              </h4>
+              <h4 className='titles-container__subtitle'>
+                <Link
+                  to='sezonowe'
+                  duration={650}
+                  spy={true}
+                  smooth={true}
+                  offset={-120}
+                >
+                  dania sezonowe
+                </Link>
+              </h4>
+              <h4 className='titles-container__subtitle'>
+                <Link
+                  to='dodatki'
+                  duration={650}
+                  spy={true}
+                  smooth={true}
+                  offset={-120}
+                >
+                  dodatki
+                </Link>
+              </h4>
             </div>
           </div>
         </div>
       </article>
-      <article className='titles-container'>
+      <article
+        className='titles-container titles-container__menu'
+        id='antipasti'
+      >
         <div
           className='titles-container__animation'
           id='box'
@@ -83,7 +188,10 @@ const Menu = () => {
           }
         })}
       </article>
-      <article className='titles-container'>
+      <article
+        className='titles-container titles-container__menu'
+        id='insalate'
+      >
         <div
           className='titles-container__animation'
           id='box'
@@ -123,7 +231,7 @@ const Menu = () => {
           }
         })}
       </article>
-      <article className='titles-container'>
+      <article className='titles-container titles-container__menu' id='zuppa'>
         <div
           className='titles-container__animation'
           id='box'
@@ -163,7 +271,7 @@ const Menu = () => {
           }
         })}
       </article>
-      <article className='titles-container'>
+      <article className='titles-container titles-container__menu' id='pasta'>
         <div
           className='titles-container__animation'
           id='box'
@@ -203,7 +311,7 @@ const Menu = () => {
           }
         })}
       </article>
-      <article className='titles-container'>
+      <article className='titles-container titles-container__menu' id='pesce'>
         <div
           className='titles-container__animation'
           id='box'
@@ -243,7 +351,7 @@ const Menu = () => {
           }
         })}
       </article>
-      <article className='titles-container'>
+      <article className='titles-container titles-container__menu' id='carne'>
         <div
           className='titles-container__animation'
           id='box'
@@ -283,7 +391,7 @@ const Menu = () => {
           }
         })}
       </article>
-      <article className='titles-container'>
+      <article className='titles-container titles-container__menu' id='forkids'>
         <div
           className='titles-container__animation'
           id='box'
@@ -291,7 +399,9 @@ const Menu = () => {
           data-aos-easing='ease-out-cubic'
           data-aos-duration='2000'
         >
-          <h1 className='titles-container__title'>per bambini</h1>
+          <h1 className='titles-container__title' id='forkids'>
+            per bambini
+          </h1>
           <h4 className='titles-container__subtitle'>
             dla dzieci / for kids / für Kinder
           </h4>
@@ -326,7 +436,7 @@ const Menu = () => {
           }
         })}
       </article>
-      <article className='titles-container'>
+      <article className='titles-container titles-container__menu' id='dolci'>
         <div
           className='titles-container__animation'
           id='box'
@@ -334,7 +444,9 @@ const Menu = () => {
           data-aos-easing='ease-out-cubic'
           data-aos-duration='2000'
         >
-          <h1 className='titles-container__title'>dolci</h1>
+          <h1 className='titles-container__title' id='dolci'>
+            dolci
+          </h1>
         </div>
         {menuData.items.map((product) => {
           if (product.category === 'dolci') {
@@ -366,7 +478,10 @@ const Menu = () => {
           }
         })}
       </article>
-      <article className='titles-container'>
+      <article
+        className='titles-container titles-container__menu'
+        id='sezonowe'
+      >
         <div
           className='titles-container__animation'
           id='box'
@@ -387,7 +502,7 @@ const Menu = () => {
           </h4>
         </div>
       </article>
-      <article className='titles-container'>
+      <article className='titles-container titles-container__menu' id='dodatki'>
         <div
           className='titles-container__animation'
           id='box'
