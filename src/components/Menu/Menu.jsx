@@ -16,6 +16,20 @@ const Menu = () => {
       duration: 800,
     });
   }, []);
+
+  const displayFastMenu = () => {
+    const targetMenuNav = document.getElementsByClassName(
+      'titles-container__menu-nav'
+    )[0];
+    const targetMenuFast = document.getElementsByClassName(
+      'titles-container__menu-fast'
+    )[0];
+    targetMenuNav.classList.toggle('active');
+    targetMenuFast.textContent === 'Otwórz szybkie menu'
+      ? (targetMenuFast.textContent = 'Zamknij szybkie menu')
+      : (targetMenuFast.textContent = 'Otwórz szybkie menu');
+  };
+
   return (
     <React.Fragment>
       {window.location.pathname === '/menu' ? <HeaderJumbotron /> : ''}
@@ -27,6 +41,12 @@ const Menu = () => {
           // data-aos-easing='ease-out-cubic'
           // data-aos-duration='2000'
         >
+          <section
+            className='titles-container__menu-fast'
+            onClick={displayFastMenu}
+          >
+            Otwórz szybkie menu
+          </section>
           <div className='titles-container__menu-nav'>
             <div className='titles-container__menu-nav-card'>
               <h4 className='titles-container__subtitle'>
@@ -36,6 +56,7 @@ const Menu = () => {
                   spy={true}
                   smooth={true}
                   offset={-120}
+                  onClick={displayFastMenu}
                 >
                   antipasti
                 </Link>
@@ -47,6 +68,7 @@ const Menu = () => {
                   spy={true}
                   smooth={true}
                   offset={-120}
+                  onClick={displayFastMenu}
                 >
                   insalate
                 </Link>
@@ -58,6 +80,7 @@ const Menu = () => {
                   spy={true}
                   smooth={true}
                   offset={-120}
+                  onClick={displayFastMenu}
                 >
                   zuppa
                 </Link>
@@ -69,6 +92,7 @@ const Menu = () => {
                   spy={true}
                   smooth={true}
                   offset={-120}
+                  onClick={displayFastMenu}
                 >
                   pasta
                 </Link>
@@ -80,10 +104,13 @@ const Menu = () => {
                   spy={true}
                   smooth={true}
                   offset={-120}
+                  onClick={displayFastMenu}
                 >
                   pesce
                 </Link>
               </h4>
+            </div>
+            <div className='titles-container__menu-nav-card'>
               <h4 className='titles-container__subtitle'>
                 <Link
                   to='carne'
@@ -91,12 +118,11 @@ const Menu = () => {
                   spy={true}
                   smooth={true}
                   offset={-120}
+                  onClick={displayFastMenu}
                 >
                   carne
                 </Link>
               </h4>
-            </div>
-            <div className='titles-container__menu-nav-card'>
               <h4 className='titles-container__subtitle'>
                 <Link
                   to='forkids'
@@ -104,6 +130,7 @@ const Menu = () => {
                   spy={true}
                   smooth={true}
                   offset={-120}
+                  onClick={displayFastMenu}
                 >
                   dla dzieci
                 </Link>
@@ -115,6 +142,7 @@ const Menu = () => {
                   spy={true}
                   smooth={true}
                   offset={-120}
+                  onClick={displayFastMenu}
                 >
                   dolci
                 </Link>
@@ -126,6 +154,7 @@ const Menu = () => {
                   spy={true}
                   smooth={true}
                   offset={-120}
+                  onClick={displayFastMenu}
                 >
                   dania sezonowe
                 </Link>
@@ -137,6 +166,7 @@ const Menu = () => {
                   spy={true}
                   smooth={true}
                   offset={-120}
+                  onClick={displayFastMenu}
                 >
                   dodatki
                 </Link>
