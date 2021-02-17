@@ -16,7 +16,7 @@ const ReservationForm = () => {
   return (
     <React.Fragment>
       {window.location.pathname === '/rezerwacja' ? <HeaderJumbotron /> : ''}
-      <div className='form-container'>
+      <div className='form-container' id='rezerwacja'>
         <div
           className='form-container__input'
           data-aos='fade-left'

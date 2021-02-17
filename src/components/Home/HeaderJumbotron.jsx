@@ -21,6 +21,7 @@ const HeaderJumbotron = () => {
   );
 
   if (loading) {
+    console.log(window.location.pathname.substring(1), 'pathname');
     var textWrapper = document.querySelector(
       '.header-jumbotron-slider__animation-first'
     );
@@ -84,7 +85,7 @@ const HeaderJumbotron = () => {
         </div>
         <img
           className='header-jumbotron-slider__image'
-          src={JumbotronImageDiscover}
+          id={`jumbotron-${window.location.pathname.substring(1)}`}
           alt='image'
         />
       </div>

@@ -23,7 +23,7 @@ const MenuShort = () => {
   }, []);
 
   return (
-    <section className='menuShort'>
+    <section className='menuShort' id='menu-short'>
       <article className='titles-container'>
         <div
           className='titles-container__animation'

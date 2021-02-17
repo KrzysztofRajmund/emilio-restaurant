@@ -39,7 +39,7 @@ const Gallery = () => {
   };
 
   return (
-    <div className='gallery'>
+    <div className='gallery' id='gallery'>
       <article className='titles-container'>
         <div
           className='titles-container__animation'

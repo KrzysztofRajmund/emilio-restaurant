@@ -9,6 +9,8 @@ import Underline from '../../assets/underline.png';
 import anime from 'animejs';
 //components
 import Navigation from './Navigation';
+//react-scroll
+import { Link } from 'react-scroll';
 
 const JumbotronSlider = () => {
   const [loading, setLoading] = useState(false);
@@ -118,9 +120,22 @@ const JumbotronSlider = () => {
             Rodzinna kuchnia włoska
           </h2>
           <div>
-            <strong id='discover'>Discover</strong>
-            <strong id='menu'>Menu</strong>
-            <strong id='visit'>​Odwiedź nas</strong>
+            <strong id='discover'>
+              <Link to='gallery' duration={650} spy={true} smooth={true}>
+                Discover
+              </Link>
+            </strong>
+            <strong id='menu'>
+              <Link to='menu-short' duration={650} spy={true} smooth={true}>
+                Menu
+              </Link>
+            </strong>
+            <strong id='visit'>
+              {' '}
+              <Link to='rezerwacja' duration={650} spy={true} smooth={true}>
+                ​Odwiedź nas
+              </Link>
+            </strong>
           </div>
           <div className='contact-info'>
             <img src={Underline} alt='underline' />

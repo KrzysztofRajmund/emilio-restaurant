@@ -99,7 +99,7 @@ body {
 
 .navigation.navbar {
   padding: 20px 30px;
-  background-color: rgba(0, 0, 0, 0.171);
+  background-color: rgba(0, 0, 0, 0.598);
   z-index: 90;
   position: absolute;
   min-width: 100%;
@@ -290,12 +290,40 @@ button.navbar-toggler:focus {
   width: 50%;
 }
 
-.header-jumbotron-slider__image {
+#jumbotron-menu {
+  background-image: url("../assets/jumbotron-menu.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   width: 100vw;
-  max-height: 100vh;
+  height: 100vh;
+}
+
+#jumbotron-onas {
+  background-image: url("../assets/jumbotron-onas.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+#jumbotron-rezerwacja {
+  background-image: url("../assets/jumbotron-rezerwacja.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+#jumbotron-kontakt {
+  background-image: url("../assets/jumbotron-kontakt.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 .header-jumbotron-slider__animation-first {
