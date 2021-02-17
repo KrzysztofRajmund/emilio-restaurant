@@ -34,8 +34,11 @@ const AboutUs = () => {
             </h5>
           </div>
         </article>
-        <div className='about__card-container' data-aos='zoom-in'>
-          <div className='about__card-text'>
+        <div
+          className='about__card-container about__card-container--full-desc '
+          data-aos='zoom-in'
+        >
+          <div className='about__card-text about__card-text--full-desc'>
             <h4 className='description'>
               <p>
                 La qualità è la nostra passione - Jakość to nasza pasja! Obok
@@ -99,7 +102,7 @@ const AboutUs = () => {
               </strong>
             </h4>
           </div>
-          <div className='about__card-image'>
+          <div className='about__card-image about__card-image--full-desc'>
             <img src={RestaurantImage} alt='restaurant-image' />
           </div>
         </div>

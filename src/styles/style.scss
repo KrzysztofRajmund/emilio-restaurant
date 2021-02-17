@@ -535,11 +535,11 @@ button.navbar-toggler {
   align-items: center;
   flex: 60%;
   text-align: center;
-  padding: 0px 50px;
+  padding: 10px 50px;
   h4 {
     color: $supplementaryTextColor;
     p {
-      padding: 20px 0px;
+      padding: 5px 0px;
     }
   }
 }
@@ -550,11 +550,23 @@ button.navbar-toggler {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0px 50px;
+  padding: 10px 50px;
   img {
     width: auto;
     height: 450px;
   }
+}
+//about full
+.about__card-container.about__card-container--full-desc {
+  display: flex;
+  flex-direction: column;
+}
+.about__card-text.about__card-text--full-desc {
+  flex: 100%;
+  padding-bottom: 30px;
+}
+.about__card-image.about__card-image--full-desc {
+  flex: 100%;
 }
 
 //about animation
@@ -868,7 +880,7 @@ button.navbar-toggler {
     font-size: 18px;
   }
   .about__card-image {
-    padding: 0px 20px;
+    padding: 10px 20px;
     img {
       width: auto;
       height: 350px;
@@ -876,7 +888,7 @@ button.navbar-toggler {
   }
 
   .about__card-text {
-    padding: 0px 20px;
+    padding: 10px 20px;
   }
 
   //nav menu
