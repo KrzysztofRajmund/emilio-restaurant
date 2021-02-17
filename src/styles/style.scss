@@ -507,6 +507,11 @@ button.navbar-toggler {
   opacity: 1;
 }
 
+.titles-container.titles-container__menu#sezonowe {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
 //titles & subtitles & description for main components
 
 .titles-container {
@@ -748,7 +753,6 @@ button.navbar-toggler {
   display: flex;
   justify-content: center;
   margin: 0px;
-  min-height: 800px;
 }
 
 .form-container__card {
@@ -762,6 +766,7 @@ button.navbar-toggler {
   flex: 60%;
   padding: 50px;
   color: $primaryTextColor;
+  min-height: 500px;
 }
 
 .form-container__input {
@@ -806,6 +811,11 @@ button.navbar-toggler {
   flex: 100%;
   border-top: 1px solid #1d1d1d;
 }
+
+// .contact__content {
+//   padding-top: 50px;
+//   padding-bottom: 50px;
+// }
 
 .contact__content a {
   color: $supplementaryTextColor;
@@ -989,7 +999,7 @@ button.navbar-toggler {
     display: block;
   }
   .contact__card-content {
-    height: 250px;
+    height: 400px;
     flex: 100%;
   }
 
@@ -1172,6 +1182,10 @@ button.navbar-toggler {
 
   .titles-container__menu-fast {
     font-size: 16px;
+  }
+
+  .titles-container.titles-container__menu {
+    padding: 30px 0px;
   }
 
   //about

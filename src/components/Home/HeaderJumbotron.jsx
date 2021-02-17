@@ -76,17 +76,17 @@ const HeaderJumbotron = () => {
       <div className='header-jumbotron-slider'>
         <div className='header-jumbotron-slider__text-container'>
           <h1 className='header-jumbotron-slider__animation-first'>
-            {filterValue[0].title}
+            {filterValue[0].title === 'onas' ? 'o nas' : filterValue[0].title}
           </h1>
           <h2 className='header-jumbotron-slider__animation-second'>
             {filterValue[0].subtitle}
           </h2>
           <img src={Underline} alt='underline' />
         </div>
-        <img
+        <section
           className='header-jumbotron-slider__image'
           id={`jumbotron-${window.location.pathname.substring(1)}`}
-        />
+        ></section>
       </div>
     </div>
   );
