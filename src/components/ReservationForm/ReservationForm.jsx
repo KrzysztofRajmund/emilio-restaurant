@@ -12,6 +12,7 @@ const ReservationForm = () => {
       duration: 2000,
     });
   }, []);
+  console.log(window.innerWidth, 'window width');
 
   return (
     <React.Fragment>
@@ -19,7 +20,7 @@ const ReservationForm = () => {
       <div className='form-container' id='rezerwacja'>
         <div
           className='form-container__input'
-          data-aos='fade-left'
+          data-aos={window.innerWidth < 770 ? 'flip-left' : 'zoom-in-right'}
           // data-aos='new-animation'
         >
           <form>
@@ -37,7 +38,10 @@ const ReservationForm = () => {
             </address>
           </form>
         </div>
-        <div className='form-container__card' data-aos='fade-right'>
+        <div
+          className='form-container__card'
+          data-aos={window.innerWidth < 770 ? 'zoom-in' : 'zoom-in-left'}
+        >
           <div className='form-container__text'>
             <h1>Rezerwacja</h1>
             <h5>

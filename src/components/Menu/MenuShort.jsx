@@ -28,7 +28,7 @@ const MenuShort = () => {
         <div
           className='titles-container__animation'
           id='box'
-          data-aos='fade-left'
+          data-aos={window.innerWidth < 770 ? 'zoom-in-up' : 'fade-left'}
         >
           <h1 className='titles-container__title'>Menu</h1>
           <h5 className='titles-container__subtitle'>
@@ -40,7 +40,7 @@ const MenuShort = () => {
         activeIndex={index}
         onSelect={handleSelect}
         indicators={true}
-        data-aos='fade-right'
+        data-aos={window.innerWidth < 770 ? 'zoom-in' : 'fade-right'}
       >
         <Carousel.Item>
           <img

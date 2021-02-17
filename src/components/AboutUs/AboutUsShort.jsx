@@ -25,7 +25,7 @@ const AboutUsShort = () => {
           <div
             className='titles-container__animation'
             id='box'
-            data-aos='fade-left'
+            data-aos={window.innerWidth < 770 ? 'zoom-in-down' : 'fade-left'}
           >
             <img src={Logo} alt='logo' width='90px' height='auto' />
             <h2>Rodzinna kuchnia włoska</h2>
