@@ -538,6 +538,9 @@ button.navbar-toggler {
   padding: 0px 50px;
   h4 {
     color: $supplementaryTextColor;
+    p {
+      padding: 20px 0px;
+    }
   }
 }
 
@@ -1072,7 +1075,7 @@ button.navbar-toggler {
       font-size: 36px;
     }
     .titles-container__subtitle {
-      font-size: 18px;
+      font-size: 14px;
     }
   }
 
@@ -1095,5 +1098,13 @@ button.navbar-toggler {
 
   .titles-container__menu-fast {
     font-size: 16px;
+  }
+
+  //about
+  .about__card-image {
+    img {
+      max-width: 250px;
+      height: auto;
+    }
   }
 }

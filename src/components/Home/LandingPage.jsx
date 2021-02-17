@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 //components
-import JumbotronSlider from "./JumbotronSlider";
+import JumbotronSlider from './JumbotronSlider';
 import MenuShort from './../Menu/MenuShort';
-import AboutUs from './../AboutUs/AboutUs';
+import AboutUsShort from './../AboutUs/AboutUsShort';
 import ReservationForm from './../ReservationForm/ReservationForm';
 import Contact from './../Contact/Contact';
 
@@ -11,7 +11,7 @@ const LandingPage = () => {
     <React.Fragment>
       <JumbotronSlider />
       <MenuShort />
-      <AboutUs />
+      <AboutUsShort />
       <ReservationForm />
       <Contact />
     </React.Fragment>
