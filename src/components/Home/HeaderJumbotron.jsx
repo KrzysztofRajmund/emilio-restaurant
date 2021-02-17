@@ -86,7 +86,6 @@ const HeaderJumbotron = () => {
         <img
           className='header-jumbotron-slider__image'
           id={`jumbotron-${window.location.pathname.substring(1)}`}
-          alt='image'
         />
       </div>
     </div>
