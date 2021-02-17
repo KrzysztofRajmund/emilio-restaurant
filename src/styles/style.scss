@@ -136,7 +136,15 @@ button.navbar-toggler {
   color: $primaryTextColor;
 }
 
-.jumbotron-slider__text-container strong {
+.jumbotron-slider__links {
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+.jumbotron-slider__links strong {
   font-family: $secondaryFont;
   font-size: 42px;
   text-transform: uppercase;
@@ -941,11 +949,12 @@ button.navbar-toggler {
     margin: 20px;
     padding: 5px;
   }
-
-  .jumbotron-slider__text-container strong {
+  //jumbotron
+  .jumbotron-slider__links strong {
     font-size: 30px;
     margin: 0px 25px;
   }
+
   //footer
   .footer-container__card {
     padding: 50px 15px 30px 15px;
@@ -1105,12 +1114,39 @@ button.navbar-toggler {
   .footer-container__logo {
     padding-top: 35px;
   }
+  //jumbotron
+  .jumbotron-slider__links strong {
+    font-size: 18px;
+    margin: 0px 10px;
+    transform: scale(1, 1.2);
+  }
+  //jumbotron animation
+  .jumbotron-slider__animation-first {
+    font-size: 28px;
+  }
+
+  .jumbotron-slider__animation-second {
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  //jumbotron animation
+  .jumbotron-slider__animation-first {
+    font-size: 20px;
+    transform: scale(1, 1.5);
+  }
+
+  .jumbotron-slider__animation-second {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 400px) {
   .titles-container {
     .titles-container__title {
-      font-size: 36px;
+      font-size: 32px;
     }
     .titles-container__subtitle {
       font-size: 14px;
@@ -1144,5 +1180,36 @@ button.navbar-toggler {
       max-width: 250px;
       height: auto;
     }
+  }
+  //jumbotron
+  .jumbotron-slider__links {
+    flex-direction: column;
+  }
+  .jumbotron-slider__links strong {
+    margin: 10px 0px;
+    font-size: 21px;
+    transform: scale(1, 1);
+  }
+  .jumbotron-slider__text-container .contact-info {
+    font-size: 14px;
+    padding-top: 20px;
+  }
+  //jumbotron animation
+  .jumbotron-slider__animation-first {
+    transform: scale(1, 1.8);
+    margin-bottom: 30px;
+  }
+
+  .jumbotron-slider__animation-second {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  //jumbotron animation
+  .jumbotron-slider__animation-first {
+    width: 100vw;
+    font-size: 16px;
+    transform: scale(1, 1.7);
   }
 }

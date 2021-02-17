@@ -181,7 +181,20 @@ button.navbar-toggler:focus {
   color: #f5f5f5;
 }
 
-.jumbotron-slider__text-container strong {
+.jumbotron-slider__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 100%;
+}
+
+.jumbotron-slider__links strong {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 42px;
   text-transform: uppercase;
@@ -189,7 +202,7 @@ button.navbar-toggler:focus {
   margin: 0px 30px;
 }
 
-.jumbotron-slider__text-container strong:hover {
+.jumbotron-slider__links strong:hover {
   cursor: pointer;
   border-bottom-width: 2px;
   border-bottom-style: solid;
@@ -1078,7 +1091,7 @@ button.navbar-toggler:focus {
     margin: 20px;
     padding: 5px;
   }
-  .jumbotron-slider__text-container strong {
+  .jumbotron-slider__links strong {
     font-size: 30px;
     margin: 0px 25px;
   }
@@ -1232,11 +1245,35 @@ button.navbar-toggler:focus {
   .footer-container__logo {
     padding-top: 35px;
   }
+  .jumbotron-slider__links strong {
+    font-size: 18px;
+    margin: 0px 10px;
+    -webkit-transform: scale(1, 1.2);
+            transform: scale(1, 1.2);
+  }
+  .jumbotron-slider__animation-first {
+    font-size: 28px;
+  }
+  .jumbotron-slider__animation-second {
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .jumbotron-slider__animation-first {
+    font-size: 20px;
+    -webkit-transform: scale(1, 1.5);
+            transform: scale(1, 1.5);
+  }
+  .jumbotron-slider__animation-second {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 400px) {
   .titles-container .titles-container__title {
-    font-size: 36px;
+    font-size: 32px;
   }
   .titles-container .titles-container__subtitle {
     font-size: 14px;
@@ -1259,6 +1296,39 @@ button.navbar-toggler:focus {
   .about__card-image img {
     max-width: 250px;
     height: auto;
+  }
+  .jumbotron-slider__links {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .jumbotron-slider__links strong {
+    margin: 10px 0px;
+    font-size: 21px;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  .jumbotron-slider__text-container .contact-info {
+    font-size: 14px;
+    padding-top: 20px;
+  }
+  .jumbotron-slider__animation-first {
+    -webkit-transform: scale(1, 1.8);
+            transform: scale(1, 1.8);
+    margin-bottom: 30px;
+  }
+  .jumbotron-slider__animation-second {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .jumbotron-slider__animation-first {
+    width: 100vw;
+    font-size: 16px;
+    -webkit-transform: scale(1, 1.7);
+            transform: scale(1, 1.7);
   }
 }
 /*# sourceMappingURL=style.css.map */

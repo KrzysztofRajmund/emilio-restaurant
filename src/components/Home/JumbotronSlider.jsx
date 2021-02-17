@@ -119,7 +119,7 @@ const JumbotronSlider = () => {
           <h2 className='jumbotron-slider__animation-second'>
             Rodzinna kuchnia włoska
           </h2>
-          <div>
+          <div className='jumbotron-slider__links'>
             <strong id='discover'>
               <Link to='gallery' duration={650} spy={true} smooth={true}>
                 Discover
