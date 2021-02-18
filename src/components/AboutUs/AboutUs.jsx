@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 //components
-import Gallery from './Gallery';
+import Album from './Album';
 import HeaderJumbotron from '../Home/HeaderJumbotron';
 //assets
 import Logo from '../../assets/logo.png';
@@ -107,7 +107,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <Gallery />
+      <Album />
     </React.Fragment>
   );
 };

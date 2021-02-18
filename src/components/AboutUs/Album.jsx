@@ -9,7 +9,7 @@ import Xicon from '../../assets/x-icon.png';
 import prevIconWhite from '../../assets/prev-icon-white.png';
 import nextIconWhite from '../../assets/next-icon-white.png';
 
-const Gallery = () => {
+const Album = () => {
   const [data, setData] = useState(tileData.items);
   const [showModal, setShowModal] = useState(false);
   const [image, setImage] = useState();
@@ -52,15 +52,17 @@ const Gallery = () => {
         </div>
       </article>
       <div className='gallery__row' data-aos='fade-up' data-aos-duration='3000'>
-        {data.map((image) => (
-          <div
-            key={image.id}
-            className='gallery__col'
-            onClick={() => displayImage(image)}
-          >
-            <img src={image.url} />
-          </div>
-        ))}
+        {data
+          .filter((x) => x.album === 'rodzinny')
+          .map((image) => (
+            <div
+              key={image.id}
+              className='gallery__col'
+              onClick={() => displayImage(image)}
+            >
+              <img src={image.url} />
+            </div>
+          ))}
         {showModal ? (
           <div className='modalContainer'>
             <section class='modalCard'>
@@ -98,4 +100,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default Album;

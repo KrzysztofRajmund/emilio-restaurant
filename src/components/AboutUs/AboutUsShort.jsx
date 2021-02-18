@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 //components
-import Gallery from './Gallery';
-import HeaderJumbotron from '../Home/HeaderJumbotron';
+import Album from './Album';
 //assets
 import Logo from '../../assets/logo.png';
 import RestaurantImage from '../../assets/restaurant-image.jpg';
@@ -19,7 +18,6 @@ const AboutUsShort = () => {
 
   return (
     <React.Fragment>
-      {window.location.pathname === '/onas' ? <HeaderJumbotron /> : ''}
       <div className='about' id='about'>
         <article className='titles-container'>
           <div
@@ -65,7 +63,7 @@ const AboutUsShort = () => {
           </div>
         </div>
       </div>
-      <Gallery />
+      <Album />
     </React.Fragment>
   );
 };
