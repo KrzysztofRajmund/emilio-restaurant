@@ -171,6 +171,13 @@ button.navbar-toggler {
     font-weight: 600;
     margin: 0px;
   }
+  p:last-of-type a {
+    color: $primaryTextColor;
+    &:hover {
+      color: #f5f5f5b1;
+      @include hoverText(0, $hoverWeight, $hoverTransform);
+    }
+  }
 
   img {
     width: 100%;

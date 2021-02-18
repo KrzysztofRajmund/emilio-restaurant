@@ -140,7 +140,9 @@ const JumbotronSlider = () => {
           <div className='contact-info'>
             <img src={Underline} alt='underline' />
             <p>Szczecin, ul. Jana Pawła II 43</p>
-            <p>tel. 508 224 177</p>
+            <p>
+              <a href='tel:+48-508-224-177'>tel. 508 224 177</a>
+            </p>
           </div>
         </div>
         <section id='image-jumbotron'></section>
