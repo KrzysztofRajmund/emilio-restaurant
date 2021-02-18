@@ -58,7 +58,7 @@ const FooterComponent = () => {
             <p>Wt–Czw 12–19</p>
             <p>Piat 12–20</p>
             <p>Sob 13–20</p>
-            <p>Niedz 13–17</p>
+            <p>Niedz 13–18</p>
             <p>
               <a href='/rezerwacja'>Rezerwuj stolik</a>
             </p>

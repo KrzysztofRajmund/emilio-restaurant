@@ -95,7 +95,7 @@ const AboutUs = () => {
                 wyróżniają się pozytywnym nastawieniem do życia i drugiego
                 człowieka. Są rozśpiewani, radośni i wiecznie uśmiechnięci.
                 Przyjdź i dodaj do swoich ulubionych miejsc nasz adres. Chcemy
-                Ci poznać i sobą zainspirować.
+                Cię poznać i sobą zainspirować.
               </p>
               <strong>
                 <i>Rodzina Emilio</i>
