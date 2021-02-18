@@ -22,7 +22,7 @@ const Contact = () => {
             <address className='contact__content'>
               <h1>Zadzwoń</h1>
               <h5>
-                <a href='tel:048-508-224-177'>+48 508 224 177</a>
+                <a href='tel:+48-508-224-177'>+48 508 224 177</a>
               </h5>
               <h1>Napisz</h1>
               <h5>

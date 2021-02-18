@@ -150,6 +150,9 @@ button.navbar-toggler {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0px 30px;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
   &:hover {
     cursor: pointer;
     border-bottom-width: 2px;

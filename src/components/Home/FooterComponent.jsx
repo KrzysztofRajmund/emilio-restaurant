@@ -16,7 +16,7 @@ const FooterComponent = () => {
             </h5>
             <p>
               {' '}
-              <a href='tel:048-508-224-177'>+48 508 224 177</a>
+              <a href='tel:+48-508-224-177'>+48 508 224 177</a>
             </p>
             <p>Jana Pawła II 43</p>
             <p>Szczecin 70-415</p>

@@ -200,6 +200,9 @@ button.navbar-toggler:focus {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0px 30px;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
 }
 
 .jumbotron-slider__links strong:hover {
