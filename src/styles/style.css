@@ -706,6 +706,17 @@ button.navbar-toggler:focus {
           flex: 100%;
 }
 
+.video {
+  padding: 50px 10px;
+  width: 100%;
+  height: 100%;
+}
+
+div.video__frame {
+  width: 100% !important;
+  height: 65vh !important;
+}
+
 .restaurant-gallery {
   display: block;
   position: relative;
@@ -1068,6 +1079,16 @@ button.navbar-toggler:focus {
   padding-top: 50px;
 }
 
+.footer-bottom__title--design a {
+  font-size: 8px;
+  color: #1d1d1d;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: underline;
+  letter-spacing: 0.1em;
+  padding-top: 10px;
+}
+
 @media screen and (max-width: 1140px) {
   .description {
     letter-spacing: 0.8px;
@@ -1259,10 +1280,16 @@ button.navbar-toggler:focus {
     display: none;
   }
   .footer-container__card--social-media {
-    padding: 0px 5px 35px 5px;
+    padding: 0px 5px 5px 5px;
   }
   .footer-container__logo {
     padding-top: 35px;
+  }
+  .footer-bottom__title--design {
+    padding-bottom: 30px;
+  }
+  .footer-bottom__title--design a {
+    font-size: 10px;
   }
   .jumbotron-slider__links strong {
     font-size: 18px;
@@ -1276,6 +1303,10 @@ button.navbar-toggler:focus {
   .jumbotron-slider__animation-second {
     font-size: 18px;
     text-transform: uppercase;
+  }
+  div.video__frame {
+    width: 100% !important;
+    height: 40vh !important;
   }
 }
 
@@ -1342,6 +1373,15 @@ button.navbar-toggler:focus {
   }
   .jumbotron-slider__animation-second {
     display: none;
+  }
+  .video {
+    padding: 10px 0px 20px 0px;
+    width: 100%;
+    height: 100%;
+  }
+  div.video__frame {
+    width: 100% !important;
+    height: 100% !important;
   }
 }
 

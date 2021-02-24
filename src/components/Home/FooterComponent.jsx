@@ -48,6 +48,11 @@ const FooterComponent = () => {
           <div className='footer-bottom__title'>
             Rodzinna restauracja włoska
           </div>
+          <div className='footer-bottom__title--design'>
+            <a href='http://www.rajmundtech.com/' target='_blank'>
+              designed by rajmundtech.com
+            </a>
+          </div>
         </div>
         <div className='footer-container__card'>
           <address>

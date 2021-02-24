@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 //components
 import Album from './Album';
 import HeaderJumbotron from '../Home/HeaderJumbotron';
+import AboutVideo from './AboutVideo';
 //assets
 import Logo from '../../assets/logo.png';
 import RestaurantImage from '../../assets/restaurant-image.jpg';
@@ -59,6 +60,7 @@ const AboutUs = () => {
               <p>
                 <i>Iwona Szulc Emilio</i>
               </p>
+              {/* <AboutVideo /> */}
               <p>
                 Powodów, dla których warto nas odwiedzić, nie brakuje. Na gości
                 czeka tu autorska i popisowa „Pasta alla forma”, czyli
