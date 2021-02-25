@@ -112,8 +112,6 @@ button.navbar-toggler {
 //jumbotron
 .jumbotron-container {
   background-color: #191919;
-  // background-color: red;
-  // background-image: url('../assets/jumbotron1.jpg');
 }
 .jumbotron-slider {
   position: relative;
@@ -138,7 +136,6 @@ button.navbar-toggler {
 
 .jumbotron-slider__links {
   display: flex;
-  // flex-direction: column;
   justify-content: center;
   align-items: center;
   max-width: 100%;
@@ -204,7 +201,6 @@ button.navbar-toggler {
   letter-spacing: 0.5em;
   text-align: center;
   color: #73aea5;
-  // text-shadow: 1px 1px 2px #f5f5f574;
   font-family: $secondaryFont;
 }
 
@@ -222,7 +218,6 @@ button.navbar-toggler {
   text-align: center;
   padding-bottom: 30px;
   color: #f5f5dc;
-  // text-shadow: 1px 1px 3px #f5f5f574;
   font-family: $secondaryFont;
 }
 
@@ -314,49 +309,6 @@ button.navbar-toggler {
   line-height: 1em;
   text-align: center;
 }
-
-//menu short
-// .menu-short-container {
-//   display: flex;
-//   justify-content: center;
-//   margin: 0px 10px 0px 10px;
-// }
-
-// .menu-short-container__card {
-//   text-align: center;
-//   padding: 0px 40px;
-//   color: black;
-//   &:hover {
-//     text-decoration: none;
-//     color: black;
-//   }
-// }
-
-// .menu-short-container__title {
-//   color: #604d45;
-//   // font-family: "sectra_display_regular", helvetica, arial, sans-serif;
-// }
-
-// .menu-short-container__image {
-//   margin: 20px;
-// }
-
-// .menu-short-container__image img {
-//   opacity: 1;
-//   border-radius: 50%;
-//   transition: transform 0.5s, opacity 0.5s;
-//   &:hover {
-//     transform: scale(1.1);
-//     opacity: 0.5;
-//   }
-// }
-
-// .menu-short-container__subtitle span {
-//   margin-top: 15px;
-//   color: rgb(152, 0, 0);
-//   font-weight: bold;
-//   text-transform: uppercase;
-// }
 
 //menu Short Carousel
 .menuShort {
@@ -492,9 +444,7 @@ button.navbar-toggler {
 .titles-container__food-container {
   padding: 20px;
   max-width: 70%;
-  // border-bottom: 0.3px solid #1d1d1d53;
   .titles-container__food-name {
-    // font-weight: 600;
     letter-spacing: 1px;
     color: #1d1d1d53;
     text-transform: uppercase;
@@ -555,11 +505,6 @@ button.navbar-toggler {
 //about
 .about {
   max-width: 100%;
-  //   background-image: url('../assets/bg-about.jpg');
-  //   background-position: center;
-  //   background-repeat: no-repeat;
-  //   background-attachment: fixed;
-  //   background-size: cover;
   background-color: $primaryBackgroundColor;
   padding: 50px 50px 50px 50px;
   h2 {
@@ -628,29 +573,6 @@ div.video__frame {
   width: 100% !important;
   height: 65vh !important;
 }
-
-//about animation
-
-// .ml9 {
-//   position: relative;
-//   font-weight: 200;
-//   font-size: 4em;
-// }
-
-// .ml9 .text-wrapper {
-//   position: relative;
-//   display: inline-block;
-//   padding-top: 0.2em;
-//   padding-right: 0.05em;
-//   padding-bottom: 0.1em;
-//   overflow: hidden;
-// }
-
-// .ml9 .letter {
-//   transform-origin: 50% 100%;
-//   display: inline-block;
-//   line-height: 1em;
-// }
 
 //restaurant-gallery
 .restaurant-gallery {
@@ -832,11 +754,6 @@ div.video__frame {
   flex: 100%;
   border-top: 1px solid #1d1d1d;
 }
-
-// .contact__content {
-//   padding-top: 50px;
-//   padding-bottom: 50px;
-// }
 
 .contact__content a {
   color: $supplementaryTextColor;
@@ -1073,23 +990,6 @@ div.video__frame {
     }
   }
 }
-
-// [data-aos='new-animation'] {
-//   opacity: 0;
-//   transition-property: transform, opacity;
-
-//   &.aos-animate {
-//     opacity: 1;
-//   }
-
-//   @media screen and (max-width: 652px) {
-//     transform: translateY(100px);
-
-//     &.aos-animate {
-//       transform: translateY(100px);
-//     }
-//   }
-// }
 
 @media screen and (max-width: 652px) {
   .gallery__col {
