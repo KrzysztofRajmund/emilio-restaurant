@@ -50,17 +50,23 @@ const AboutUs = () => {
                 włoskich przypraw, oliwy, chleba, wina oraz radość i zadowolenie
                 gości jest jedyną pasją, którą mają w życiu gospodarze tego
                 przepysznego i porywającego punktu na kulinarnej mapie
-                Szczecina. „Na gości, którzy zawitają do Emilio czekają
-                niebywałe doznania kulinarne. Nasza kuchnia opiera się głównie
-                na składnikach, które sprowadzamy do Szczecina prosto z
-                najróżniejszych włoskich regionów. Najwyższej jakości produkty i
-                nietuzinkowe połączenia smakowe są odzwierciedleniem pasji, z
-                jaką tworzone są nasze dania.”
+                Szczecina.
+                <br />
+                <p></p>
+                <i>
+                  {' '}
+                  „Na gości, którzy zawitają do Emilio czekają niebywałe
+                  doznania kulinarne. Nasza kuchnia opiera się głównie na
+                  składnikach, które sprowadzamy do Szczecina prosto z
+                  najróżniejszych włoskich regionów. Najwyższej jakości produkty
+                  i nietuzinkowe połączenia smakowe są odzwierciedleniem pasji,
+                  z jaką tworzone są nasze dania.”
+                </i>
               </p>
               <p>
-                <i>Iwona Szulc Emilio</i>
+                <i style={{ float: 'right' }}>Iwona Szulc, Emilio</i>
               </p>
-              {/* <AboutVideo /> */}
+              <AboutVideo />
               <p>
                 Powodów, dla których warto nas odwiedzić, nie brakuje. Na gości
                 czeka tu autorska i popisowa „Pasta alla forma”, czyli
@@ -80,17 +86,18 @@ const AboutUs = () => {
                 Sycylii.
               </p>
               <p>
-                „Okolica, w której jesteśmy otwarci jest tłumnie odwiedzana
-                przez turystów i mieszkańców Szczecina. Przyjeżdżają do nas
-                goście z całego świata oraz z różnych regionów Polski –
-                miłośnicy włoskich win i dań. Naszych gości przyciąga przede
-                wszystkim rozgłos, jakim cieszy się nasza kuchnia.”
+                <i>
+                  „Okolica, w której jesteśmy otwarci jest tłumnie odwiedzana
+                  przez turystów i mieszkańców Szczecina. Przyjeżdżają do nas
+                  goście z całego świata oraz z różnych regionów Polski –
+                  miłośnicy włoskich win i dań. Naszych gości przyciąga przede
+                  wszystkim rozgłos, jakim cieszy się nasza kuchnia.”
+                </i>
               </p>
               <p>
-                <i>
-                  Dodaje założycielka, pomysłodawczyni i prawdziwa gospodyni
-                  tego miejsca, Iwona Szulc.
-                </i>
+                Dodaje założycielka, pomysłodawczyni i prawdziwa gospodyni tego
+                miejsca,
+                <i> Iwona Szulc.</i>
               </p>
               <p>
                 Co najważniejsze klimat tego miejsca tworzą ludzie, którzy

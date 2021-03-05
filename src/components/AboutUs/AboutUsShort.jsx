@@ -46,12 +46,16 @@ const AboutUsShort = () => {
                 włoskich przypraw, oliwy, chleba, wina oraz radość i zadowolenie
                 gości jest jedyną pasją, którą mają w życiu gospodarze tego
                 przepysznego i porywającego punktu na kulinarnej mapie
-                Szczecina. „Na gości, którzy zawitają do Emilio czekają
-                niebywałe doznania kulinarne. Nasza kuchnia opiera się głównie
-                na składnikach, które sprowadzamy do Szczecina prosto z
-                najróżniejszych włoskich regionów. Najwyższej jakości produkty i
-                nietuzinkowe połączenia smakowe są odzwierciedleniem pasji, z
-                jaką tworzone są nasze dania.”
+                Szczecina.
+                <br />
+                <i>
+                  „Na gości, którzy zawitają do Emilio czekają niebywałe
+                  doznania kulinarne. Nasza kuchnia opiera się głównie na
+                  składnikach, które sprowadzamy do Szczecina prosto z
+                  najróżniejszych włoskich regionów. Najwyższej jakości produkty
+                  i nietuzinkowe połączenia smakowe są odzwierciedleniem pasji,
+                  z jaką tworzone są nasze dania.”
+                </i>
               </p>
               <strong>
                 <i>Rodzina Emilio</i>
