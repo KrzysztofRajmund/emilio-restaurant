@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 //components
 import Navigation from '../Home/Navigation';
+import SeoHelmet from './../SeoHelmet';
 //data json
 import tileData from '../../tileData';
 //AOS
@@ -42,6 +43,10 @@ const RestaurantGallery = () => {
 
   return (
     <React.Fragment>
+      <SeoHelmet
+        title='Emilio Restauracja'
+        description='Emilio Restauracja, restauracja Szczecin, włoskie smaki, kuchnia włoska. Zarezerwuj stolik.'
+      />
       <Navigation />
       <div className='restaurant-gallery'>
         <article className='titles-container'>

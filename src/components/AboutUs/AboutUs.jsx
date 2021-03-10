@@ -3,6 +3,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import Album from './Album';
 import HeaderJumbotron from '../Home/HeaderJumbotron';
 import AboutVideo from './AboutVideo';
+import SeoHelmet from './../SeoHelmet';
 //assets
 import Logo from '../../assets/logo.png';
 import RestaurantImage from '../../assets/restaurant-image.jpg';
@@ -10,7 +11,7 @@ import RestaurantImage from '../../assets/restaurant-image.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const AboutUs = () => {
+const AboutUs = (props) => {
   useEffect(() => {
     AOS.init({
       offset: 300,
@@ -20,6 +21,10 @@ const AboutUs = () => {
 
   return (
     <React.Fragment>
+      <SeoHelmet
+        title='Restauracja Szczecin'
+        description='Restauracja Szczecin, włoskie smaki, kuchnia włoska. Jakość to nasza pasja!'
+      />
       {window.location.pathname === '/onas' ? <HeaderJumbotron /> : ''}
       <div className='about' id='about'>
         <article className='titles-container'>

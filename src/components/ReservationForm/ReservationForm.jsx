@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 //components
 import HeaderJumbotron from '../Home/HeaderJumbotron';
+import SeoHelmet from './../SeoHelmet';
 //AOS
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -16,6 +17,10 @@ const ReservationForm = () => {
 
   return (
     <React.Fragment>
+      <SeoHelmet
+        title='Kuchnia Włoska'
+        description='Restauracja Szczecin, kuchnia włoska. Restauracja, restauracja szczecin, włoskie smaki.'
+      />
       {window.location.pathname === '/rezerwacja' ? <HeaderJumbotron /> : ''}
       <div className='form-container' id='rezerwacja'>
         <div

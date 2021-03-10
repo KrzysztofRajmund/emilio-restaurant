@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 //components
 import HeaderJumbotron from '../Home/HeaderJumbotron';
+import SeoHelmet from './../SeoHelmet';
 //json data
 import menuData from '../../menuData';
 //AOS
@@ -32,6 +33,11 @@ const Menu = () => {
 
   return (
     <React.Fragment>
+      <SeoHelmet
+        title='Kuchnia Włoska'
+        description='Emilio Restauracja, włoskie smaki, kuchnia włoska, ristorante emilio.
+        Makarony, pasta, ravioli, antipasti, wino.'
+      />
       {window.location.pathname === '/menu' ? <HeaderJumbotron /> : ''}
       <article className='titles-container titles-container__nav-sticky'>
         <div

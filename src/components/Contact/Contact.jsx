@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 //components
 import MapContact from './MapContact';
 import HeaderJumbotron from '../Home/HeaderJumbotron';
+import SeoHelmet from './../SeoHelmet';
 //AOS
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -15,6 +16,10 @@ const Contact = () => {
   }, []);
   return (
     <React.Fragment>
+      <SeoHelmet
+        title='Emilio Restauracja'
+        description='Restauracja, włoskie smaki, kuchnia włoska, wino, makarony, pasta, ravioli, antipasti, włochy.'
+      />
       {window.location.pathname === '/kontakt' ? <HeaderJumbotron /> : ''}
       <div className='contact'>
         {window.location.pathname === '/kontakt' ? (
