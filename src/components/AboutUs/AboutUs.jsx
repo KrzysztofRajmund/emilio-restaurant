@@ -11,7 +11,7 @@ import RestaurantImage from '../../assets/restaurant-image.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const AboutUs = (props) => {
+const AboutUs = () => {
   useEffect(() => {
     AOS.init({
       offset: 300,
@@ -24,6 +24,8 @@ const AboutUs = (props) => {
       <SeoHelmet
         title='Restauracja Szczecin'
         description='Restauracja Szczecin, włoskie smaki, kuchnia włoska. Jakość to nasza pasja!'
+        imageUrl='http://www.emiliorestauracja.com/1%20(16).jpg'
+        imageAlt='O nas'
       />
       {window.location.pathname === '/onas' ? <HeaderJumbotron /> : ''}
       <div className='about' id='about'>
