@@ -11,7 +11,7 @@ const LandingPage = () => {
   return (
     <React.Fragment>
       <SeoHelmet
-        title='Restauracja Emilio'
+        title='Emilio Restauracja'
         description='Emilio Restauracja, najlepsza kuchnia włoska w Szczecinie!
         Restauracja emilio, kuchnia włoska, włoskie smaki, restauracja szczecin.'
         imageUrl='http://www.emiliorestauracja.com/1%20(16).jpg'
