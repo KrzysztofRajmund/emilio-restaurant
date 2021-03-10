@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import metaDecorator from '../metaDecorator';
 
 const SeoHelmet = ({ title, description, imageUrl, imageAlt }) => {
-  console.log(title, description, 'YOYOYO');
+  console.log(title, description, imageUrl, imageAlt, 'YOYOYO');
   return (
     <Helmet>
       <title>{title}</title>

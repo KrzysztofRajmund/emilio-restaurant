@@ -16,10 +16,10 @@ const Contact = () => {
   }, []);
   return (
     <React.Fragment>
-      <SeoHelmet
+      {/* <SeoHelmet
         title='Emilio Restauracja'
         description='Restauracja, włoskie smaki, kuchnia włoska, wino, makarony, pasta, ravioli, antipasti, włochy.'
-      />
+      /> */}
       {window.location.pathname === '/kontakt' ? <HeaderJumbotron /> : ''}
       <div className='contact'>
         {window.location.pathname === '/kontakt' ? (

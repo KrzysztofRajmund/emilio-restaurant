@@ -17,10 +17,10 @@ const ReservationForm = () => {
 
   return (
     <React.Fragment>
-      <SeoHelmet
+      {/* <SeoHelmet
         title='Kuchnia Włoska'
         description='Restauracja Szczecin, kuchnia włoska. Restauracja, restauracja szczecin, włoskie smaki.'
-      />
+      /> */}
       {window.location.pathname === '/rezerwacja' ? <HeaderJumbotron /> : ''}
       <div className='form-container' id='rezerwacja'>
         <div
