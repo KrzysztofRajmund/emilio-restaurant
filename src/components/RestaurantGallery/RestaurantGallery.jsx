@@ -44,8 +44,8 @@ const RestaurantGallery = () => {
   return (
     <React.Fragment>
       <SeoHelmet
-        title='Emilio Restauracja'
-        description='Emilio Restauracja, restauracja Szczecin, włoskie smaki, kuchnia włoska. Zarezerwuj stolik.'
+        title='Restauracja Emilio'
+        description='Restauracja Emilio, restauracja Szczecin, włoskie smaki, kuchnia włoska. Zarezerwuj stolik.'
       />
       <Navigation />
       <div className='restaurant-gallery'>
