@@ -1,6 +1,5 @@
 import React from 'react';
-// react-snap server side rendering replacement
-import { hydrate, render } from 'react-dom';
+import ReactDOM from 'react-dom';
 import './styles/style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import EmilioApp from './components/Home/EmilioApp';
@@ -13,10 +12,11 @@ const APP = (
 );
 
 const rootElement = document.getElementById('root');
+
 if (rootElement.hasChildNodes()) {
-  hydrate(APP, rootElement);
+  ReactDOM.hydrate(APP, rootElement);
 } else {
-  render(APP, rootElement);
+  ReactDOM.render(APP, rootElement);
 }
 
 // If you want to start measuring performance in your app, pass a function
