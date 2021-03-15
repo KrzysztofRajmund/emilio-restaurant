@@ -1,22 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { hydrate, render } from 'react-dom';
 import './styles/style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import EmilioApp from './components/Home/EmilioApp';
 import reportWebVitals from './reportWebVitals';
 
-const APP = (
-  <React.StrictMode>
-    <EmilioApp />
-  </React.StrictMode>
-);
+const APP = <EmilioApp />;
 
 const rootElement = document.getElementById('root');
-
 if (rootElement.hasChildNodes()) {
-  ReactDOM.hydrate(APP, rootElement);
+  hydrate(APP, rootElement);
 } else {
-  ReactDOM.render(APP, rootElement);
+  render(APP, rootElement);
 }
 
 // If you want to start measuring performance in your app, pass a function
