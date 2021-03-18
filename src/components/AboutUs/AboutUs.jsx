@@ -25,7 +25,7 @@ const AboutUs = () => {
         title='Restauracja Szczecin'
         description='Restauracja Szczecin, włoskie smaki, kuchnia włoska. Jakość to nasza pasja!'
         imageUrl='http://www.emiliorestauracja.com/1%20(16).jpg'
-        imageAlt='Kuchnia Włoska'
+        imageAlt='Emilio Restauracja'
       />
       {window.location.pathname === '/onas' ? <HeaderJumbotron /> : ''}
       <div className='about' id='about'>

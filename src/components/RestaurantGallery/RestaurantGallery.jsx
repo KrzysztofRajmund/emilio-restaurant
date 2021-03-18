@@ -46,6 +46,8 @@ const RestaurantGallery = () => {
       <SeoHelmet
         title='Restauracja Emilio'
         description='Restauracja Emilio, restauracja Szczecin, włoskie smaki, kuchnia włoska. Zarezerwuj stolik.'
+        imageUrl='http://www.emiliorestauracja.com/1%20(16).jpg'
+        imageAlt='Restauracja Emilio'
       />
       <Navigation />
       <div className='restaurant-gallery'>

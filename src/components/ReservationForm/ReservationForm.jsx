@@ -17,10 +17,12 @@ const ReservationForm = () => {
 
   return (
     <React.Fragment>
-      {/* <SeoHelmet
+      <SeoHelmet
         title='Kuchnia Włoska'
         description='Restauracja Szczecin, kuchnia włoska. Restauracja, restauracja szczecin, włoskie smaki.'
-      /> */}
+        imageUrl='http://www.emiliorestauracja.com/1%20(16).jpg'
+        imageAlt='Restauracja Emilio'
+      />
       {window.location.pathname === '/rezerwacja' ? <HeaderJumbotron /> : ''}
       <div className='form-container' id='rezerwacja'>
         <div

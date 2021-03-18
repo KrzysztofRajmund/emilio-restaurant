@@ -16,10 +16,12 @@ const Contact = () => {
   }, []);
   return (
     <React.Fragment>
-      {/* <SeoHelmet
+      <SeoHelmet
         title='Emilio Restauracja'
         description='Restauracja, włoskie smaki, kuchnia włoska, wino, makarony, pasta, ravioli, antipasti, włochy.'
-      /> */}
+        imageUrl='http://www.emiliorestauracja.com/1%20(16).jpg'
+        imageAlt='Emilio Restauracja'
+      />
       {window.location.pathname === '/kontakt' ? <HeaderJumbotron /> : ''}
       <div className='contact'>
         {window.location.pathname === '/kontakt' ? (
