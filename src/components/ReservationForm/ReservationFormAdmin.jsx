@@ -82,6 +82,38 @@ const ReservationFormAdmin = () => {
     e.preventDefault();
     console.log('SUBMIT CLICKED !!!!!!!!!!!!!!!', booking);
     //post booking details
+    fetch('http://localhost:3001/send', {
+      method: 'POST',
+      body: JSON.stringify(booking),
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        if (response.status === 'success') {
+          alert('Message sent');
+          resetForm();
+        } else if (response.status == 'fail') {
+          alert('Message failed to send');
+        }
+      });
+    //   .catch((error) => {
+    //     console.error('Error:', error);
+    //   });
+  };
+
+  const resetForm = () => {
+    setBooking({
+      firstname: '',
+      lastname: '',
+      email: '',
+      phone: '',
+      date: selectedDate,
+      people: '',
+      message: '',
+    });
   };
 
   return (
