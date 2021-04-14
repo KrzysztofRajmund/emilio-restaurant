@@ -8,14 +8,13 @@ import AboutUs from './../AboutUs/AboutUs';
 import RestaurantGallery from './../RestaurantGallery/RestaurantGallery';
 import Contact from './../Contact/Contact';
 import Menu from './../Menu/Menu';
-import ReservationForm from './../ReservationForm/ReservationForm';
+import ReservationFormAdmin from './../ReservationForm/ReservationFormAdmin';
 import ScrollButton from './ScrollButton';
 import ThemeContext from './ThemeContext';
 //json
 import tileData from '../../tileData';
 
 const themes = tileData;
-console.log(themes.items, 'themes.items');
 
 const EmilioApp = () => {
   return (
@@ -35,7 +34,7 @@ const EmilioApp = () => {
             <Menu />
           </Route>
           <Route path='/rezerwacja'>
-            <ReservationForm />
+            <ReservationFormAdmin />
           </Route>
           <Route path='/'>
             <LandingPage />

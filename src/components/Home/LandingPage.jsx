@@ -3,7 +3,7 @@ import React from 'react';
 import JumbotronSlider from './JumbotronSlider';
 import MenuShort from './../Menu/MenuShort';
 import AboutUsShort from './../AboutUs/AboutUsShort';
-import ReservationForm from './../ReservationForm/ReservationForm';
+import ReservationFormAdmin from './../ReservationForm/ReservationFormAdmin';
 import Contact from './../Contact/Contact';
 import SeoHelmet from './../SeoHelmet';
 
@@ -20,7 +20,7 @@ const LandingPage = () => {
       <JumbotronSlider />
       <MenuShort />
       <AboutUsShort />
-      <ReservationForm />
+      <ReservationFormAdmin />
       <Contact />
     </React.Fragment>
   );
