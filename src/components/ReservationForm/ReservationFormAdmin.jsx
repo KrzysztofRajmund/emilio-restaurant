@@ -62,11 +62,11 @@ const ReservationFormAdmin = () => {
   //   const [message, setMessage] = useState('');
   const [booking, setBooking] = useState({
     firstname: '',
-    lastname: '',
+    // lastname: '',
     email: '',
-    phone: '',
-    date: selectedDate,
-    people: '',
+    // phone: '',
+    // date: selectedDate,
+    // people: '',
     message: '',
   });
 
@@ -82,7 +82,7 @@ const ReservationFormAdmin = () => {
     e.preventDefault();
     console.log('SUBMIT CLICKED !!!!!!!!!!!!!!!', booking);
     //post booking details
-    fetch('http://localhost:3001/send', {
+    fetch('http://localhost:3002/send', {
       method: 'POST',
       body: JSON.stringify(booking),
       headers: {
@@ -94,7 +94,7 @@ const ReservationFormAdmin = () => {
       .then((response) => {
         if (response.status === 'success') {
           alert('Message sent');
-          resetForm();
+          //   resetForm();
         } else if (response.status == 'fail') {
           alert('Message failed to send');
         }
@@ -104,17 +104,17 @@ const ReservationFormAdmin = () => {
     //   });
   };
 
-  const resetForm = () => {
-    setBooking({
-      firstname: '',
-      lastname: '',
-      email: '',
-      phone: '',
-      date: selectedDate,
-      people: '',
-      message: '',
-    });
-  };
+  //   const resetForm = () => {
+  //     setBooking({
+  //       firstname: '',
+  //       lastname: '',
+  //       email: '',
+  //       phone: '',
+  //       date: selectedDate,
+  //       people: '',
+  //       message: '',
+  //     });
+  //   };
 
   return (
     <React.Fragment>
@@ -146,7 +146,7 @@ const ReservationFormAdmin = () => {
                   }}
                 />
               </Grid>
-              <Grid item xs={6}>
+              {/* <Grid item xs={6}>
                 <TextField
                   name='lastname'
                   value={booking.lastname}
@@ -160,7 +160,7 @@ const ReservationFormAdmin = () => {
                     className: classes.input,
                   }}
                 />
-              </Grid>
+              </Grid> */}
               <Grid item xs={12}>
                 <TextField
                   name='email'
@@ -176,7 +176,7 @@ const ReservationFormAdmin = () => {
                   }}
                 />
               </Grid>
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <TextField
                   name='phone'
                   value={booking.phone}
@@ -190,8 +190,8 @@ const ReservationFormAdmin = () => {
                     className: classes.input,
                   }}
                 />
-              </Grid>
-              <MuiPickersUtilsProvider utils={DateFnsUtils}>
+              </Grid> */}
+              {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
                 <Grid item xs={6}>
                   <KeyboardDatePicker
                     name='selectedDate'
@@ -225,8 +225,8 @@ const ReservationFormAdmin = () => {
                     }}
                   />
                 </Grid>
-              </MuiPickersUtilsProvider>
-              <Grid item xs={12}>
+              </MuiPickersUtilsProvider> */}
+              {/* <Grid item xs={12}>
                 <TextField
                   name='selectedDate'
                   value={selectedDate}
@@ -239,9 +239,9 @@ const ReservationFormAdmin = () => {
                     className: classes.input,
                   }}
                 />
-              </Grid>
+              </Grid> */}
 
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <TextField
                   name='people'
                   value={booking.people}
@@ -256,7 +256,7 @@ const ReservationFormAdmin = () => {
                     className: classes.input,
                   }}
                 />
-              </Grid>
+              </Grid> */}
               <Grid item xs={12}>
                 <TextField
                   name='message'
