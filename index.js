@@ -43,18 +43,38 @@ router.get('/', (req, res) => {
 
 router.post('/send', (req, res, next) => {
   var firstname = req.body.firstname;
+  var lastname = req.body.lastname;
   var email = req.body.email;
+  var phone = req.body.phone;
+  var day = req.body.date.day;
+  var time = req.body.date.time;
+  var people = req.body.people;
   var message = req.body.message;
-  var content = `name: ${firstname} \n email: ${email} \n message: ${message} `;
-  console.log(req.body);
-  var mail = {
+  // var content = `name: ${firstname} \n email: ${email} \n message: ${message} `;
+
+  //reservation
+  const outputReservation = `
+    <h3>Nowa rezerwacja ${day}, godz.${time}</h3>
+    <ul>  
+      <li><strong>Imię:</strong> ${firstname}</li>
+      <li><strong>Nazwisko:</strong> ${lastname}</li>
+      <li><strong>Email:</strong> ${email}</li>
+      <li><strong>Telefon:</strong> ${phone}</li>
+      <li><strong>Ilość osób:</strong> ${people}</li>
+    </ul>
+    <h3>Wiadomość:</h3>
+    <p>${message}</p>
+  `;
+
+  var mailReservation = {
     from: email,
     to: 'knadlonek@gmail.com', // email address that you want to receive messages on
-    subject: 'New Message from Contact Form',
-    text: content,
+    subject: `Nowa rezerwacja na dzień: ${day}, godz.${time}`,
+    // text: content,
+    html: outputReservation,
   };
 
-  transporter.sendMail(mail, (err, data) => {
+  transporter.sendMail(mailReservation, (err, data) => {
     if (err) {
       res.json({
         status: 'fail',
@@ -65,33 +85,28 @@ router.post('/send', (req, res, next) => {
       });
     }
   });
+
+  //confirmation
+  const outputConfirmation = `
+    <h3>Twoja rezerwacja na dzień ${day}, o godz.${time}, będzie wkrótce potwierdzona przez restaurację Emilio.</h3>
+    <ul>  
+      <li><strong>Imię:</strong> ${firstname}</li>
+      <li><strong>Nazwisko:</strong> ${lastname}</li>
+      <li><strong>Email:</strong> ${email}</li>
+      <li><strong>Telefon:</strong> ${phone}</li>
+      <li><strong>Ilość osób:</strong> ${people}</li>
+    </ul>
+    <h3>Wiadomość:</h3>
+    <p>${message}</p>
+  `;
+  var mailConfirmation = {
+    from: 'knadlonek@gmail.com',
+    to: email, // email address klienta
+    subject: `Twoja rezerwacja: ${day}, godz.${time}`,
+    html: outputConfirmation,
+  };
+  transporter.sendMail(mailConfirmation);
 });
 
 //port listen
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`));
-
-//MAILTRAP TEST!!!!
-// var transporter = nodemailer.createTransport({
-//   host: 'smtp.mailtrap.io',
-//   port: 2525,
-//   auth: {
-//     user: 'e2b41a73479ec6',
-//     pass: '38eb5b0a600881',
-//   },
-// });
-//MAILTRAP TEST!!!!
-
-//FUNCTION TEST!!!
-// async function run() {
-//   let sendResult = await transporter.sendMail({
-//     from: 'Krzysztof knadlonek@gmail.com',
-//     //from: 'Krzysztof <knadlonek@gmail.com',
-//     to: 'knadlonek@gmail.com',
-//     subject: 'New Message from Contact Form',
-//     text: 'ello',
-//   });
-//   console.log(sendResult, 'result');
-// }
-
-// run();
-//FUNCTION TEST!!!

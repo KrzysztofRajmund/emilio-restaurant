@@ -3,15 +3,10 @@ import React, { useState } from 'react';
 import HeaderJumbotron from '../Home/HeaderJumbotron';
 //material-ui
 import TextField from '@material-ui/core/TextField';
-import { ThemeProvider } from '@material-ui/styles';
-import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import DateFnsUtils from '@date-io/date-fns';
-import {
-  MuiPickersUtilsProvider,
-  KeyboardTimePicker,
-  KeyboardDatePicker,
-} from '@material-ui/pickers';
+import Icon from '@material-ui/core/Icon';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,6 +28,9 @@ const useStyles = makeStyles((theme) => ({
       color: 'red',
     },
   },
+  button: {
+    margin: theme.spacing(1),
+  },
   textField: {
     margin: 5,
     color: '#1d1d1d',
@@ -53,34 +51,38 @@ const useStyles = makeStyles((theme) => ({
 const ReservationFormAdmin = () => {
   const classes = useStyles();
   //useState hooks
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  //   const [firstname, setFirstname] = useState('');
-  //   const [lastname, setLastname] = useState('');
-  //   const [email, setEmail] = useState('');
-  //   const [phone, setPhone] = useState('');
-  //   const [people, setPeople] = useState('');
-  //   const [message, setMessage] = useState('');
   const [booking, setBooking] = useState({
     firstname: '',
-    // lastname: '',
+    lastname: '',
     email: '',
-    // phone: '',
-    // date: selectedDate,
-    // people: '',
+    phone: '',
+    date: {
+      day: '',
+      time: '',
+    },
+    people: '',
     message: '',
   });
 
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
+  //date change
+  const handleDateChange = (e) => {
+    setBooking({
+      ...booking,
+      date: {
+        ...booking.date,
+        [e.target.name]: e.target.value,
+      },
+    });
   };
-
+  //other input change
   const handleInputChange = (e) => {
     setBooking({ ...booking, [e.target.name]: e.target.value });
   };
 
+  //submit button
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('SUBMIT CLICKED !!!!!!!!!!!!!!!', booking);
+    console.log(booking, 'booking date');
     //post booking details
     fetch('http://localhost:3002/send', {
       method: 'POST',
@@ -94,7 +96,7 @@ const ReservationFormAdmin = () => {
       .then((response) => {
         if (response.status === 'success') {
           alert('Message sent');
-          //   resetForm();
+          resetForm();
         } else if (response.status == 'fail') {
           alert('Message failed to send');
         }
@@ -104,17 +106,20 @@ const ReservationFormAdmin = () => {
     //   });
   };
 
-  //   const resetForm = () => {
-  //     setBooking({
-  //       firstname: '',
-  //       lastname: '',
-  //       email: '',
-  //       phone: '',
-  //       date: selectedDate,
-  //       people: '',
-  //       message: '',
-  //     });
-  //   };
+  const resetForm = () => {
+    setBooking({
+      firstname: '',
+      lastname: '',
+      email: '',
+      phone: '',
+      date: {
+        day: '',
+        time: '',
+      },
+      people: '',
+      message: '',
+    });
+  };
 
   return (
     <React.Fragment>
@@ -146,7 +151,7 @@ const ReservationFormAdmin = () => {
                   }}
                 />
               </Grid>
-              {/* <Grid item xs={6}>
+              <Grid item xs={6}>
                 <TextField
                   name='lastname'
                   value={booking.lastname}
@@ -160,7 +165,7 @@ const ReservationFormAdmin = () => {
                     className: classes.input,
                   }}
                 />
-              </Grid> */}
+              </Grid>
               <Grid item xs={12}>
                 <TextField
                   name='email'
@@ -176,7 +181,7 @@ const ReservationFormAdmin = () => {
                   }}
                 />
               </Grid>
-              {/* <Grid item xs={12}>
+              <Grid item xs={12}>
                 <TextField
                   name='phone'
                   value={booking.phone}
@@ -190,58 +195,38 @@ const ReservationFormAdmin = () => {
                     className: classes.input,
                   }}
                 />
-              </Grid> */}
-              {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                <Grid item xs={6}>
-                  <KeyboardDatePicker
-                    name='selectedDate'
-                    value={selectedDate}
-                    onChange={handleDateChange}
-                    margin='normal'
-                    id='date-picker-dialog'
-                    label='Data'
-                    format='dd/MM/yyyy'
-                    KeyboardButtonProps={{
-                      'aria-label': 'change date',
-                    }}
-                    InputProps={{
-                      className: classes.input,
-                    }}
-                  />
-                </Grid>
-                <Grid item xs={6}>
-                  <KeyboardTimePicker
-                    name='selectedDate'
-                    value={selectedDate}
-                    onChange={handleDateChange}
-                    margin='normal'
-                    id='time-picker'
-                    label='Godzina'
-                    KeyboardButtonProps={{
-                      'aria-label': 'change time',
-                    }}
-                    InputProps={{
-                      className: classes.input,
-                    }}
-                  />
-                </Grid>
-              </MuiPickersUtilsProvider> */}
-              {/* <Grid item xs={12}>
+              </Grid>
+              <Grid item xs={12}>
                 <TextField
-                  name='selectedDate'
-                  value={selectedDate}
-                  fullWidth
+                  id='date'
+                  label='Dzień'
+                  type='date'
+                  name='day'
+                  value={booking.date.day}
+                  onChange={(e) => handleDateChange(e)}
                   className={classes.textField}
-                  id='filled-basic'
-                  label='Data'
-                  variant='filled'
-                  InputProps={{
-                    className: classes.input,
+                  InputLabelProps={{
+                    shrink: true,
                   }}
                 />
-              </Grid> */}
+                <TextField
+                  id='time'
+                  label='Godzina'
+                  type='time'
+                  name='time'
+                  value={booking.date.time}
+                  onChange={(e) => handleDateChange(e)}
+                  className={classes.textField}
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  inputProps={{
+                    step: 300, // 5 min
+                  }}
+                />
+              </Grid>
 
-              {/* <Grid item xs={12}>
+              <Grid item xs={12}>
                 <TextField
                   name='people'
                   value={booking.people}
@@ -256,7 +241,7 @@ const ReservationFormAdmin = () => {
                     className: classes.input,
                   }}
                 />
-              </Grid> */}
+              </Grid>
               <Grid item xs={12}>
                 <TextField
                   name='message'
@@ -275,8 +260,16 @@ const ReservationFormAdmin = () => {
                   }}
                 />
               </Grid>
+              <Button
+                variant='outlined'
+                color='secondary'
+                className={classes.button}
+                endIcon={<Icon></Icon>}
+                type='submit'
+              >
+                Wyślij
+              </Button>
             </Grid>
-            <button type='submit'>Wyślij</button>
           </form>
         </div>
         <div className='form-container__card'>

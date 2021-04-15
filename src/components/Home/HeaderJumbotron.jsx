@@ -21,7 +21,6 @@ const HeaderJumbotron = () => {
   );
 
   if (loading) {
-    console.log(window.location.pathname.substring(1), 'pathname');
     var textWrapper = document.querySelector(
       '.header-jumbotron-slider__animation-first'
     );
