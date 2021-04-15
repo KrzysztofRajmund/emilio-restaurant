@@ -30,7 +30,13 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     margin: theme.spacing(1),
+    color: 'rgb(112, 0, 0)',
+    borderColor: 'rgb(112, 0, 0)',
+    '&:hover': {
+      backgroundColor: 'rgb(112, 0, 0, 0.1)',
+    },
   },
+
   textField: {
     margin: 5,
     color: '#1d1d1d',
@@ -262,9 +268,15 @@ const ReservationFormAdmin = () => {
               </Grid>
               <Button
                 variant='outlined'
-                color='secondary'
+                // color='action'
                 className={classes.button}
-                endIcon={<Icon></Icon>}
+                endIcon={
+                  <Icon
+                  // style={{ color: 'green' }}
+                  >
+                    send
+                  </Icon>
+                }
                 type='submit'
               >
                 Wyślij
