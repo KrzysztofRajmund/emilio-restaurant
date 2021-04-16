@@ -5,7 +5,7 @@ import MenuShort from './../Menu/MenuShort';
 import AboutUsShort from './../AboutUs/AboutUsShort';
 import ReservationFormAdmin from './../ReservationForm/ReservationFormAdmin';
 import Contact from './../Contact/Contact';
-import SeoHelmet from './../SeoHelmet';
+import SeoHelmet from './../utils/SeoHelmet';
 
 const LandingPage = () => {
   return (

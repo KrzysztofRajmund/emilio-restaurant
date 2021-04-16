@@ -3,7 +3,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import Album from './Album';
 import HeaderJumbotron from '../Home/HeaderJumbotron';
 import AboutVideo from './AboutVideo';
-import SeoHelmet from './../SeoHelmet';
+import SeoHelmet from './../utils/SeoHelmet';
 //assets
 import Logo from '../../assets/logo.png';
 import RestaurantImage from '../../assets/restaurant-image.jpg';

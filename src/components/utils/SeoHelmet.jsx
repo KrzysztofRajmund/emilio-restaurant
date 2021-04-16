@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 //json
-import metaDecorator from '../metaDecorator';
+import metaDecorator from '../../metaDecorator.json';
 
 const SeoHelmet = ({ title, description, imageUrl, imageAlt }) => {
   return (

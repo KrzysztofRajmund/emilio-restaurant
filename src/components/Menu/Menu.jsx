@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 //components
 import HeaderJumbotron from '../Home/HeaderJumbotron';
-import SeoHelmet from './../SeoHelmet';
+import SeoHelmet from './../utils/SeoHelmet';
 //json data
 import menuData from '../../menuData';
 //AOS

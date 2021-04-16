@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 //components
 import Navigation from '../Home/Navigation';
-import SeoHelmet from './../SeoHelmet';
+import SeoHelmet from './../utils/SeoHelmet';
 //data json
 import tileData from '../../tileData';
 //AOS

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 //components
 import MapContact from './MapContact';
 import HeaderJumbotron from '../Home/HeaderJumbotron';
-import SeoHelmet from './../SeoHelmet';
+import SeoHelmet from './../utils/SeoHelmet';
 //AOS
 import AOS from 'aos';
 import 'aos/dist/aos.css';
