@@ -10,7 +10,7 @@ import Contact from './../Contact/Contact';
 import Menu from './../Menu/Menu';
 import ReservationFormAdmin from './../ReservationForm/ReservationFormAdmin';
 import ScrollButton from './ScrollButton';
-import ThemeContext from './ThemeContext';
+import ThemeContext from './../utils/ThemeContext';
 //json
 import tileData from '../../tileData';
 
