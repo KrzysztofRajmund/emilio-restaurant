@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 //components
 import Navigation from './Navigation';
-import ThemeContext from './ThemeContext';
+import ThemeContext from '../utils/ThemeContext';
 //assets
 import JumbotronImageDiscover from '../../assets/jumbotron1.jpg';
 import Underline from '../../assets/underline.png';
