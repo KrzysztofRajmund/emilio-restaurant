@@ -329,9 +329,8 @@ const ReservationFormAdmin = () => {
           <div className='form-container__text'>
             <h1>Rezerwacja</h1>
             <h5>
-              For parties of six or more, we recommend making reservations at
-              least two weeks in advance. For walk-ins, we only seat parties on
-              a first come, first served basis.
+              W przypadku spotkań powyżej sześciu osób rekomendujemy dokonać
+              rezerwacji z przynajmniej tygodniowym wyprzedzeniem.
             </h5>
           </div>
         </div>
