@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 //components
 import HeaderJumbotron from '../Home/HeaderJumbotron';
 import AlertMessage from '../utils/AlertMessage';
+import SeoHelmet from './../utils/SeoHelmet';
+//AOS
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 //material-ui
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -9,6 +14,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Icon from '@material-ui/core/Icon';
 
+// material-ui styling
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -52,12 +58,19 @@ const useStyles = makeStyles((theme) => ({
   },
   textFieldFull: {
     margin: 5,
-    // width: "100ch",
   },
 }));
 
 const ReservationFormAdmin = () => {
   const classes = useStyles();
+
+  useEffect(() => {
+    AOS.init({
+      offset: 300,
+      duration: 2000,
+    });
+  }, []);
+
   //useState hooks
   const [open, setOpen] = useState(false);
   const [style, setStyle] = useState('');
@@ -88,6 +101,22 @@ const ReservationFormAdmin = () => {
   //other input change
   const handleInputChange = (e) => {
     setBooking({ ...booking, [e.target.name]: e.target.value });
+  };
+
+  //reset form
+  const resetForm = () => {
+    setBooking({
+      firstname: '',
+      lastname: '',
+      email: '',
+      phone: '',
+      date: {
+        day: '',
+        time: '',
+      },
+      people: '',
+      message: '',
+    });
   };
 
   //submit button
@@ -127,26 +156,14 @@ const ReservationFormAdmin = () => {
       });
   };
 
-  const resetForm = () => {
-    setBooking({
-      firstname: '',
-      lastname: '',
-      email: '',
-      phone: '',
-      date: {
-        day: '',
-        time: '',
-      },
-      people: '',
-      message: '',
-    });
-  };
-
   return (
     <React.Fragment>
       {window.location.pathname === '/rezerwacja' ? <HeaderJumbotron /> : ''}
-      <div className='form-container'>
-        <div className='form-container__input'>
+      <div className='form-container' id='rezerwacja'>
+        <div
+          className='form-container__input'
+          data-aos={window.innerWidth < 770 ? 'flip-left' : 'zoom-in-right'}
+        >
           <form
             onSubmit={handleSubmit}
             className={classes.root}
@@ -308,7 +325,6 @@ const ReservationFormAdmin = () => {
               </Grid>
               <Button
                 variant='outlined'
-                // color='action'
                 className={classes.button}
                 endIcon={
                   <Icon
@@ -325,7 +341,10 @@ const ReservationFormAdmin = () => {
             </Grid>
           </form>
         </div>
-        <div className='form-container__card'>
+        <div
+          className='form-container__card'
+          data-aos={window.innerWidth < 770 ? 'zoom-in' : 'zoom-in-left'}
+        >
           <div className='form-container__text'>
             <h1>Rezerwacja</h1>
             <h5>
