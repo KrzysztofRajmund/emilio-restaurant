@@ -51,7 +51,6 @@ router.post('/send', (req, res, next) => {
   var people = req.body.people;
   var message = req.body.message;
   // var content = `name: ${firstname} \n email: ${email} \n message: ${message} `;
-
   //reservation
   const outputReservation = `
     <h3>Nowa rezerwacja ${day}, godz.${time}</h3>

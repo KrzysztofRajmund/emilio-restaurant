@@ -93,7 +93,7 @@ const ReservationFormAdmin = () => {
   //submit button
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(booking, 'booking date');
+
     //post booking details
     fetch('http://localhost:3002/send', {
       method: 'POST',
@@ -150,7 +150,7 @@ const ReservationFormAdmin = () => {
           <form
             onSubmit={handleSubmit}
             className={classes.root}
-            noValidate
+            validate
             autoComplete='off'
           >
             <Grid container spacing={1}>
@@ -167,6 +167,9 @@ const ReservationFormAdmin = () => {
                   variant='filled'
                   InputProps={{
                     className: classes.input,
+                  }}
+                  inputProps={{
+                    minLength: 3,
                   }}
                   floatingLabelFocusStyle={{
                     className: classes.floatingLabelFocusStyle,
@@ -187,11 +190,15 @@ const ReservationFormAdmin = () => {
                   InputProps={{
                     className: classes.input,
                   }}
+                  inputProps={{
+                    minLength: 3,
+                  }}
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
                   required
+                  type='email'
                   name='email'
                   value={booking.email}
                   onChange={(e) => handleInputChange(e)}
@@ -203,11 +210,15 @@ const ReservationFormAdmin = () => {
                   InputProps={{
                     className: classes.input,
                   }}
+                  inputProps={{
+                    minLength: 3,
+                  }}
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
                   required
+                  type='number'
                   name='phone'
                   value={booking.phone}
                   onChange={(e) => handleInputChange(e)}
@@ -218,6 +229,9 @@ const ReservationFormAdmin = () => {
                   variant='filled'
                   InputProps={{
                     className: classes.input,
+                  }}
+                  inputProps={{
+                    minLength: 8,
                   }}
                 />
               </Grid>
@@ -256,6 +270,7 @@ const ReservationFormAdmin = () => {
               <Grid item xs={12}>
                 <TextField
                   required
+                  type='number'
                   name='people'
                   value={booking.people}
                   onChange={(e) => handleInputChange(e)}
@@ -285,6 +300,9 @@ const ReservationFormAdmin = () => {
                   fullWidth
                   InputProps={{
                     className: classes.input,
+                  }}
+                  inputProps={{
+                    maxLength: 2,
                   }}
                 />
               </Grid>
