@@ -11,6 +11,9 @@ import Menu from './../Menu/Menu';
 import ReservationFormAdmin from './../ReservationForm/ReservationFormAdmin';
 import ScrollButton from './ScrollButton';
 import ThemeContext from './../utils/ThemeContext';
+//components ADMIN
+import Login from './../AdminPanel/Login';
+import Admin from './../AdminPanel/Admin';
 //json
 import tileData from '../../tileData';
 
@@ -36,6 +39,14 @@ const EmilioApp = () => {
           <Route path='/rezerwacja'>
             <ReservationFormAdmin />
           </Route>
+          {/* ADMIN PANEL */}
+          <Route path='/adminpanel/login'>
+            <Login />
+          </Route>
+          {/* <Route path='/adminpanel/admin'>
+            <Admin />
+          </Route> */}
+          {/* ADMIN PANEL */}
           <Route path='/'>
             <LandingPage />
           </Route>
