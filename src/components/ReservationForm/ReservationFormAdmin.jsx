@@ -12,6 +12,7 @@ import Icon from '@material-ui/core/Icon';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    position: 'relative',
     justifyContent: 'center',
     '& .MuiFormLabel-root': {
       color: 'rgba(0, 0, 0, 0.24)',
@@ -58,6 +59,9 @@ const useStyles = makeStyles((theme) => ({
 const ReservationFormAdmin = () => {
   const classes = useStyles();
   //useState hooks
+  const [open, setOpen] = useState(false);
+  const [style, setStyle] = useState('');
+  const [message, setMessage] = useState('');
   const [booking, setBooking] = useState({
     firstname: '',
     lastname: '',
@@ -102,15 +106,25 @@ const ReservationFormAdmin = () => {
       .then((response) => response.json())
       .then((response) => {
         if (response.status === 'success') {
-          alert('Message sent');
+          setStyle('success');
+          setMessage('Prośba o rezerwację została pomyślnie wysłana');
+          setOpen(true);
+          setTimeout(() => {
+            setOpen(false);
+          }, 3500);
           resetForm();
-        } else if (response.status == 'fail') {
-          alert('Message failed to send');
+        } else if (response.status === 'fail') {
+          setStyle('error');
+          setMessage('Prosze uzupełnić wymagane pola!');
+          setOpen(true);
+          setTimeout(() => {
+            setOpen(false);
+          }, 3500);
         }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
       });
-    //   .catch((error) => {
-    //     console.error('Error:', error);
-    //   });
   };
 
   const resetForm = () => {
@@ -142,6 +156,7 @@ const ReservationFormAdmin = () => {
             <Grid container spacing={1}>
               <Grid item xs={6}>
                 <TextField
+                  required
                   name='firstname'
                   onChange={(e) => handleInputChange(e)}
                   value={booking.firstname}
@@ -160,6 +175,7 @@ const ReservationFormAdmin = () => {
               </Grid>
               <Grid item xs={6}>
                 <TextField
+                  required
                   name='lastname'
                   value={booking.lastname}
                   onChange={(e) => handleInputChange(e)}
@@ -175,6 +191,7 @@ const ReservationFormAdmin = () => {
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  required
                   name='email'
                   value={booking.email}
                   onChange={(e) => handleInputChange(e)}
@@ -190,6 +207,7 @@ const ReservationFormAdmin = () => {
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  required
                   name='phone'
                   value={booking.phone}
                   onChange={(e) => handleInputChange(e)}
@@ -205,6 +223,7 @@ const ReservationFormAdmin = () => {
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  required
                   id='date'
                   label='Dzień'
                   type='date'
@@ -217,8 +236,9 @@ const ReservationFormAdmin = () => {
                   }}
                 />
                 <TextField
+                  required
                   id='time'
-                  label='Godzina'
+                  label='Godz.'
                   type='time'
                   name='time'
                   value={booking.date.time}
@@ -235,6 +255,7 @@ const ReservationFormAdmin = () => {
 
               <Grid item xs={12}>
                 <TextField
+                  required
                   name='people'
                   value={booking.people}
                   onChange={(e) => handleInputChange(e)}
@@ -282,6 +303,7 @@ const ReservationFormAdmin = () => {
               >
                 Wyślij
               </Button>
+              <AlertMessage style={style} message={message} open={open} />
             </Grid>
           </form>
         </div>

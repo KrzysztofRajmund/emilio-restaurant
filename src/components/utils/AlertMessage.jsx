@@ -2,22 +2,37 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
+import Alert from '@material-ui/lab/Alert';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100%',
+    // width: '100%',
     '& > * + *': {
       marginTop: theme.spacing(2),
     },
   },
+  snackBar: {
+    bottom: '15%',
+    position: 'absolute',
+    width: '100%',
+  },
 }));
 
-const AlertMessage = () => {
+const AlertMessage = ({ style, message, open }) => {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Alert severity='success'>This is a success message!</Alert>
+      <Snackbar
+        className={classes.snackBar}
+        open={open}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'center',
+        }}
+      >
+        <Alert severity={style}>{message}</Alert>
+      </Snackbar>
     </React.Fragment>
   );
 };
