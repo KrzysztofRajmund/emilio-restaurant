@@ -1,14 +1,17 @@
 const express = require('express');
 const router = express.Router();
-var nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const passport = require('passport');
+const users = require('./server/routes/api/users');
+
+//env
 const dotenv = require('dotenv');
-
 dotenv.config();
-const app = express();
 
+const app = express();
 app.use(cors());
 app.use(express.json());
 app.use('/', router);
@@ -19,16 +22,25 @@ app.use(
   })
 );
 app.use(bodyParser.json());
-
+//---------------------------------------------------------------------
+// DATABASE !!!
 //DB config
-const dbURI = `mongodb+srv://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}@cluster0.slv2r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const dbURI = `mongodb+srv://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}@cluster0.slv2r.mongodb.net/emilioDatabase?retryWrites=true&w=majority`;
 // Connect to MongoDB
 mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB successfully connected'))
   .catch((err) => console.log(err));
 
-//EMAIL
+// Passport middleware
+app.use(passport.initialize());
+// Passport config
+require('./server/passport')(passport);
+// Routes
+app.use('/api/users', users);
+
+//---------------------------------------------------------------------
+//EMAIL !!!
 var transport = {
   host: 'smtp-relay.sendinblue.com',
   port: 587,
@@ -48,7 +60,7 @@ transporter.verify((error, success) => {
   if (error) {
     console.log(error);
   } else {
-    console.log('Server is ready to take messages');
+    console.log('Server is ready to take emails');
   }
 });
 
