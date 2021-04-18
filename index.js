@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 const dbURI = `mongodb+srv://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}@cluster0.slv2r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 // Connect to MongoDB
 mongoose
-  .connect(dbURI, { useNewUrlParser: true })
+  .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB successfully connected'))
   .catch((err) => console.log(err));
 
