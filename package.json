@@ -20,9 +20,11 @@
     "@testing-library/user-event": "^12.6.0",
     "animejs": "^3.2.1",
     "aos": "^3.0.0-beta.6",
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.5.3",
+    "classnames": "^2.3.1",
     "concurrently": "^6.0.2",
     "cors": "^2.8.5",
     "date-fns": "^2.16.1",
@@ -31,6 +33,7 @@
     "google-maps-react": "^2.0.6",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
     "mongoose": "^5.12.4",
     "node-sass": "^5.0.0",
     "nodemailer": "^6.5.0",
@@ -64,6 +67,7 @@
     "eject": "react-scripts eject",
     "postbuild": "react-snap"
   },
+   "proxy": "http://localhost:3002",
   "eslintConfig": {
     "extends": [
       "react-app",
