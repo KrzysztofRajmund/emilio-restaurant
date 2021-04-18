@@ -867,7 +867,27 @@ div.video__frame {
   }
 }
 
-//media
+//BACKEND!!!
+.form-container.admin-signup {
+  background-image: url('../assets/background-admin (1).jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  .form-container__input {
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    max-width: 40%;
+  }
+}
+
+//MEDIA!!!
 
 @media screen and (max-width: 1140px) {
   .description {
@@ -997,6 +1017,13 @@ div.video__frame {
       display: block;
     }
   }
+
+  //admin
+  .form-container.admin-signup {
+    .form-container__input {
+      max-width: 80%;
+    }
+  }
 }
 
 @media screen and (max-width: 652px) {
@@ -1103,6 +1130,12 @@ div.video__frame {
 
   .jumbotron-slider__animation-second {
     font-size: 16px;
+  }
+  //admin
+  .form-container.admin-signup {
+    .form-container__input {
+      max-width: 100%;
+    }
   }
 }
 

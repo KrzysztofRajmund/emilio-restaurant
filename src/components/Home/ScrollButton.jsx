@@ -24,7 +24,8 @@ const ScrollButton = () => {
   return (
     <React.Fragment>
       {window.location.pathname === '/adminpanel/login' ||
-      window.location.pathname === '/adminpanel/admin' ? (
+      window.location.pathname === '/adminpanel/admin' ||
+      window.location.pathname === '/adminpanel/register' ? (
         ''
       ) : (
         <div className='scroll-container'>

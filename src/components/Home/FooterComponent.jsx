@@ -8,7 +8,8 @@ const FooterComponent = () => {
   return (
     <React.Fragment>
       {window.location.pathname === '/adminpanel/login' ||
-      window.location.pathname === '/adminpanel/admin' ? (
+      window.location.pathname === '/adminpanel/admin' ||
+      window.location.pathname === '/adminpanel/register' ? (
         ''
       ) : (
         <footer className='footer-container'>

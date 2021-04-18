@@ -37,8 +37,8 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     margin: theme.spacing(1),
-    color: 'rgb(112, 0, 0)',
-    borderColor: 'rgb(112, 0, 0)',
+    color: 'rgb(0, 0, 0)',
+    borderColor: 'rgb(0, 0, 0)',
     '&:hover': {
       backgroundColor: 'rgb(112, 0, 0, 0.1)',
     },
@@ -114,7 +114,7 @@ const ReservationFormAdmin = () => {
 
   return (
     <React.Fragment>
-      <div className='form-container'>
+      <div className='form-container admin-signup'>
         <div className='form-container__input'>
           <form
             onSubmit={(e) => handleSubmit(e, history)}
@@ -125,6 +125,7 @@ const ReservationFormAdmin = () => {
             <Grid container spacing={1}>
               <Grid item xs={12}>
                 <TextField
+                  autoFocus
                   required
                   type='text'
                   name='name'
