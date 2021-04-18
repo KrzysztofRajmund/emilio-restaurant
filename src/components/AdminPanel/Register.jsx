@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 //components
 import AlertMessage from '../utils/AlertMessage';
 import Admin from '../AdminPanel/Admin';
@@ -12,7 +12,6 @@ import Icon from '@material-ui/core/Icon';
 import axios from 'axios';
 //router
 import { useHistory } from 'react-router-dom';
-import { response } from 'express';
 
 // material-ui styling
 const useStyles = makeStyles((theme) => ({
@@ -64,12 +63,10 @@ const useStyles = makeStyles((theme) => ({
 const ReservationFormAdmin = () => {
   const classes = useStyles();
   let history = useHistory();
-  console.log(history);
 
   //useState hooks
   const [style, setStyle] = useState('');
   const [message, setMessage] = useState('');
-  const [auth, setAuth] = useState(false);
   const [open, setOpen] = useState(false);
   const [register, setRegister] = useState({
     name: '',
@@ -96,17 +93,23 @@ const ReservationFormAdmin = () => {
   //submit button
   const handleSubmit = (e, history) => {
     e.preventDefault();
-    console.log(history, 'history');
+
     axios
       .post('http://localhost:3002/api/users/register', register)
       .then((response) => {
         if (response.status == 200) {
+          resetForm();
           history.push('/adminpanel/login');
-        } else {
-          console.log(response);
         }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        setStyle('error');
+        setMessage('Email już jest zarejestrowany!');
+        setOpen(true);
+        setTimeout(() => {
+          setOpen(false);
+        }, 3500);
+      });
   };
 
   return (
@@ -214,6 +217,7 @@ const ReservationFormAdmin = () => {
               >
                 Register
               </Button>
+              <AlertMessage style={style} message={message} open={open} />
             </Grid>
           </form>
         </div>

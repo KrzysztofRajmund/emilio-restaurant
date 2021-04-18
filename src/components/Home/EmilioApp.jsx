@@ -10,7 +10,9 @@ import Contact from './../Contact/Contact';
 import Menu from './../Menu/Menu';
 import ReservationFormAdmin from './../ReservationForm/ReservationFormAdmin';
 import ScrollButton from './ScrollButton';
+//utils
 import ThemeContext from './../utils/ThemeContext';
+import PrivateRoute from './../utils/PrivateRoute';
 //components ADMIN
 import Register from './../AdminPanel/Register';
 import Login from './../AdminPanel/Login';
@@ -47,9 +49,7 @@ const EmilioApp = () => {
           <Route path='/adminpanel/register'>
             <Register />
           </Route>
-          {/* <Route path='/adminpanel/admin'>
-            <Admin />
-          </Route> */}
+          <PrivateRoute exact path='/adminpanel/admin' component={Admin} />
           {/* ADMIN PANEL */}
           <Route path='/'>
             <LandingPage />

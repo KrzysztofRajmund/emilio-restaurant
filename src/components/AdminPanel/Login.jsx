@@ -8,6 +8,12 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Icon from '@material-ui/core/Icon';
+//axios
+import axios from 'axios';
+//router
+import { useHistory } from 'react-router-dom';
+//jwt decode
+import jwt_decode from 'jwt-decode';
 
 // material-ui styling
 const useStyles = makeStyles((theme) => ({
@@ -58,14 +64,16 @@ const useStyles = makeStyles((theme) => ({
 
 const ReservationFormAdmin = () => {
   const classes = useStyles();
+  //route history
+  let history = useHistory();
 
   //useState hooks
-  const [auth, setAuth] = useState(false);
   const [open, setOpen] = useState(false);
   const [style, setStyle] = useState('');
   const [message, setMessage] = useState('');
+  const [user, setUser] = useState();
   const [login, setLogin] = useState({
-    username: '',
+    email: '',
     password: '',
   });
 
@@ -77,108 +85,115 @@ const ReservationFormAdmin = () => {
   //reset form
   const resetForm = () => {
     setLogin({
-      username: '',
+      email: '',
       password: '',
     });
   };
 
   //submit button
-  const handleSubmit = (e) => {
+  const handleSubmit = (e, history) => {
     e.preventDefault();
 
-    if (
-      login.username === 'emilio@gmail.com' &&
-      login.password === 'emilio2021'
-    ) {
-      setAuth(true);
-      resetForm();
-    } else {
-      setAuth(false);
-      setStyle('error');
-      setMessage(
-        'Username lub hasło jest nieprawidłowe, wpisz ponownie lub skontaktuj się z działem IT'
-      );
-      setOpen(true);
-      setTimeout(() => {
-        setOpen(false);
-      }, 5000);
-    }
-  };
+    axios
+      .post('http://localhost:3002/api/users/login', login)
+      .then((response) => {
+        if (response.status == 200) {
+          //set token to local storage
+          localStorage.setItem('jwtToken', response.data.token);
+          //decode user to get his data
+          const userDecode = jwt_decode(response.data.token);
+          //set user data in variable
+          setUser(userDecode);
+          resetForm();
+          //push user to dashboard
+          history.push('/adminpanel/admin');
+        }
+      })
+      .catch((error) => {
+        setStyle('error');
+        setOpen(true);
+        setTimeout(() => {
+          setOpen(false);
+        }, 3500);
+        if (error.response.data.emailnotfound) {
+          setMessage('Nieznaleziono użytkownika! Wpisz email jeszcze raz.');
+        }
 
+        if (error.response.data.passwordincorrect) {
+          setMessage('Hasło nieprawidłowe.');
+        }
+      });
+  };
   return (
     <React.Fragment>
-      {!auth ? (
-        <div className='form-container'>
-          <div className='form-container__input'>
-            <form
-              onSubmit={handleSubmit}
-              className={classes.root}
-              validate
-              autoComplete='off'
-            >
-              <Grid container spacing={1}>
-                <Grid item xs={12}>
-                  <TextField
-                    required
-                    type='email'
-                    name='username'
-                    value={login.username}
-                    onChange={(e) => handleInputChange(e)}
-                    fullWidth
-                    className={classes.textField}
-                    id='filled-basic'
-                    label='username '
-                    variant='filled'
-                    InputProps={{
-                      className: classes.input,
-                    }}
-                    inputProps={{
-                      minLength: 4,
-                    }}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    required
-                    type='password'
-                    name='password'
-                    value={login.password}
-                    onChange={(e) => handleInputChange(e)}
-                    fullWidth
-                    className={classes.textField}
-                    id='filled-basic'
-                    label='password'
-                    variant='filled'
-                    InputProps={{
-                      className: classes.input,
-                    }}
-                    inputProps={{
-                      minLength: 4,
-                    }}
-                  />
-                </Grid>
-                <Button
-                  variant='outlined'
-                  className={classes.button}
-                  endIcon={
-                    <Icon
-                    // style={{ color: 'green' }}
-                    >
-                      send
-                    </Icon>
-                  }
-                  type='submit'
-                >
-                  Login
-                </Button>
-                <AlertMessage style={style} message={message} open={open} />
+      <div className='form-container'>
+        <div className='form-container__input'>
+          <form
+            onSubmit={(e) => handleSubmit(e, history)}
+            className={classes.root}
+            validate
+            autoComplete='off'
+          >
+            <Grid container spacing={1}>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  type='email'
+                  name='email'
+                  value={login.email}
+                  onChange={(e) => handleInputChange(e)}
+                  fullWidth
+                  className={classes.textField}
+                  id='filled-basic'
+                  label='email'
+                  variant='filled'
+                  InputProps={{
+                    className: classes.input,
+                  }}
+                  inputProps={{
+                    minLength: 4,
+                  }}
+                />
               </Grid>
-            </form>
-          </div>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  type='password'
+                  name='password'
+                  value={login.password}
+                  onChange={(e) => handleInputChange(e)}
+                  fullWidth
+                  className={classes.textField}
+                  id='filled-basic'
+                  label='password'
+                  variant='filled'
+                  InputProps={{
+                    className: classes.input,
+                  }}
+                  inputProps={{
+                    minLength: 4,
+                  }}
+                />
+              </Grid>
+              <Button
+                variant='outlined'
+                className={classes.button}
+                endIcon={
+                  <Icon
+                  // style={{ color: 'green' }}
+                  >
+                    send
+                  </Icon>
+                }
+                type='submit'
+              >
+                Login
+              </Button>
+              <AlertMessage style={style} message={message} open={open} />
+            </Grid>
+          </form>
         </div>
-      ) : (
-        <Admin auth={auth} />
-      )}
+      </div>
     </React.Fragment>
   );
 };
