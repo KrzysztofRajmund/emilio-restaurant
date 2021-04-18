@@ -1,20 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 //assets
-import MenuShortImage1 from '../../assets/dinner-image.jpg';
-import MenuShortImage2 from '../../assets/dessert-image.jpg';
-import MenuShortImage3 from '../../assets/wine-image.jpg';
+import MenuSeasonalImage from '../../assets/dinner-image.jpg';
+import GalleryImage from '../../assets/jumbotron-onas.jpg';
 
 const images = [
   {
-    url: { MenuShortImage1 },
+    url: MenuSeasonalImage,
     title: 'Menu Sezonowe',
     width: '50%',
   },
   {
-    url: '/static/images/grid-list/burgers.jpg',
+    url: GalleryImage,
     title: 'Galeria',
     width: '50%',
   },
@@ -23,13 +22,13 @@ const images = [
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    flexWrap: 'wrap',
+    // flexWrap: 'wrap',
     minWidth: 300,
     width: '100%',
   },
   image: {
     position: 'relative',
-    height: 200,
+    height: '100px',
     [theme.breakpoints.down('xs')]: {
       width: '100% !important', // Overrides inline-style
       height: 100,
@@ -98,38 +97,52 @@ const useStyles = makeStyles((theme) => ({
 export default function Buttons() {
   const classes = useStyles();
 
+  const [show, setShow] = useState(true);
+
+  const handleShow = (title) => {
+    if (title === 'Menu Sezonowe') {
+      setShow(true);
+    } else {
+      setShow(false);
+    }
+  };
+
   return (
-    <div className={classes.root}>
-      {images.map((image) => (
-        <ButtonBase
-          focusRipple
-          key={image.title}
-          className={classes.image}
-          focusVisibleClassName={classes.focusVisible}
-          style={{
-            width: image.width,
-          }}
-        >
-          <span
-            className={classes.imageSrc}
+    <React.Fragment>
+      <div className={classes.root}>
+        {images.map((image) => (
+          <ButtonBase
+            onClick={() => handleShow(image.title)}
+            focusRipple
+            key={image.title}
+            className={classes.image}
+            focusVisibleClassName={classes.focusVisible}
             style={{
-              backgroundImage: `url(${image.url})`,
+              width: image.width,
             }}
-          />
-          <span className={classes.imageBackdrop} />
-          <span className={classes.imageButton}>
-            <Typography
-              component='span'
-              variant='subtitle1'
-              color='inherit'
-              className={classes.imageTitle}
-            >
-              {image.title}
-              <span className={classes.imageMarked} />
-            </Typography>
-          </span>
-        </ButtonBase>
-      ))}
-    </div>
+          >
+            <span
+              className={classes.imageSrc}
+              style={{
+                backgroundImage: `url(${image.url})`,
+              }}
+            />
+            <span className={classes.imageBackdrop} />
+            <span className={classes.imageButton}>
+              <Typography
+                component='span'
+                variant='subtitle1'
+                color='inherit'
+                className={classes.imageTitle}
+              >
+                {image.title}
+                <span className={classes.imageMarked} />
+              </Typography>
+            </span>
+          </ButtonBase>
+        ))}
+      </div>
+      {show ? 'menu sezonowe' : 'Galeria'}
+    </React.Fragment>
   );
 }

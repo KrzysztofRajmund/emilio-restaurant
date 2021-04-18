@@ -81,7 +81,7 @@ router.post('/login', (req, res) => {
           payload,
           process.env.KEY,
           {
-            expiresIn: 31556926, // 1 year in seconds
+            expiresIn: 604800, // 1 week in seconds
           },
           (err, token) => {
             res.json({

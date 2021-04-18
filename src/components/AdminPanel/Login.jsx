@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 //components
 import AlertMessage from '../utils/AlertMessage';
-import Admin from '../AdminPanel/Admin';
 //material-ui
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Icon from '@material-ui/core/Icon';
+//router
+import { Link } from 'react-router-dom';
 //axios
 import axios from 'axios';
 //router
@@ -45,6 +46,16 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: 'rgb(112, 0, 0, 0.1)',
     },
   },
+  buttonLink: {
+    fontSize: 'small',
+    margin: 'auto 2px',
+    color: 'rgb(0, 0, 0)',
+    borderColor: 'rgb(0, 0, 0)',
+    textAlign: 'center',
+    '&:hover': {
+      color: 'rgb(0, 0, 0,0.5)',
+    },
+  },
 
   textField: {
     margin: 5,
@@ -71,7 +82,7 @@ const ReservationFormAdmin = () => {
   const [open, setOpen] = useState(false);
   const [style, setStyle] = useState('');
   const [message, setMessage] = useState('');
-  const [user, setUser] = useState();
+  // const [user, setUser] = useState();
   const [login, setLogin] = useState({
     email: '',
     password: '',
@@ -100,10 +111,10 @@ const ReservationFormAdmin = () => {
         if (response.status == 200) {
           //set token to local storage
           localStorage.setItem('jwtToken', response.data.token);
-          //decode user to get his data
-          const userDecode = jwt_decode(response.data.token);
-          //set user data in variable
-          setUser(userDecode);
+          // //decode user to get his data
+          // const userDecode = jwt_decode(response.data.token);
+          // //set user data in variable
+          // setUser(userDecode);
           resetForm();
           //push user to dashboard
           history.push('/adminpanel/admin');
@@ -190,6 +201,9 @@ const ReservationFormAdmin = () => {
               >
                 Login
               </Button>
+              <Link to='/adminpanel/register' className={classes.buttonLink}>
+                Zarejestruj się
+              </Link>
               <AlertMessage style={style} message={message} open={open} />
             </Grid>
           </form>
