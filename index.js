@@ -2,16 +2,31 @@ const express = require('express');
 const router = express.Router();
 var nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 
 dotenv.config();
-const apiPort = 3002;
 const app = express();
-console.log(process.env.USER);
+
 app.use(cors());
 app.use(express.json());
 app.use('/', router);
+// Bodyparser middleware
+app.use(
+  bodyParser.urlencoded({
+    extended: false,
+  })
+);
+app.use(bodyParser.json());
+
+//DB config
+const dbURI = `mongodb+srv://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}@cluster0.slv2r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+// Connect to MongoDB
+mongoose
+  .connect(dbURI, { useNewUrlParser: true })
+  .then(() => console.log('MongoDB successfully connected'))
+  .catch((err) => console.log(err));
 
 //EMAIL
 var transport = {
@@ -106,6 +121,6 @@ router.post('/send', (req, res, next) => {
   };
   transporter.sendMail(mailConfirmation);
 });
-
+const port = process.env.PORT || 3002; // process.env.port(Heroku's port)
 //port listen
-app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`));
+app.listen(port, () => console.log(`Server running on port ${port}`));
