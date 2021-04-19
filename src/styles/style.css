@@ -1129,6 +1129,83 @@ div.video__frame {
   padding: 2px;
 }
 
+.api-container {
+  position: relative;
+}
+
+.api-container .api-container__button--add {
+  position: absolute;
+  top: -25%;
+  right: 2%;
+  min-width: 50px;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+}
+
+.api-container table {
+  margin: 50px auto 15px auto;
+  text-align: center;
+  min-width: 95%;
+}
+
+.api-container table tr:not(:first-child) {
+  border-bottom: 0.5px solid #1d1d1d;
+}
+
+.api-container table tr:not(:first-child):nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.115);
+}
+
+.api-container table td:last-child {
+  text-align: right;
+}
+
+.api-container table td:last-child button {
+  padding: 5px;
+  min-width: 50px;
+  margin: 5px;
+  border: 0.5px solid #1d1d1d;
+  border-radius: 4px;
+}
+
+.api-container table td:last-child button:first-child {
+  background-color: #1d1d1d;
+  color: #f5f5f5;
+}
+
+.api-container table td:last-child button:last-child {
+  background-color: #700000;
+  color: #f5f5f5;
+}
+
+.api-container table td:last-child button:hover {
+  opacity: 0.7;
+}
+
+.api-container .admin-modal__container {
+  z-index: 95;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.api-container .admin-modal__container .admin-modal__exit {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  padding: 10px;
+  z-index: 90;
+  color: #f5f5f5;
+}
+
 @media screen and (max-width: 1140px) {
   .description {
     letter-spacing: 0.8px;

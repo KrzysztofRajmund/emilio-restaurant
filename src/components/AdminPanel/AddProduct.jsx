@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 //components
 import AlertMessage from '../utils/AlertMessage';
+
 //material-ui
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -9,8 +10,6 @@ import Grid from '@material-ui/core/Grid';
 import Icon from '@material-ui/core/Icon';
 //axios
 import axios from 'axios';
-//router
-import { useHistory } from 'react-router-dom';
 
 // material-ui styling
 const useStyles = makeStyles((theme) => ({
@@ -59,76 +58,68 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ReservationFormAdmin = () => {
+const AddProduct = ({ showAddProduct, onClose }) => {
   const classes = useStyles();
-  let history = useHistory();
 
   //useState hooks
   const [style, setStyle] = useState('');
   const [message, setMessage] = useState('');
   const [open, setOpen] = useState(false);
-  const [register, setRegister] = useState({
-    name: '',
-    email: '',
-    password: '',
-    password2: '',
+  const [image, setImage] = useState({
+    album: '',
   });
 
   //other input change
   const handleInputChange = (e) => {
-    setRegister({ ...register, [e.target.name]: e.target.value });
+    setImage({ ...image, [e.target.name]: e.target.value });
   };
 
   //reset form
   const resetForm = () => {
-    setRegister({
-      name: '',
-      email: '',
-      password: '',
-      password2: '',
+    setImage({
+      album: '',
     });
   };
 
-  //submit button
-  const handleSubmit = (e, history) => {
-    e.preventDefault();
-
-    axios
-      .post('http://localhost:3002/api/users/register', register)
-      .then((response) => {
-        if (response.status == 200) {
-          resetForm();
-          history.push('/adminpanel/login');
-        }
-      })
-      .catch((error) => {
-        setStyle('error');
-        setMessage('Email już jest zarejestrowany!');
-        setOpen(true);
-        setTimeout(() => {
-          setOpen(false);
-        }, 3500);
-      });
+  //TEST
+  const [imageTest, setImageTest] = useState(null);
+  const handleImageTest = (e) => {
+    setImageTest(e.target.files[0]);
+    console.log(e.target.files[0], 'file input');
+    //do filsize error
   };
 
+  //submit button
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log('need to set up url');
+  };
+
+  if (!showAddProduct) {
+    return null;
+  }
   return (
-    <React.Fragment>
+    <div className='admin-modal__container'>
       <div className='form-container admin-signup'>
+        <div className='admin-modal__exit' onClick={(e) => onClose(e)}>
+          X
+        </div>
         <div className='form-container__input'>
           <form
-            onSubmit={(e) => handleSubmit(e, history)}
+            onSubmit={(e) => handleSubmit(e)}
             className={classes.root}
             validate
             autoComplete='off'
           >
             <Grid container spacing={1}>
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <TextField
                   autoFocus
                   required
                   type='text'
-                  name='name'
-                  value={register.name}
+                  name='album'
+                  value={image.album}
                   onChange={(e) => handleInputChange(e)}
                   fullWidth
                   className={classes.textField}
@@ -142,64 +133,21 @@ const ReservationFormAdmin = () => {
                     minLength: 4,
                   }}
                 />
-              </Grid>
+              </Grid> */}
               <Grid item xs={12}>
                 <TextField
                   required
-                  type='email'
-                  name='email'
-                  value={register.email}
-                  onChange={(e) => handleInputChange(e)}
+                  type='file'
+                  accept='image/png,image/jpeg,image/jpg'
+                  name='image'
+                  onChange={(e) => handleImageTest(e)}
                   fullWidth
                   className={classes.textField}
                   id='filled-basic'
-                  label='email '
+                  //   label='email '
                   variant='filled'
                   InputProps={{
                     className: classes.input,
-                  }}
-                  inputProps={{
-                    minLength: 4,
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  type='password'
-                  name='password'
-                  value={register.password}
-                  onChange={(e) => handleInputChange(e)}
-                  fullWidth
-                  className={classes.textField}
-                  id='filled-basic'
-                  label='hasło'
-                  variant='filled'
-                  InputProps={{
-                    className: classes.input,
-                  }}
-                  inputProps={{
-                    minLength: 4,
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  type='password'
-                  name='password2'
-                  value={register.password2}
-                  onChange={(e) => handleInputChange(e)}
-                  fullWidth
-                  className={classes.textField}
-                  id='filled-basic'
-                  label='potwierdź hasło'
-                  variant='filled'
-                  InputProps={{
-                    className: classes.input,
-                  }}
-                  inputProps={{
-                    minLength: 4,
                   }}
                 />
               </Grid>
@@ -215,15 +163,15 @@ const ReservationFormAdmin = () => {
                 }
                 type='submit'
               >
-                Register
+                Dodaj
               </Button>
               <AlertMessage style={style} message={message} open={open} />
             </Grid>
           </form>
         </div>
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 
-export default ReservationFormAdmin;
+export default AddProduct;

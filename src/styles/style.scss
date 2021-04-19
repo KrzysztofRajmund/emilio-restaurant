@@ -887,15 +887,7 @@ div.video__frame {
     max-width: 40%;
   }
 }
-
-//admin panel
-// .adminpanel {
-//   // display: flex;
-//   // justify-content: center;
-//   // align-items: center;
-//   // text-align: center;
-// }
-
+//header nav
 .navigation.admin-headernav {
   position: relative;
   padding: 0;
@@ -904,6 +896,73 @@ div.video__frame {
   a.navigation__nav-link {
     margin: 5px 15px 5px 5px;
     padding: 2px;
+  }
+}
+
+//api container
+.api-container {
+  position: relative;
+  .api-container__button--add {
+    position: absolute;
+    top: -25%;
+    right: 2%;
+    min-width: 50px;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+  }
+  table {
+    margin: 50px auto 15px auto;
+    text-align: center;
+    min-width: 95%;
+    tr:not(:first-child) {
+      border-bottom: 0.5px solid $secondaryTextColor;
+      &:nth-child(odd) {
+        background-color: rgba(0, 0, 0, 0.115);
+      }
+    }
+    td:last-child {
+      text-align: right;
+      button {
+        padding: 5px;
+        min-width: 50px;
+        margin: 5px;
+        border: 0.5px solid $secondaryTextColor;
+        border-radius: 4px;
+        &:first-child {
+          background-color: $secondaryTextColor;
+          color: $primaryTextColor;
+        }
+        &:last-child {
+          background-color: $supplementaryTextColor;
+          color: $primaryTextColor;
+        }
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  .admin-modal__container {
+    z-index: 95;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 0.3s;
+    .admin-modal__exit {
+      position: absolute;
+      top: 5%;
+      right: 5%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      padding: 10px;
+      z-index: 90;
+      color: $primaryTextColor;
+    }
   }
 }
 
