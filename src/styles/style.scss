@@ -890,11 +890,22 @@ div.video__frame {
 
 //admin panel
 // .adminpanel {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   text-align: center;
+//   // display: flex;
+//   // justify-content: center;
+//   // align-items: center;
+//   // text-align: center;
 // }
+
+.navigation.admin-headernav {
+  position: relative;
+  padding: 0;
+  height: 40px;
+  background-color: $secondaryTextColor;
+  a.navigation__nav-link {
+    margin: 5px 15px 5px 5px;
+    padding: 2px;
+  }
+}
 
 //MEDIA!!!
 

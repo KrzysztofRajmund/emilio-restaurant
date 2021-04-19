@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 //components
 import AlertMessage from '../utils/AlertMessage';
 import Buttons from './Buttons';
+import HeaderNav from './HeaderNav';
 //jwt decode
 import jwt_decode from 'jwt-decode';
 
@@ -22,10 +23,11 @@ const Admin = () => {
   };
   return (
     <React.Fragment>
+      <HeaderNav user={userDecoded.name} />
       <div className='adminpanel'>
         <AlertMessage
           style='success'
-          message={`Witaj ${userDecoded.name} w panelu admina`}
+          message={`Witaj ${userDecoded.name} w panelu admina`.toUpperCase()}
           open={showUser}
         />
         <Buttons />

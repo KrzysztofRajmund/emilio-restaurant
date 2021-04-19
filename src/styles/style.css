@@ -1117,6 +1117,18 @@ div.video__frame {
   max-width: 40%;
 }
 
+.navigation.admin-headernav {
+  position: relative;
+  padding: 0;
+  height: 40px;
+  background-color: #1d1d1d;
+}
+
+.navigation.admin-headernav a.navigation__nav-link {
+  margin: 5px 15px 5px 5px;
+  padding: 2px;
+}
+
 @media screen and (max-width: 1140px) {
   .description {
     letter-spacing: 0.8px;
