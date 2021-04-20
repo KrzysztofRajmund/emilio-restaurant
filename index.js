@@ -56,6 +56,13 @@ app.get('/getObjects', async (req, res) => {
   res.send(objectsBucket);
   console.log(objectsBucket, 'objectsBucket');
 });
+//delete object
+app.get('/deleteObject/:id', async (req, res, next) => {
+  const deleteObject = await amazonS3.deleteObjectFromBucket(req.params.id);
+  res.send(deleteObject);
+  console.log(deleteObject, 'deleteObject');
+  console.log(req.params.id, 'req params id');
+});
 //---------------------------------------------------------------------
 //---------------------------------------------------------------------
 //EMAIL !!!

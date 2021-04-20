@@ -73,12 +73,29 @@ function getListOfObjects() {
         return reject(err);
       }
 
-      resolve(data);
+      resolve(data.Contents);
     });
   });
 
   return pListObjects;
 }
 
+function deleteObjectFromBucket(id) {
+  s3.deleteObject(
+    {
+      Bucket: bucketName,
+      Key: id,
+    },
+    function (err, data) {
+      if (err) {
+        console.log(err, 'error');
+      } else {
+        console.log(data, 'data object deleted');
+      }
+    }
+  );
+}
+
 exports.generateUploadURL = generateUploadURL;
 exports.getListOfObjects = getListOfObjects;
+exports.deleteObjectFromBucket = deleteObjectFromBucket;

@@ -9,10 +9,14 @@ const GalleryAdmin = () => {
   const [imagesItems, setImagesItems] = useState();
 
   const getImagesBucket = async () => {
-    await axios.get('/getObjects').then((response) => {
-      const images = response.data;
-      setImagesItems(images.Contents);
-    });
+    try {
+      await axios.get('/getObjects').then((response) => {
+        const images = response.data;
+        setImagesItems(images);
+      });
+    } catch (err) {
+      console.log(err, 'error');
+    }
   };
 
   useEffect(() => {
@@ -22,7 +26,10 @@ const GalleryAdmin = () => {
     setShowAddProduct(!showAddProduct);
   };
   const handleDelete = (id) => {
-    console.log(id);
+    axios.get(`/deleteObject/${id}`).then((response) => {
+      const image = response.data;
+      getImagesBucket();
+    });
   };
 
   console.log(imagesItems, 'imagesItems');
@@ -39,23 +46,25 @@ const GalleryAdmin = () => {
           <th></th>
         </tr>
 
-        {imagesItems.map((item) => {
-          return (
-            <tr key={item.Etag}>
-              <td>
-                <img
-                  src='https://emilio-gallery.s3.eu-central-1.amazonaws.com/1+(1).jpg'
-                  alt='image'
-                ></img>
-              </td>
-              <td>{item.Key}</td>
-              <td>
-                <button>edit</button>
-                <button onClick={() => handleDelete(item.Etag)}>usuń</button>
-              </td>
-            </tr>
-          );
-        })}
+        {imagesItems &&
+          imagesItems.map((item) => {
+            return (
+              <tr key={item.ETag}>
+                <td>
+                  <img
+                    src='https://emilio-gallery.s3.eu-central-1.amazonaws.com/1+(1).jpg'
+                    src={`https://emilio-gallery.s3.eu-central-1.amazonaws.com/${item.Key}`}
+                    alt='image'
+                  ></img>
+                </td>
+                <td>{item.Key}</td>
+                <td>
+                  <button>edit</button>
+                  <button onClick={() => handleDelete(item.Key)}>usuń</button>
+                </td>
+              </tr>
+            );
+          })}
       </table>
     </div>
   );

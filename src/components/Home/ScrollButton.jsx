@@ -8,18 +8,18 @@ const ScrollButton = () => {
     setLoading(true);
   }, []);
 
-  if (loading) {
-    document.onscroll = function () {
-      if (
-        window.innerHeight + window.scrollY + 250 >
-        document.body.clientHeight
-      ) {
-        scroll.classList.add('hidden');
-      } else {
-        scroll.classList.remove('hidden');
-      }
-    };
-  }
+  // if (loading) {
+  //   document.onscroll = function () {
+  //     if (
+  //       window.innerHeight + window.scrollY + 250 >
+  //       document.body.clientHeight
+  //     ) {
+  //       scroll.classList.add('hidden');
+  //     } else {
+  //       scroll.classList.remove('hidden');
+  //     }
+  //   };
+  // }
 
   return (
     <React.Fragment>
