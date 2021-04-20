@@ -90,10 +90,14 @@ const AddProduct = ({ showAddProduct, onClose }) => {
   };
 
   //submit button
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log('need to set up url');
+    const { url } = await fetch('/s3PutUrl').then((response) =>
+      response.json()
+    );
+
+    console.log(url, 'URL');
   };
 
   if (!showAddProduct) {
@@ -109,7 +113,7 @@ const AddProduct = ({ showAddProduct, onClose }) => {
           <form
             onSubmit={(e) => handleSubmit(e)}
             className={classes.root}
-            validate
+            validate='true'
             autoComplete='off'
           >
             <Grid container spacing={1}>

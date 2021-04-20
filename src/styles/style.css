@@ -1190,8 +1190,6 @@ div.video__frame {
   position: fixed;
   top: 0;
   left: 0;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
 .api-container .admin-modal__container .admin-modal__exit {

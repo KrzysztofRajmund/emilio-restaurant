@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const passport = require('passport');
 const users = require('./server/routes/api/users');
+const s3URL = require('./server/routes/api/s3.js');
 
 //env
 const dotenv = require('dotenv');
@@ -23,6 +24,7 @@ app.use(
 );
 app.use(bodyParser.json());
 //---------------------------------------------------------------------
+//---------------------------------------------------------------------
 // DATABASE !!!
 //DB config
 const dbURI = `mongodb+srv://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}@cluster0.slv2r.mongodb.net/emilioDatabase?retryWrites=true&w=majority`;
@@ -39,6 +41,14 @@ require('./server/passport')(passport);
 // Routes
 app.use('/api/users', users);
 
+//---------------------------------------------------------------------
+//---------------------------------------------------------------------
+//S3
+app.get('/s3PutUrl', async (req, res) => {
+  const url = await s3URL.generateUploadURL();
+  res.send({ url });
+});
+//---------------------------------------------------------------------
 //---------------------------------------------------------------------
 //EMAIL !!!
 var transport = {

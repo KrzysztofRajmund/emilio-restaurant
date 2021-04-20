@@ -118,7 +118,7 @@ const ReservationFormAdmin = () => {
           <form
             onSubmit={(e) => handleSubmit(e, history)}
             className={classes.root}
-            validate
+            validate='true'
             autoComplete='off'
           >
             <Grid container spacing={1}>
