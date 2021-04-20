@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const passport = require('passport');
 const users = require('./server/routes/api/users');
-const s3URL = require('./server/routes/api/s3.js');
+const amazonS3 = require('./server/routes/api/s3.js');
 
 //env
 const dotenv = require('dotenv');
@@ -43,10 +43,18 @@ app.use('/api/users', users);
 
 //---------------------------------------------------------------------
 //---------------------------------------------------------------------
-//S3
+//S3!!!
+//random url
 app.get('/s3PutUrl', async (req, res) => {
-  const url = await s3URL.generateUploadURL();
+  const url = await amazonS3.generateUploadURL();
   res.send({ url });
+  console.log(url, 'url');
+});
+// get list of objects
+app.get('/getObjects', async (req, res) => {
+  const objectsBucket = await amazonS3.getListOfObjects();
+  res.send(objectsBucket);
+  console.log(objectsBucket, 'objectsBucket');
 });
 //---------------------------------------------------------------------
 //---------------------------------------------------------------------
@@ -143,6 +151,7 @@ router.post('/send', (req, res, next) => {
   };
   transporter.sendMail(mailConfirmation);
 });
+
 const port = process.env.PORT || 3002; // process.env.port(Heroku's port)
 //port listen
 app.listen(port, () => console.log(`Server running on port ${port}`));

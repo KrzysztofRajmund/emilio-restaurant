@@ -93,11 +93,14 @@ const AddProduct = ({ showAddProduct, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { url } = await fetch('/s3PutUrl').then((response) =>
-      response.json()
-    );
-
-    console.log(url, 'URL');
+    //GET SECURE URL FROM AMAZON S3
+    const { url } = await axios('/s3PutUrl').then((response) => response.data);
+    //POST IMAGE TO AMAZON S3 DIRECTLY FROM CLIENT
+    await axios
+      .put(url, imageTest)
+      .then((response) =>
+        console.log(response.config.url.split('?')[0], 'response')
+      );
   };
 
   if (!showAddProduct) {

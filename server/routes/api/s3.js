@@ -4,14 +4,13 @@ const { promisify } = require('util');
 //env
 const dotenv = require('dotenv');
 dotenv.config();
-//randomise Key in params:
-const randomBytes = promisify(crypto.randomBytes);
 
+//config
 const region = 'eu-central-1';
 const bucketName = 'emilio-gallery';
 const accessKeyId = process.env.AWS_KEY_ID;
 const secretAccessKey = process.env.AWS_KEY_SECRET;
-
+// Create S3 service object
 const s3 = new aws.S3({
   region,
   accessKeyId,
@@ -19,8 +18,11 @@ const s3 = new aws.S3({
   signatureVersion: 'v4',
 });
 
-async function generateUploadURL() {
+//GET RANDOM SECURE URL!!!
+//for uploading images straightaway from client
+const generateUploadURL = async () => {
   //randomise Key in params:
+  const randomBytes = promisify(crypto.randomBytes);
   const rawBytes = await randomBytes(16);
   const randomImageName = rawBytes.toString('hex');
 
@@ -32,6 +34,51 @@ async function generateUploadURL() {
 
   const uploadURL = s3.getSignedUrlPromise('putObject', params);
   return uploadURL;
+};
+
+//GET LIST OF OBJECTS!!!
+// const getListOfObjects =() => {
+//   // Create the parameters for calling listObjects
+//   var bucketParams = {
+//     Bucket: bucketName,
+//   };
+//   try {
+//     aws.config.setPromisesDependency();
+
+//     // Call S3 to obtain a list of the objects in the bucket
+//     const response = await s3
+//       .listObjectsV2(bucketParams, function (err, data) {
+//         if (err) {
+//           console.log('Error', err);
+//         } else {
+//           console.log('Success data received', data.Contents[0].Key);
+//         }
+//         // return data.Contents[0].Key;
+//       })
+//       .promise();
+//     console.log('response', response);
+//   } catch (e) {
+//     console.log(e, 'error');
+//   }
+// };
+
+function getListOfObjects() {
+  var bucketParams = {
+    Bucket: bucketName,
+  };
+
+  var pListObjects = new Promise(function (resolve, reject) {
+    s3.listObjects(bucketParams, function (err, data) {
+      if (err) {
+        return reject(err);
+      }
+
+      resolve(data);
+    });
+  });
+
+  return pListObjects;
 }
 
 exports.generateUploadURL = generateUploadURL;
+exports.getListOfObjects = getListOfObjects;
