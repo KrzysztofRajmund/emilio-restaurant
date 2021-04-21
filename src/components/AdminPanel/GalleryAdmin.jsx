@@ -13,6 +13,7 @@ const GalleryAdmin = () => {
       await axios.get('/getObjects').then((response) => {
         const images = response.data;
         setImagesItems(images);
+        console.log(response, 'images');
       });
     } catch (err) {
       console.log(err, 'error');
@@ -32,10 +33,13 @@ const GalleryAdmin = () => {
     });
   };
 
-  console.log(imagesItems, 'imagesItems');
   return (
     <div className='api-container'>
-      <AddProduct onClose={showModal} showAddProduct={showAddProduct} />
+      <AddProduct
+        onClose={showModal}
+        showAddProduct={showAddProduct}
+        getImagesBucket={getImagesBucket}
+      />
       <button className='api-container__button--add' onClick={showModal}>
         Dodaj
       </button>

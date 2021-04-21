@@ -58,49 +58,74 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AddProduct = ({ showAddProduct, onClose }) => {
+const AddProduct = ({ showAddProduct, onClose, getImagesBucket }) => {
   const classes = useStyles();
 
   //useState hooks
   const [style, setStyle] = useState('');
   const [message, setMessage] = useState('');
   const [open, setOpen] = useState(false);
-  const [image, setImage] = useState({
-    album: '',
-  });
+  const [image, setImage] = useState();
 
   //other input change
-  const handleInputChange = (e) => {
-    setImage({ ...image, [e.target.name]: e.target.value });
-  };
+  //   const handleInputChange = (e) => {
+  //     setImage({ ...image, [e.target.name]: e.target.value });
+  //   };
 
   //reset form
-  const resetForm = () => {
-    setImage({
-      album: '',
-    });
+  //   const resetForm = () => {
+  //     setImage({
+  //       album: '',
+  //     });
+  //   };
+
+  //select file
+  const handleInputImage = (e) => {
+    if (e.target.files[0].size > 1024000) {
+      setStyle('error');
+      setOpen(true);
+      setMessage('Max. rozmiar pliku 1mb');
+      setTimeout(() => {
+        setOpen(false);
+      }, 3500);
+    } else {
+      setImage(e.target.files[0]);
+    }
   };
 
-  //TEST
-  const [imageTest, setImageTest] = useState(null);
-  const handleImageTest = (e) => {
-    setImageTest(e.target.files[0]);
-    console.log(e.target.files[0], 'file input');
-    //do filsize error
-  };
-
-  //submit button
+  //submit file
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    //GET SECURE URL FROM AMAZON S3
-    const { url } = await axios('/s3PutUrl').then((response) => response.data);
-    //POST IMAGE TO AMAZON S3 DIRECTLY FROM CLIENT
-    await axios
-      .put(url, imageTest)
-      .then((response) =>
-        console.log(response.config.url.split('?')[0], 'response')
+    if (image) {
+      //GET SECURE URL FROM AMAZON S3
+      const { url } = await axios('/s3PutUrl').then(
+        (response) => response.data
       );
+      //POST IMAGE TO AMAZON S3 DIRECTLY FROM CLIENT
+      await axios.put(url, image).then((response) => {
+        if (response.status !== 200) {
+          setStyle('error');
+          setOpen(true);
+          setMessage('Wybierz plik jeszce raz');
+          setTimeout(() => {
+            setOpen(false);
+          }, 3500);
+        } else {
+          console.log(new Date());
+        }
+      });
+      //close modal
+      onClose(e);
+      //fetch new images
+      getImagesBucket();
+    } else {
+      setStyle('error');
+      setOpen(true);
+      setMessage('Max. rozmiar pliku 1mb');
+      setTimeout(() => {
+        setOpen(false);
+      }, 3500);
+    }
   };
 
   if (!showAddProduct) {
@@ -147,11 +172,10 @@ const AddProduct = ({ showAddProduct, onClose }) => {
                   type='file'
                   accept='image/png,image/jpeg,image/jpg'
                   name='image'
-                  onChange={(e) => handleImageTest(e)}
+                  onChange={(e) => handleInputImage(e)}
                   fullWidth
                   className={classes.textField}
                   id='filled-basic'
-                  //   label='email '
                   variant='filled'
                   InputProps={{
                     className: classes.input,

@@ -73,7 +73,14 @@ function getListOfObjects() {
         return reject(err);
       }
 
-      resolve(data.Contents);
+      resolve(
+        data.Contents.sort(function (a, b) {
+          console.log(a.LastModified, 'DATEEEE');
+          // Turn your strings into dates, and then subtract them
+          // to get a value that is either negative, positive, or zero.
+          return b.LastModified - a.LastModified;
+        })
+      );
     });
   });
 

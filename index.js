@@ -48,20 +48,16 @@ app.use('/api/users', users);
 app.get('/s3PutUrl', async (req, res) => {
   const url = await amazonS3.generateUploadURL();
   res.send({ url });
-  console.log(url, 'url');
 });
 // get list of objects
 app.get('/getObjects', async (req, res) => {
   const objectsBucket = await amazonS3.getListOfObjects();
   res.send(objectsBucket);
-  console.log(objectsBucket, 'objectsBucket');
 });
 //delete object
-app.get('/deleteObject/:id', async (req, res, next) => {
+app.get('/deleteObject/:id', async (req, res) => {
   const deleteObject = await amazonS3.deleteObjectFromBucket(req.params.id);
   res.send(deleteObject);
-  console.log(deleteObject, 'deleteObject');
-  console.log(req.params.id, 'req params id');
 });
 //---------------------------------------------------------------------
 //---------------------------------------------------------------------
