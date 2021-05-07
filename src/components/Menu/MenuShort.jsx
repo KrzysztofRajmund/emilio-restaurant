@@ -21,7 +21,7 @@ const MenuShort = () => {
       duration: 800,
     });
   }, []);
-
+  console.log(process.env, 'env');
   return (
     <section className='menuShort' id='menu-short'>
       <article className='titles-container'>
@@ -45,7 +45,7 @@ const MenuShort = () => {
         <Carousel.Item>
           <img
             className='d-block w-100'
-            src={MenuShortImage1}
+            src={process.env.PUBLIC_URL + '/1(1).jpg'}
             alt='First slide'
           />
           <Carousel.Caption>

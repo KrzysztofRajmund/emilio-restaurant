@@ -324,9 +324,6 @@ const ReservationFormAdmin = () => {
                   InputProps={{
                     className: classes.input,
                   }}
-                  inputProps={{
-                    maxLength: 2,
-                  }}
                 />
               </Grid>
               <Button

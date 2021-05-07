@@ -7,7 +7,7 @@ const cors = require('cors');
 const passport = require('passport');
 const users = require('./server/routes/api/users');
 const amazonS3 = require('./server/routes/api/s3.js');
-
+const path = require('path');
 //env
 const dotenv = require('dotenv');
 dotenv.config();
@@ -16,6 +16,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use('/', router);
+
 // Bodyparser middleware
 app.use(
   bodyParser.urlencoded({
@@ -85,10 +86,6 @@ transporter.verify((error, success) => {
   }
 });
 
-router.get('/', (req, res) => {
-  res.send('Hello!');
-});
-
 router.post('/send', (req, res, next) => {
   var firstname = req.body.firstname;
   var lastname = req.body.lastname;
@@ -155,6 +152,25 @@ router.post('/send', (req, res, next) => {
   transporter.sendMail(mailConfirmation);
 });
 
+router.get('/', (req, res) => {
+  res.send('Hello!');
+});
+
 const port = process.env.PORT || 3002; // process.env.port(Heroku's port)
 //port listen
 app.listen(port, () => console.log(`Server running on port ${port}`));
+
+//production
+if (process.env.NODE_ENV === 'production') {
+  // app.use(express.static(path.join(__dirname, '/build')));
+  app.use(express.static('build'));
+
+  // app.get('/', function (req, res) {
+  //   res.sendFile(path.join(__dirname, '/build', 'index.html'));
+  // });
+
+  app.get('*', function (req, res) {
+    res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+  });
+}
+//production
