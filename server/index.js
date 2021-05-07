@@ -5,8 +5,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const passport = require('passport');
-const users = require('./server/routes/api/users');
-const amazonS3 = require('./server/routes/api/s3.js');
+const users = require('./routes/api/users');
+const amazonS3 = require('./routes/api/s3.js');
 const path = require('path');
 //env
 const dotenv = require('dotenv');
@@ -38,7 +38,7 @@ mongoose
 // Passport middleware
 app.use(passport.initialize());
 // Passport config
-require('./server/passport')(passport);
+require('./passport')(passport);
 // Routes
 app.use('/api/users', users);
 
@@ -112,7 +112,7 @@ router.post('/send', (req, res, next) => {
 
   var mailReservation = {
     from: email,
-    to: 'knadlonek@gmail.com', // email address that you want to receive messages on
+    to: 'info@restauracjaemilio.pl', // email address that you want to receive messages on
     subject: `Nowa rezerwacja na dzień: ${day}, godz.${time}`,
     // text: content,
     html: outputReservation,
@@ -144,7 +144,7 @@ router.post('/send', (req, res, next) => {
     <p>${message}</p>
   `;
   var mailConfirmation = {
-    from: 'knadlonek@gmail.com',
+    from: 'info@restauracjaemilio.pl',
     to: email, // email address klienta
     subject: `Twoja rezerwacja: ${day}, godz.${time}`,
     html: outputConfirmation,
@@ -161,16 +161,16 @@ const port = process.env.PORT || 3002; // process.env.port(Heroku's port)
 app.listen(port, () => console.log(`Server running on port ${port}`));
 
 //production
-if (process.env.NODE_ENV === 'production') {
-  // app.use(express.static(path.join(__dirname, '/build')));
-  app.use(express.static('build'));
+// if (process.env.NODE_ENV === 'production') {
+// app.use(express.static(path.join(__dirname, '/build')));
+// app.use(express.static('build'));
 
-  // app.get('/', function (req, res) {
-  //   res.sendFile(path.join(__dirname, '/build', 'index.html'));
-  // });
+// app.get('/', function (req, res) {
+//   res.sendFile(path.join(__dirname, '/build', 'index.html'));
+// });
 
-  app.get('*', function (req, res) {
-    res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
-  });
-}
+//   app.get('*', function (req, res) {
+//     res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+//   });
+// }
 //production

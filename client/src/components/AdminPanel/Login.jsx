@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 //components
 import AlertMessage from '../utils/AlertMessage';
 //material-ui
@@ -7,10 +7,14 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Icon from '@material-ui/core/Icon';
+//router
+import { Link } from 'react-router-dom';
 //axios
 import axios from 'axios';
 //router
 import { useHistory } from 'react-router-dom';
+//jwt decode
+import jwt_decode from 'jwt-decode';
 
 // material-ui styling
 const useStyles = makeStyles((theme) => ({
@@ -42,6 +46,16 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: 'rgb(112, 0, 0, 0.1)',
     },
   },
+  buttonLink: {
+    fontSize: 'small',
+    margin: 'auto 2px',
+    color: 'rgb(0, 0, 0)',
+    borderColor: 'rgb(0, 0, 0)',
+    textAlign: 'center',
+    '&:hover': {
+      color: 'rgb(0, 0, 0,0.5)',
+    },
+  },
 
   textField: {
     margin: 5,
@@ -61,31 +75,29 @@ const useStyles = makeStyles((theme) => ({
 
 const ReservationFormAdmin = () => {
   const classes = useStyles();
+  //route history
   let history = useHistory();
 
   //useState hooks
+  const [open, setOpen] = useState(false);
   const [style, setStyle] = useState('');
   const [message, setMessage] = useState('');
-  const [open, setOpen] = useState(false);
-  const [register, setRegister] = useState({
-    name: '',
+  // const [user, setUser] = useState();
+  const [login, setLogin] = useState({
     email: '',
     password: '',
-    password2: '',
   });
 
   //other input change
   const handleInputChange = (e) => {
-    setRegister({ ...register, [e.target.name]: e.target.value });
+    setLogin({ ...login, [e.target.name]: e.target.value });
   };
 
   //reset form
   const resetForm = () => {
-    setRegister({
-      name: '',
+    setLogin({
       email: '',
       password: '',
-      password2: '',
     });
   };
 
@@ -94,23 +106,38 @@ const ReservationFormAdmin = () => {
     e.preventDefault();
 
     axios
-      .post('http://localhost:3002/api/users/register', register)
+      .post(
+        'https://emilio-restaurant-server.herokuapp.com/api/users/login',
+        login
+      )
       .then((response) => {
         if (response.status == 200) {
+          //set token to local storage
+          localStorage.setItem('jwtToken', response.data.token);
+          // //decode user to get his data
+          // const userDecode = jwt_decode(response.data.token);
+          // //set user data in variable
+          // setUser(userDecode);
           resetForm();
-          history.push('/adminpanel/login');
+          //push user to dashboard
+          history.push('/adminpanel/admin');
         }
       })
       .catch((error) => {
         setStyle('error');
-        setMessage('Email już jest zarejestrowany!');
         setOpen(true);
         setTimeout(() => {
           setOpen(false);
         }, 3500);
+        if (error.response.data.emailnotfound) {
+          setMessage('Nieznaleziono użytkownika! Wpisz email jeszcze raz.');
+        }
+
+        if (error.response.data.passwordincorrect) {
+          setMessage('Hasło nieprawidłowe.');
+        }
       });
   };
-
   return (
     <React.Fragment>
       <div className='form-container admin-signup'>
@@ -126,34 +153,14 @@ const ReservationFormAdmin = () => {
                 <TextField
                   autoFocus
                   required
-                  type='text'
-                  name='name'
-                  value={register.name}
-                  onChange={(e) => handleInputChange(e)}
-                  fullWidth
-                  className={classes.textField}
-                  id='filled-basic'
-                  label='name '
-                  variant='filled'
-                  InputProps={{
-                    className: classes.input,
-                  }}
-                  inputProps={{
-                    minLength: 4,
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
                   type='email'
                   name='email'
-                  value={register.email}
+                  value={login.email}
                   onChange={(e) => handleInputChange(e)}
                   fullWidth
                   className={classes.textField}
                   id='filled-basic'
-                  label='email '
+                  label='email'
                   variant='filled'
                   InputProps={{
                     className: classes.input,
@@ -168,32 +175,12 @@ const ReservationFormAdmin = () => {
                   required
                   type='password'
                   name='password'
-                  value={register.password}
+                  value={login.password}
                   onChange={(e) => handleInputChange(e)}
                   fullWidth
                   className={classes.textField}
                   id='filled-basic'
-                  label='hasło'
-                  variant='filled'
-                  InputProps={{
-                    className: classes.input,
-                  }}
-                  inputProps={{
-                    minLength: 4,
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  type='password'
-                  name='password2'
-                  value={register.password2}
-                  onChange={(e) => handleInputChange(e)}
-                  fullWidth
-                  className={classes.textField}
-                  id='filled-basic'
-                  label='potwierdź hasło'
+                  label='password'
                   variant='filled'
                   InputProps={{
                     className: classes.input,
@@ -215,8 +202,11 @@ const ReservationFormAdmin = () => {
                 }
                 type='submit'
               >
-                Register
+                Login
               </Button>
+              <Link to='/adminpanel/register' className={classes.buttonLink}>
+                Zarejestruj się
+              </Link>
               <AlertMessage style={style} message={message} open={open} />
             </Grid>
           </form>

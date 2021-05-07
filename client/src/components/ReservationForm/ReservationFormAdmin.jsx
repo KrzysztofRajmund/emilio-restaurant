@@ -124,7 +124,7 @@ const ReservationFormAdmin = () => {
     e.preventDefault();
 
     //post booking details
-    fetch('http://localhost:3002/send', {
+    fetch('https://emilio-restaurant-server.herokuapp.com/send', {
       method: 'POST',
       body: JSON.stringify(booking),
       headers: {
