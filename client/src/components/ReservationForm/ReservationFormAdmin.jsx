@@ -13,6 +13,9 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Icon from '@material-ui/core/Icon';
+import Checkbox from '@material-ui/core/Checkbox';
+import Popover from '@material-ui/core/Popover';
+import Typography from '@material-ui/core/Typography';
 
 // material-ui styling
 const useStyles = makeStyles((theme) => ({
@@ -44,6 +47,17 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: 'rgb(112, 0, 0, 0.1)',
     },
   },
+  rodoButton: {
+    margin: theme.spacing(1),
+    color: 'rgb(112, 0, 0)',
+    border: 'none',
+    fontSize: '0.5rem',
+    margin: '0',
+    '&:hover': {
+      color: 'rgb(0, 0, 0)',
+      border: 'none',
+    },
+  },
 
   textField: {
     margin: 5,
@@ -58,6 +72,10 @@ const useStyles = makeStyles((theme) => ({
   },
   textFieldFull: {
     margin: 5,
+  },
+  typography: {
+    padding: theme.spacing(2),
+    fontSize: '0.6rem',
   },
 }));
 
@@ -155,6 +173,19 @@ const ReservationFormAdmin = () => {
         console.error('Error:', error);
       });
   };
+
+  //rodo
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  const openRodo = Boolean(anchorEl);
+  const id = openRodo ? 'simple-popover' : undefined;
 
   return (
     <React.Fragment>
@@ -326,6 +357,49 @@ const ReservationFormAdmin = () => {
                   }}
                 />
               </Grid>
+              <Grid item xs={12}>
+                <Checkbox
+                  required
+                  color='default'
+                  inputProps={{ 'aria-label': 'checkbox with default color' }}
+                />
+                <Button
+                  aria-describedby={id}
+                  color='primary'
+                  onClick={handleClick}
+                  variant='outlined'
+                  className={classes.rodoButton}
+                >
+                  Wyrażam zgodę na przetwarzanie moich danych osobowych...
+                </Button>
+                <Popover
+                  id={id}
+                  open={openRodo}
+                  anchorEl={anchorEl}
+                  onClose={handleClose}
+                  anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'center',
+                  }}
+                  transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'center',
+                  }}
+                >
+                  <Typography className={classes.typography}>
+                    Wyrażam zgodę na przetwarzanie moich danych osobowych,
+                    podanych w powyższym formularzu, wyłącznie w celu udzielenia
+                    odpowiedzi na wysłaną przeze mnie wiadomość. Podane w
+                    formularzu dane osobowe mogą być przetwarzane przez
+                    administratora zgodnie z obowiązującymi w tym zakresie
+                    przepisami RODO oraz Polityką Prywatności. Podanie danych
+                    jest dobrowolne. Administrator umożliwia m.in. wgląd do
+                    danych osobowych i zapewnia prawo ich poprawiania, jak i
+                    usunięcia.
+                  </Typography>
+                </Popover>
+              </Grid>
+
               <Button
                 variant='outlined'
                 className={classes.button}
