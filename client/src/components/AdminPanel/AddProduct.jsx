@@ -98,9 +98,9 @@ const AddProduct = ({ showAddProduct, onClose, getImagesBucket }) => {
     e.preventDefault();
     if (image) {
       //GET SECURE URL FROM AMAZON S3
-      const { url } = await axios('/s3PutUrl').then(
-        (response) => response.data
-      );
+      const { url } = await axios(
+        'https://emilio-restaurant-server.herokuapp.com/s3PutUrl'
+      ).then((response) => response.data);
       //POST IMAGE TO AMAZON S3 DIRECTLY FROM CLIENT
       await axios.put(url, image).then((response) => {
         if (response.status !== 200) {

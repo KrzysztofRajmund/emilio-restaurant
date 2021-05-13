@@ -10,11 +10,13 @@ const GalleryAdmin = () => {
 
   const getImagesBucket = async () => {
     try {
-      await axios.get('/getObjects').then((response) => {
-        const images = response.data;
-        setImagesItems(images);
-        console.log(response, 'images');
-      });
+      await axios
+        .get('https://emilio-restaurant-server.herokuapp.com/getObjects')
+        .then((response) => {
+          const images = response.data;
+          setImagesItems(images);
+          console.log(response, 'images');
+        });
     } catch (err) {
       console.log(err, 'error');
     }
@@ -27,10 +29,12 @@ const GalleryAdmin = () => {
     setShowAddProduct(!showAddProduct);
   };
   const handleDelete = (id) => {
-    axios.get(`/deleteObject/${id}`).then((response) => {
-      const image = response.data;
-      getImagesBucket();
-    });
+    axios
+      .get(`https://emilio-restaurant-server.herokuapp.com/deleteObject/${id}`)
+      .then((response) => {
+        const image = response.data;
+        getImagesBucket();
+      });
   };
 
   return (
