@@ -111,7 +111,7 @@ const AddProduct = ({ showAddProduct, onClose, getImagesBucket }) => {
             setOpen(false);
           }, 3500);
         } else {
-          console.log(new Date());
+          console.log('response', response);
         }
       });
       //close modal

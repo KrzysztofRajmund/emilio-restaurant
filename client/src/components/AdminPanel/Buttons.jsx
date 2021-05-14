@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 //components
-import MenuSeasonalAdmin from './MenuSeasonalAdmin';
+import MenuAdmin from './MenuAdmin';
 import GalleryAdmin from './GalleryAdmin';
 //material-ui
 import { makeStyles } from '@material-ui/core/styles';
@@ -146,7 +146,7 @@ export default function Buttons() {
           </ButtonBase>
         ))}
       </div>
-      {show ? <MenuSeasonalAdmin /> : <GalleryAdmin />}
+      {show ? <MenuAdmin /> : <GalleryAdmin />}
     </React.Fragment>
   );
 }

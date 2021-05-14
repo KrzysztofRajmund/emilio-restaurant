@@ -5,7 +5,10 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const passport = require('passport');
+//routes
 const users = require('./routes/api/users');
+const menu = require('./routes/api/menu');
+//S3
 const amazonS3 = require('./routes/api/s3.js');
 const path = require('path');
 //env
@@ -39,8 +42,10 @@ mongoose
 app.use(passport.initialize());
 // Passport config
 require('./passport')(passport);
-// Routes
+
+// ROUTES IMPORT
 app.use('/api/users', users);
+app.use('/api/menu', menu);
 
 //---------------------------------------------------------------------
 //---------------------------------------------------------------------
@@ -48,6 +53,7 @@ app.use('/api/users', users);
 //random url
 app.get('/s3PutUrl', async (req, res) => {
   const url = await amazonS3.generateUploadURL();
+  console.log(url, 'url');
   res.send({ url });
 });
 // get list of objects

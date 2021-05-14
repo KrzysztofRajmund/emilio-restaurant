@@ -60,7 +60,6 @@ const GalleryAdmin = () => {
               <tr key={item.ETag}>
                 <td>
                   <img
-                    src='https://emilio-gallery.s3.eu-central-1.amazonaws.com/1+(1).jpg'
                     src={`https://emilio-gallery.s3.eu-central-1.amazonaws.com/${item.Key}`}
                     alt='image'
                   ></img>
