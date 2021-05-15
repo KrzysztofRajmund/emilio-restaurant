@@ -10,9 +10,7 @@ import AlertMessage from '../utils/AlertMessage';
 import AddMenu from './AddMenu';
 import EditMenu from './EditMenu';
 
-const theme = createMuiTheme({
-  plPL,
-});
+const theme = createMuiTheme(plPL);
 
 export default function MenuAdmin() {
   const [style, setStyle] = useState('');
@@ -182,7 +180,7 @@ export default function MenuAdmin() {
       </div>
 
       <div style={{ height: 400, width: '100%' }}>
-        <DataGrid rows={mappedMenu} columns={columns} pageSize={5} />
+        <DataGrid rows={mappedMenu} columns={columns} pageSize={10} />
         <AlertMessage style={style} message={message} open={open} />
       </div>
     </ThemeProvider>

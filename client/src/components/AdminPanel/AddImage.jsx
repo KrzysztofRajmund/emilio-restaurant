@@ -7,7 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Icon from '@material-ui/core/Icon';
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 //axios
 import axios from 'axios';
 
@@ -184,13 +184,7 @@ const AddImage = ({ showAddProduct, onClose, getImagesBucket }) => {
               <Button
                 variant='outlined'
                 className={classes.button}
-                endIcon={
-                  <Icon
-                  // style={{ color: 'green' }}
-                  >
-                    send
-                  </Icon>
-                }
+                startIcon={<CloudUploadIcon />}
                 type='submit'
               >
                 Dodaj

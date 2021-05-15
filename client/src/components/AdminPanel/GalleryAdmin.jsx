@@ -10,9 +10,7 @@ import axios from 'axios';
 import AlertMessage from '../utils/AlertMessage';
 import AddImage from './AddImage';
 
-const theme = createMuiTheme({
-  plPL,
-});
+const theme = createMuiTheme(plPL);
 
 export default function GalleryAdmin() {
   const [style, setStyle] = useState('');
@@ -39,28 +37,31 @@ export default function GalleryAdmin() {
     getImagesBucket();
   }, []);
 
-  console.log('images', imagesItems);
-
-  const mappedImages = imagesItems.map((item) => {
-    return {
-      id: item.ETag,
-      url: `https://emilio-gallery.s3.eu-central-1.amazonaws.com/${item.Key}`,
-      title: item.Key,
-      edit: 'edytuj',
-      delete: 'usuń',
-    };
-  });
+  console.log('images99', imagesItems);
+  // if (imagesItems) {
+  //   const mappedImages = imagesItems.map((item) => {
+  //     return {
+  //       id: item.ETag,
+  //       url: `https://emilio-gallery.s3.eu-central-1.amazonaws.com/${item.Key}`,
+  //       title: item.Key,
+  //       edit: 'edytuj',
+  //       delete: 'usuń',
+  //     };
+  //   });
+  // }
 
   const showModal = (e) => {
     setShowAddProduct(!showAddProduct);
   };
   const handleDelete = (e) => {
+    console.log('deleteing', e.currentTarget.id);
     axios
       .get(
         `https://emilio-restaurant-server.herokuapp.com/deleteObject/${e.currentTarget.id}`
       )
       .then((response) => {
         const image = response.data;
+        console.log('deleted', response);
         getImagesBucket();
       });
   };
@@ -70,35 +71,36 @@ export default function GalleryAdmin() {
     {
       field: 'url',
       headerName: 'Image',
+      description: 'Tej kolumny nie można sortować',
       sortable: false,
       disableClickEventBubbling: true,
       renderCell: (params) => {
-        console.log(params);
-        return <Avatar variant='square' alt='image' src='' />;
+        return <Avatar variant='square' alt='image' src={params.row.url} />;
       },
+      width: 250,
     },
-    { field: 'title', headerName: 'Tytuł', width: 100 },
-    {
-      field: 'edit',
-      headerName: 'Edytuj',
-      sortable: false,
-      description: 'Edytuj produkt',
-      disableClickEventBubbling: true,
-      // renderCell: (params) => {
-      //   return (
-      //     <Button
-      //       size='small'
-      //       variant='contained'
-      //       color='primary'
-      //       data-item={params.row.id}
-      //       onClick={(e) => editItemFunc(e)}
-      //     >
-      //       Edytuj
-      //     </Button>
-      //   );
-      // },
-      width: 100,
-    },
+    { field: 'title', headerName: 'Tytuł', width: 350 },
+    // {
+    //   field: 'edit',
+    //   headerName: 'Edytuj',
+    //   sortable: false,
+    //   description: 'Edytuj produkt',
+    //   disableClickEventBubbling: true,
+    //   renderCell: (params) => {
+    //     return (
+    //       <Button
+    //         size='small'
+    //         variant='contained'
+    //         color='primary'
+    //         // data-item={params.row.id}
+    //         // onClick={(e) => editItemFunc(e)}
+    //       >
+    //         Edytuj
+    //       </Button>
+    //     );
+    //   },
+    //   width: 100,
+    // },
     {
       field: 'delete',
       headerName: 'Usuń',
@@ -111,8 +113,9 @@ export default function GalleryAdmin() {
             size='small'
             variant='contained'
             color='secondary'
-            id={params.row.id}
+            id={params.row.title}
             onClick={(e) => {
+              console.log('params', params);
               handleDelete(e);
             }}
           >
@@ -142,7 +145,23 @@ export default function GalleryAdmin() {
         </Button>
       </div>
       <div style={{ height: 400, width: '100%' }}>
-        <DataGrid rows={mappedImages} columns={columns} pageSize={5} />
+        <DataGrid
+          rows={
+            imagesItems
+              ? imagesItems.map((item) => {
+                  return {
+                    id: item.ETag,
+                    url: `https://emilio-gallery.s3.eu-central-1.amazonaws.com/${item.Key}`,
+                    title: item.Key,
+                    edit: 'edytuj',
+                    delete: 'usuń',
+                  };
+                })
+              : []
+          }
+          columns={columns}
+          pageSize={10}
+        />
         <AlertMessage style={style} message={message} open={open} />
       </div>
     </ThemeProvider>
