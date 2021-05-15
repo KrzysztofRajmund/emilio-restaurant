@@ -118,6 +118,16 @@ const ReservationFormAdmin = () => {
   };
   //other input change
   const handleInputChange = (e) => {
+    if (e.target.name === 'people' && e.target.value < 1) {
+      setStyle('error');
+      setMessage('Liczba gości nie może być mniejsza niż 1');
+      setOpen(true);
+      setTimeout(() => {
+        setOpen(false);
+      }, 3500);
+      e.target.value = 0;
+      return;
+    }
     setBooking({ ...booking, [e.target.name]: e.target.value });
   };
 

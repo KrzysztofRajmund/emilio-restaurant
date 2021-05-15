@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AddProduct = ({ showAddProduct, onClose, getImagesBucket }) => {
+const AddImage = ({ showAddProduct, onClose, getImagesBucket }) => {
   const classes = useStyles();
 
   //useState hooks
@@ -111,20 +111,19 @@ const AddProduct = ({ showAddProduct, onClose, getImagesBucket }) => {
             setOpen(false);
           }, 3500);
         } else {
-          console.log('response', response);
+          setStyle('success');
+          setMessage('Zdjęcie zostało dodane');
+          setOpen(true);
+          setTimeout(() => {
+            //close message
+            setOpen(false);
+            //fetch all items with recent update
+            getImagesBucket();
+            //close modal
+            onClose(e);
+          }, 3000);
         }
       });
-      //close modal
-      onClose(e);
-      //fetch new images
-      getImagesBucket();
-    } else {
-      setStyle('error');
-      setOpen(true);
-      setMessage('Max. rozmiar pliku 1mb');
-      setTimeout(() => {
-        setOpen(false);
-      }, 3500);
     }
   };
 
@@ -196,13 +195,13 @@ const AddProduct = ({ showAddProduct, onClose, getImagesBucket }) => {
               >
                 Dodaj
               </Button>
-              <AlertMessage style={style} message={message} open={open} />
             </Grid>
           </form>
+          <AlertMessage style={style} message={message} open={open} />
         </div>
       </div>
     </div>
   );
 };
 
-export default AddProduct;
+export default AddImage;

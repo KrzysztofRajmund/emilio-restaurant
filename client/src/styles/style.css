@@ -1138,10 +1138,7 @@ div.video__frame {
   position: absolute;
   top: -2%;
   right: 2%;
-  min-width: 50px;
-  padding: 10px;
-  margin: 5px;
-  border: none;
+  margin: 10px;
 }
 
 .api-container table {
