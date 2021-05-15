@@ -105,7 +105,7 @@ const AddMenu = ({ showAddMenu, onClose, getMenuItems }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('submit');
-    let url = 'http://localhost:3002/api/menu/post';
+    let url = 'https://emilio-restaurant-server.herokuapp.com/api/menu/post';
     let body = menu;
     axios
       .post(url, body)

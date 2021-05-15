@@ -22,7 +22,9 @@ export default function MenuAdmin() {
   const [editItem, setEditItem] = useState({});
 
   const getMenuItems = async () => {
-    await axios('http://localhost:3002/api/menu/get').then((response) => {
+    await axios(
+      'https://emilio-restaurant-server.herokuapp.com/api/menu/get'
+    ).then((response) => {
       if (response.status !== 200) {
         setStyle('error');
         setOpen(true);
@@ -62,7 +64,9 @@ export default function MenuAdmin() {
 
   const deleteItem = async (e) => {
     await axios
-      .delete(`http://localhost:3002/api/menu/delete/${e.currentTarget.id}`)
+      .delete(
+        `https://emilio-restaurant-server.herokuapp.com/api/menu/delete/${e.currentTarget.id}`
+      )
       .then((response) => {
         if (response.status !== 200) {
           setStyle('error');

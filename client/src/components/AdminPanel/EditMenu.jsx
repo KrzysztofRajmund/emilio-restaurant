@@ -121,7 +121,8 @@ const EditMenu = ({ showEditMenu, onClose, getMenuItems, editItem }) => {
     e.preventDefault();
     let id = menu.id;
     console.log('submit', id);
-    let url = 'http://localhost:3002/api/menu/update/' + id;
+    let url =
+      'https://emilio-restaurant-server.herokuapp.com/api/menu/update/' + id;
     let body = menu;
     console.log(url);
     axios
