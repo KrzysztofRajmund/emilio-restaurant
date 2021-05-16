@@ -3,6 +3,8 @@ import React from 'react';
 import Logo from '../../assets/logo.png';
 import Facebook from '../../assets/facebook.png';
 import Instagram from '../../assets/instagram.png';
+//router
+import { Link, NavLink } from 'react-router-dom';
 
 const FooterComponent = () => {
   return (
@@ -34,7 +36,9 @@ const FooterComponent = () => {
           </div>
           <div className='footer-container__card'>
             <div className='footer-container__logo'>
-              <img src={Logo} width='100px' height='auto' alt='logo' />
+              <Link to='/adminpanel/login'>
+                <img src={Logo} width='100px' height='auto' alt='logo' />
+              </Link>
             </div>
             <a
               className=' footer-container__card--social-media'
