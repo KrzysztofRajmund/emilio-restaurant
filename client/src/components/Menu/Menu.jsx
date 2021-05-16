@@ -1,21 +1,39 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 //components
 import HeaderJumbotron from '../Home/HeaderJumbotron';
 import SeoHelmet from './../utils/SeoHelmet';
-//json data
-import menuData from '../../menuData';
+// //json data
+// import menuData from '../../menuData';
 //AOS
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 //react-scroll
 import { Link } from 'react-scroll';
+//axios
+import axios from 'axios';
 
 const Menu = () => {
+  const [menu, setMenu] = useState();
+
+  const getMenuItems = async () => {
+    await axios(
+      'https://emilio-restaurant-server.herokuapp.com/api/menu/get'
+    ).then((response) => {
+      if (response.status !== 200) {
+        console.log('error', response);
+      } else {
+        console.log('response MENU', response.data.data);
+        setMenu(response.data.data);
+      }
+    });
+  };
+
   useEffect(() => {
     AOS.init({
       offset: 150,
       duration: 800,
     });
+    getMenuItems();
   }, []);
 
   const displayFastMenu = () => {
@@ -194,35 +212,38 @@ const Menu = () => {
         >
           <h1 className='titles-container__title'>antipasti</h1>
         </div>
-        {menuData.items.map((product) => {
-          if (product.category === 'antipasti') {
-            return (
-              <div
-                key={product.id}
-                className='titles-container__food-container'
-              >
-                <h3 className='titles-container__food-name'>{product.title}</h3>
-                <h4 className='titles-container__food-description titles-container__food-description--polish'>
-                  {product.description.includes('/')
-                    ? product.description.substring(
-                        0,
-                        product.description.indexOf('/')
-                      )
-                    : product.description}
-                </h4>
-                <h4 className='titles-container__food-description'>
-                  {product.description.substring(
-                    product.description.indexOf('/') + 1,
-                    product.description.length + 1
-                  )}
-                </h4>
-                <h4 className='titles-container__food-price'>
-                  {product.price}
-                </h4>
-              </div>
-            );
-          }
-        })}
+        {menu &&
+          menu.map((product) => {
+            if (product.category === 'antipasti') {
+              return (
+                <div
+                  key={product.id}
+                  className='titles-container__food-container'
+                >
+                  <h3 className='titles-container__food-name'>
+                    {product.title}
+                  </h3>
+                  <h4 className='titles-container__food-description titles-container__food-description--polish'>
+                    {product.description.includes('/')
+                      ? product.description.substring(
+                          0,
+                          product.description.indexOf('/')
+                        )
+                      : product.description}
+                  </h4>
+                  <h4 className='titles-container__food-description'>
+                    {product.description.substring(
+                      product.description.indexOf('/') + 1,
+                      product.description.length + 1
+                    )}
+                  </h4>
+                  <h4 className='titles-container__food-price'>
+                    {product.price} pln
+                  </h4>
+                </div>
+              );
+            }
+          })}
       </article>
       <article
         className='titles-container titles-container__menu'
@@ -237,35 +258,38 @@ const Menu = () => {
         >
           <h1 className='titles-container__title'>insalate</h1>
         </div>
-        {menuData.items.map((product) => {
-          if (product.category === 'insalate') {
-            return (
-              <div
-                key={product.id}
-                className='titles-container__food-container'
-              >
-                <h3 className='titles-container__food-name'>{product.title}</h3>
-                <h4 className='titles-container__food-description titles-container__food-description--polish'>
-                  {product.description.includes('/')
-                    ? product.description.substring(
-                        0,
-                        product.description.indexOf('/')
-                      )
-                    : product.description}
-                </h4>
-                <h4 className='titles-container__food-description'>
-                  {product.description.substring(
-                    product.description.indexOf('/') + 1,
-                    product.description.length + 1
-                  )}
-                </h4>
-                <h4 className='titles-container__food-price'>
-                  {product.price}
-                </h4>
-              </div>
-            );
-          }
-        })}
+        {menu &&
+          menu.map((product) => {
+            if (product.category === 'insalate') {
+              return (
+                <div
+                  key={product.id}
+                  className='titles-container__food-container'
+                >
+                  <h3 className='titles-container__food-name'>
+                    {product.title}
+                  </h3>
+                  <h4 className='titles-container__food-description titles-container__food-description--polish'>
+                    {product.description.includes('/')
+                      ? product.description.substring(
+                          0,
+                          product.description.indexOf('/')
+                        )
+                      : product.description}
+                  </h4>
+                  <h4 className='titles-container__food-description'>
+                    {product.description.substring(
+                      product.description.indexOf('/') + 1,
+                      product.description.length + 1
+                    )}
+                  </h4>
+                  <h4 className='titles-container__food-price'>
+                    {product.price} pln
+                  </h4>
+                </div>
+              );
+            }
+          })}
       </article>
       <article className='titles-container titles-container__menu' id='zuppa'>
         <div
@@ -277,35 +301,38 @@ const Menu = () => {
         >
           <h1 className='titles-container__title'>zuppa</h1>
         </div>
-        {menuData.items.map((product) => {
-          if (product.category === 'zuppa') {
-            return (
-              <div
-                key={product.id}
-                className='titles-container__food-container'
-              >
-                <h3 className='titles-container__food-name'>{product.title}</h3>
-                <h4 className='titles-container__food-description titles-container__food-description--polish'>
-                  {product.description.includes('/')
-                    ? product.description.substring(
-                        0,
-                        product.description.indexOf('/')
-                      )
-                    : product.description}
-                </h4>
-                <h4 className='titles-container__food-description'>
-                  {product.description.substring(
-                    product.description.indexOf('/') + 1,
-                    product.description.length + 1
-                  )}
-                </h4>
-                <h4 className='titles-container__food-price'>
-                  {product.price}
-                </h4>
-              </div>
-            );
-          }
-        })}
+        {menu &&
+          menu.map((product) => {
+            if (product.category === 'zuppa') {
+              return (
+                <div
+                  key={product.id}
+                  className='titles-container__food-container'
+                >
+                  <h3 className='titles-container__food-name'>
+                    {product.title}
+                  </h3>
+                  <h4 className='titles-container__food-description titles-container__food-description--polish'>
+                    {product.description.includes('/')
+                      ? product.description.substring(
+                          0,
+                          product.description.indexOf('/')
+                        )
+                      : product.description}
+                  </h4>
+                  <h4 className='titles-container__food-description'>
+                    {product.description.substring(
+                      product.description.indexOf('/') + 1,
+                      product.description.length + 1
+                    )}
+                  </h4>
+                  <h4 className='titles-container__food-price'>
+                    {product.price} pln
+                  </h4>
+                </div>
+              );
+            }
+          })}
       </article>
       <article className='titles-container titles-container__menu' id='pasta'>
         <div
@@ -317,35 +344,38 @@ const Menu = () => {
         >
           <h1 className='titles-container__title'>pasta</h1>
         </div>
-        {menuData.items.map((product) => {
-          if (product.category === 'pasta') {
-            return (
-              <div
-                key={product.id}
-                className='titles-container__food-container'
-              >
-                <h3 className='titles-container__food-name'>{product.title}</h3>
-                <h4 className='titles-container__food-description titles-container__food-description--polish'>
-                  {product.description.includes('/')
-                    ? product.description.substring(
-                        0,
-                        product.description.indexOf('/')
-                      )
-                    : product.description}
-                </h4>
-                <h4 className='titles-container__food-description'>
-                  {product.description.substring(
-                    product.description.indexOf('/') + 1,
-                    product.description.length + 1
-                  )}
-                </h4>
-                <h4 className='titles-container__food-price'>
-                  {product.price}
-                </h4>
-              </div>
-            );
-          }
-        })}
+        {menu &&
+          menu.map((product) => {
+            if (product.category === 'pasta') {
+              return (
+                <div
+                  key={product.id}
+                  className='titles-container__food-container'
+                >
+                  <h3 className='titles-container__food-name'>
+                    {product.title}
+                  </h3>
+                  <h4 className='titles-container__food-description titles-container__food-description--polish'>
+                    {product.description.includes('/')
+                      ? product.description.substring(
+                          0,
+                          product.description.indexOf('/')
+                        )
+                      : product.description}
+                  </h4>
+                  <h4 className='titles-container__food-description'>
+                    {product.description.substring(
+                      product.description.indexOf('/') + 1,
+                      product.description.length + 1
+                    )}
+                  </h4>
+                  <h4 className='titles-container__food-price'>
+                    {product.price} pln
+                  </h4>
+                </div>
+              );
+            }
+          })}
       </article>
       <article className='titles-container titles-container__menu' id='pesce'>
         <div
@@ -357,35 +387,38 @@ const Menu = () => {
         >
           <h1 className='titles-container__title'>pesce</h1>
         </div>
-        {menuData.items.map((product) => {
-          if (product.category === 'pesce') {
-            return (
-              <div
-                key={product.id}
-                className='titles-container__food-container'
-              >
-                <h3 className='titles-container__food-name'>{product.title}</h3>
-                <h4 className='titles-container__food-description titles-container__food-description--polish'>
-                  {product.description.includes('/')
-                    ? product.description.substring(
-                        0,
-                        product.description.indexOf('/')
-                      )
-                    : product.description}
-                </h4>
-                <h4 className='titles-container__food-description'>
-                  {product.description.substring(
-                    product.description.indexOf('/') + 1,
-                    product.description.length + 1
-                  )}
-                </h4>
-                <h4 className='titles-container__food-price'>
-                  {product.price}
-                </h4>
-              </div>
-            );
-          }
-        })}
+        {menu &&
+          menu.map((product) => {
+            if (product.category === 'pesce') {
+              return (
+                <div
+                  key={product.id}
+                  className='titles-container__food-container'
+                >
+                  <h3 className='titles-container__food-name'>
+                    {product.title}
+                  </h3>
+                  <h4 className='titles-container__food-description titles-container__food-description--polish'>
+                    {product.description.includes('/')
+                      ? product.description.substring(
+                          0,
+                          product.description.indexOf('/')
+                        )
+                      : product.description}
+                  </h4>
+                  <h4 className='titles-container__food-description'>
+                    {product.description.substring(
+                      product.description.indexOf('/') + 1,
+                      product.description.length + 1
+                    )}
+                  </h4>
+                  <h4 className='titles-container__food-price'>
+                    {product.price} pln
+                  </h4>
+                </div>
+              );
+            }
+          })}
       </article>
       <article className='titles-container titles-container__menu' id='carne'>
         <div
@@ -397,35 +430,38 @@ const Menu = () => {
         >
           <h1 className='titles-container__title'>carne</h1>
         </div>
-        {menuData.items.map((product) => {
-          if (product.category === 'carne') {
-            return (
-              <div
-                key={product.id}
-                className='titles-container__food-container'
-              >
-                <h3 className='titles-container__food-name'>{product.title}</h3>
-                <h4 className='titles-container__food-description titles-container__food-description--polish'>
-                  {product.description.includes('/')
-                    ? product.description.substring(
-                        0,
-                        product.description.indexOf('/')
-                      )
-                    : product.description}
-                </h4>
-                <h4 className='titles-container__food-description'>
-                  {product.description.substring(
-                    product.description.indexOf('/') + 1,
-                    product.description.length + 1
-                  )}
-                </h4>
-                <h4 className='titles-container__food-price'>
-                  {product.price}
-                </h4>
-              </div>
-            );
-          }
-        })}
+        {menu &&
+          menu.map((product) => {
+            if (product.category === 'carne') {
+              return (
+                <div
+                  key={product.id}
+                  className='titles-container__food-container'
+                >
+                  <h3 className='titles-container__food-name'>
+                    {product.title}
+                  </h3>
+                  <h4 className='titles-container__food-description titles-container__food-description--polish'>
+                    {product.description.includes('/')
+                      ? product.description.substring(
+                          0,
+                          product.description.indexOf('/')
+                        )
+                      : product.description}
+                  </h4>
+                  <h4 className='titles-container__food-description'>
+                    {product.description.substring(
+                      product.description.indexOf('/') + 1,
+                      product.description.length + 1
+                    )}
+                  </h4>
+                  <h4 className='titles-container__food-price'>
+                    {product.price} pln
+                  </h4>
+                </div>
+              );
+            }
+          })}
       </article>
       <article className='titles-container titles-container__menu' id='forkids'>
         <div
@@ -442,35 +478,38 @@ const Menu = () => {
             dla dzieci / for kids / für Kinder
           </h4>
         </div>
-        {menuData.items.map((product) => {
-          if (product.category === 'per bambini') {
-            return (
-              <div
-                key={product.id}
-                className='titles-container__food-container'
-              >
-                <h3 className='titles-container__food-name'>{product.title}</h3>
-                <h4 className='titles-container__food-description titles-container__food-description--polish'>
-                  {product.description.includes('/')
-                    ? product.description.substring(
-                        0,
-                        product.description.indexOf('/')
-                      )
-                    : product.description}
-                </h4>
-                <h4 className='titles-container__food-description'>
-                  {product.description.substring(
-                    product.description.indexOf('/') + 1,
-                    product.description.length + 1
-                  )}
-                </h4>
-                <h4 className='titles-container__food-price'>
-                  {product.price}
-                </h4>
-              </div>
-            );
-          }
-        })}
+        {menu &&
+          menu.map((product) => {
+            if (product.category === 'per bambini') {
+              return (
+                <div
+                  key={product.id}
+                  className='titles-container__food-container'
+                >
+                  <h3 className='titles-container__food-name'>
+                    {product.title}
+                  </h3>
+                  <h4 className='titles-container__food-description titles-container__food-description--polish'>
+                    {product.description.includes('/')
+                      ? product.description.substring(
+                          0,
+                          product.description.indexOf('/')
+                        )
+                      : product.description}
+                  </h4>
+                  <h4 className='titles-container__food-description'>
+                    {product.description.substring(
+                      product.description.indexOf('/') + 1,
+                      product.description.length + 1
+                    )}
+                  </h4>
+                  <h4 className='titles-container__food-price'>
+                    {product.price} pln
+                  </h4>
+                </div>
+              );
+            }
+          })}
       </article>
       <article className='titles-container titles-container__menu' id='dolci'>
         <div
@@ -484,35 +523,38 @@ const Menu = () => {
             dolci
           </h1>
         </div>
-        {menuData.items.map((product) => {
-          if (product.category === 'dolci') {
-            return (
-              <div
-                key={product.id}
-                className='titles-container__food-container'
-              >
-                <h3 className='titles-container__food-name'>{product.title}</h3>
-                <h4 className='titles-container__food-description titles-container__food-description--polish'>
-                  {product.description.includes('/')
-                    ? product.description.substring(
-                        0,
-                        product.description.indexOf('/')
-                      )
-                    : product.description}
-                </h4>
-                <h4 className='titles-container__food-description'>
-                  {product.description.substring(
-                    product.description.indexOf('/') + 1,
-                    product.description.length + 1
-                  )}
-                </h4>
-                <h4 className='titles-container__food-price'>
-                  {product.price}
-                </h4>
-              </div>
-            );
-          }
-        })}
+        {menu &&
+          menu.map((product) => {
+            if (product.category === 'dolci') {
+              return (
+                <div
+                  key={product.id}
+                  className='titles-container__food-container'
+                >
+                  <h3 className='titles-container__food-name'>
+                    {product.title}
+                  </h3>
+                  <h4 className='titles-container__food-description titles-container__food-description--polish'>
+                    {product.description.includes('/')
+                      ? product.description.substring(
+                          0,
+                          product.description.indexOf('/')
+                        )
+                      : product.description}
+                  </h4>
+                  <h4 className='titles-container__food-description'>
+                    {product.description.substring(
+                      product.description.indexOf('/') + 1,
+                      product.description.length + 1
+                    )}
+                  </h4>
+                  <h4 className='titles-container__food-price'>
+                    {product.price} pln
+                  </h4>
+                </div>
+              );
+            }
+          })}
       </article>
       <article
         className='titles-container titles-container__menu'
@@ -548,35 +590,38 @@ const Menu = () => {
         >
           <h1 className='titles-container__title'>dodatki</h1>
         </div>
-        {menuData.items.map((product) => {
-          if (product.category === 'dodatki') {
-            return (
-              <div
-                key={product.id}
-                className='titles-container__food-container'
-              >
-                <h3 className='titles-container__food-name'>{product.title}</h3>
-                <h4 className='titles-container__food-description titles-container__food-description--polish'>
-                  {product.description.includes('/')
-                    ? product.description.substring(
-                        0,
-                        product.description.indexOf('/')
-                      )
-                    : product.description}
-                </h4>
-                <h4 className='titles-container__food-description'>
-                  {product.description.substring(
-                    product.description.indexOf('/') + 1,
-                    product.description.length + 1
-                  )}
-                </h4>
-                <h4 className='titles-container__food-price'>
-                  {product.price}
-                </h4>
-              </div>
-            );
-          }
-        })}
+        {menu &&
+          menu.map((product) => {
+            if (product.category === 'dodatki') {
+              return (
+                <div
+                  key={product.id}
+                  className='titles-container__food-container'
+                >
+                  <h3 className='titles-container__food-name'>
+                    {product.title}
+                  </h3>
+                  <h4 className='titles-container__food-description titles-container__food-description--polish'>
+                    {product.description.includes('/')
+                      ? product.description.substring(
+                          0,
+                          product.description.indexOf('/')
+                        )
+                      : product.description}
+                  </h4>
+                  <h4 className='titles-container__food-description'>
+                    {product.description.substring(
+                      product.description.indexOf('/') + 1,
+                      product.description.length + 1
+                    )}
+                  </h4>
+                  <h4 className='titles-container__food-price'>
+                    {product.price} pln
+                  </h4>
+                </div>
+              );
+            }
+          })}
       </article>
     </React.Fragment>
   );
