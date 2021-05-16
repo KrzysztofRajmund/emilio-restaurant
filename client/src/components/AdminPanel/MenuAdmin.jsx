@@ -183,8 +183,8 @@ export default function MenuAdmin() {
         </Button>
       </div>
 
-      <div style={{ height: 400, width: '100%' }}>
-        <DataGrid rows={mappedMenu} columns={columns} pageSize={10} />
+      <div style={{ height: '75vh', width: '100%' }}>
+        <DataGrid rows={mappedMenu} columns={columns} pageSize={8} />
         <AlertMessage style={style} message={message} open={open} />
       </div>
     </ThemeProvider>

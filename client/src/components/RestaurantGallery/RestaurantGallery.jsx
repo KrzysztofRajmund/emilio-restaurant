@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 //components
 import Navigation from '../Home/Navigation';
 import SeoHelmet from './../utils/SeoHelmet';
-//data json
-import tileData from '../../tileData';
+// //data json
+// import tileData from '../../tileData';
 //AOS
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -11,17 +11,34 @@ import 'aos/dist/aos.css';
 import Xicon from '../../assets/x-icon.png';
 import prevIconWhite from '../../assets/prev-icon-white.png';
 import nextIconWhite from '../../assets/next-icon-white.png';
+//axios
+import axios from 'axios';
 
 const RestaurantGallery = () => {
-  const [data, setData] = useState(tileData.items);
+  const [data, setData] = useState();
   const [showModal, setShowModal] = useState(false);
   const [image, setImage] = useState();
+
+  const getImagesBucket = async () => {
+    try {
+      await axios
+        .get('https://emilio-restaurant-server.herokuapp.com/getObjects')
+        .then((response) => {
+          const images = response.data;
+          setData(images);
+          console.log(response, 'images');
+        });
+    } catch (err) {
+      console.log(err, 'error');
+    }
+  };
 
   useEffect(() => {
     AOS.init({
       offset: 300,
       duration: 800,
     });
+    getImagesBucket();
   }, []);
 
   const displayImage = (image) => {
@@ -67,22 +84,25 @@ const RestaurantGallery = () => {
           data-aos='fade-up'
           data-aos-duration='3000'
         >
-          {tileData.items.map((image) => (
-            <div
-              key={image.id}
-              className='gallery__col'
-              onClick={() => displayImage(image)}
-            >
-              <img src={image.url} />
-            </div>
-          ))}
+          {data &&
+            data.map((image) => (
+              <div
+                key={image.Key}
+                className='gallery__col'
+                onClick={() => displayImage(image)}
+              >
+                <img
+                  src={`https://emilio-gallery.s3.eu-central-1.amazonaws.com/${image.Key}`}
+                />
+              </div>
+            ))}
           {showModal ? (
             <div className='modalContainer'>
               <section class='modalCard'>
                 <img
                   className='modalImage'
-                  src={image.url}
-                  alt={image.id}
+                  src={`https://emilio-gallery.s3.eu-central-1.amazonaws.com/${image.Key}`}
+                  alt={image.Key}
                   onClick={() => nextImage(data.indexOf(image) + 1)}
                 />
                 <img

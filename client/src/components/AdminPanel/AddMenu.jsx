@@ -215,7 +215,7 @@ const AddMenu = ({ showAddMenu, onClose, getMenuItems }) => {
                 <TextField
                   type='text'
                   name='description'
-                  value={menu.description}
+                  value={menu.description || ''}
                   onChange={(e) => handleInputChange(e)}
                   fullWidth
                   className={classes.textField}
@@ -224,9 +224,6 @@ const AddMenu = ({ showAddMenu, onClose, getMenuItems }) => {
                   variant='filled'
                   InputProps={{
                     className: classes.input,
-                  }}
-                  inputProps={{
-                    minLength: 0,
                   }}
                 />
               </Grid>
@@ -244,9 +241,6 @@ const AddMenu = ({ showAddMenu, onClose, getMenuItems }) => {
                   variant='filled'
                   InputProps={{
                     className: classes.input,
-                  }}
-                  inputProps={{
-                    minLength: 0,
                   }}
                 />
               </Grid>

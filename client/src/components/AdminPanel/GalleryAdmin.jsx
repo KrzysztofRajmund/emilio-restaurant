@@ -144,7 +144,7 @@ export default function GalleryAdmin() {
           Dodaj
         </Button>
       </div>
-      <div style={{ height: 400, width: '100%' }}>
+      <div style={{ height: '75vh', width: '100%' }}>
         <DataGrid
           rows={
             imagesItems
@@ -160,7 +160,7 @@ export default function GalleryAdmin() {
               : []
           }
           columns={columns}
-          pageSize={10}
+          pageSize={8}
         />
         <AlertMessage style={style} message={message} open={open} />
       </div>

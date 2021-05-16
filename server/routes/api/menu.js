@@ -15,7 +15,7 @@ router.post('/post', (req, res) => {
   ) {
     return res.status(400).send({
       success: false,
-      message: 'Wszystkie pola (oprócz opisu) są wymagane!',
+      message: 'Wszystkie pola (w wyjątkiem opisu) są wymagane!',
     });
   }
   //create a product
