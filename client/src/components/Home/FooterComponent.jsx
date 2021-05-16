@@ -36,9 +36,7 @@ const FooterComponent = () => {
           </div>
           <div className='footer-container__card'>
             <div className='footer-container__logo'>
-              <Link to='/adminpanel/login'>
-                <img src={Logo} width='100px' height='auto' alt='logo' />
-              </Link>
+              <img src={Logo} width='100px' height='auto' alt='logo' />
             </div>
             <a
               className=' footer-container__card--social-media'
@@ -61,6 +59,8 @@ const FooterComponent = () => {
               <a href='http://www.rajmundtech.com/' target='_blank'>
                 designed by rajmundtech.com
               </a>
+              <br></br>
+              <Link to='/adminpanel/login'>admin login</Link>
             </div>
           </div>
           <div className='footer-container__card'>
