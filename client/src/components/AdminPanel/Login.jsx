@@ -203,10 +203,13 @@ const ReservationFormAdmin = () => {
                 }
                 type='submit'
               >
-                Login
+                Zaloguj
               </Button>
-              <Link to='/adminpanel/register' className={classes.buttonLink}>
+              {/* <Link to='/adminpanel/register' className={classes.buttonLink}>
                 Zarejestruj się
+              </Link> */}
+              <Link to='/' className={classes.buttonLink}>
+                Wróć
               </Link>
               <AlertMessage style={style} message={message} open={open} />
             </Grid>
