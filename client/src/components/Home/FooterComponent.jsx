@@ -60,7 +60,7 @@ const FooterComponent = () => {
                 designed by rajmundtech.com
               </a>
               <br></br>
-              <Link to='/adminpanel/login'>admin login</Link>
+              <Link to='/adminpanel/login'>admin</Link>
             </div>
           </div>
           <div className='footer-container__card'>

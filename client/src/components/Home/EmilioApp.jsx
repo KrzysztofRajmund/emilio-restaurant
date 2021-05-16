@@ -46,9 +46,9 @@ const EmilioApp = () => {
           <Route path='/adminpanel/login'>
             <Login />
           </Route>
-          <Route path='/adminpanel/register'>
+          {/* <Route path='/adminpanel/register'>
             <Register />
-          </Route>
+          </Route> */}
           <PrivateRoute exact path='/adminpanel/admin' component={Admin} />
           {/* ADMIN PANEL */}
           <Route path='/'>
