@@ -69,10 +69,9 @@ const FooterComponent = () => {
                 Godziny otwarcia
                 <hr />
               </h5>
-              <p>Wt–Czw 12–19</p>
-              <p>Piat 12–20</p>
-              <p>Sob 13–20</p>
-              <p>Niedz 13–18</p>
+              <p>Pn–Czw 13–21</p>
+              <p>Pt-Sb 13–22</p>
+              <p>Niedz 13–20</p>
               <p>
                 <a href='/rezerwacja'>Rezerwuj stolik</a>
               </p>
