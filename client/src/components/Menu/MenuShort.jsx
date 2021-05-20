@@ -21,7 +21,6 @@ const MenuShort = () => {
       duration: 800,
     });
   }, []);
-  console.log(process.env, 'env');
   return (
     <section className='menuShort' id='menu-short'>
       <article className='titles-container'>

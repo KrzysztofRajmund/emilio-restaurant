@@ -102,7 +102,7 @@ const ReservationFormAdmin = () => {
       day: '',
       time: '',
     },
-    people: '',
+    people: 2,
     message: '',
   });
 
@@ -118,14 +118,13 @@ const ReservationFormAdmin = () => {
   };
   //other input change
   const handleInputChange = (e) => {
-    if (e.target.name === 'people' && e.target.value < 1) {
+    if (e.target.name === 'people' && parseInt(e.target.value) <= 0) {
       setStyle('error');
       setMessage('Liczba gości nie może być mniejsza niż 1');
       setOpen(true);
       setTimeout(() => {
         setOpen(false);
       }, 3500);
-      e.target.value = 0;
       return;
     }
     setBooking({ ...booking, [e.target.name]: e.target.value });
@@ -150,38 +149,38 @@ const ReservationFormAdmin = () => {
   //submit button
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    console.log(booking, 'booking');
     //post booking details
-    fetch('https://emilio-restaurant-server.herokuapp.com/send', {
-      method: 'POST',
-      body: JSON.stringify(booking),
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => response.json())
-      .then((response) => {
-        if (response.status === 'success') {
-          setStyle('success');
-          setMessage('Prośba o rezerwację została pomyślnie wysłana');
-          setOpen(true);
-          setTimeout(() => {
-            setOpen(false);
-          }, 3500);
-          resetForm();
-        } else if (response.status === 'fail') {
-          setStyle('error');
-          setMessage('Prosze uzupełnić wymagane pola!');
-          setOpen(true);
-          setTimeout(() => {
-            setOpen(false);
-          }, 3500);
-        }
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+    // fetch('https://emilio-restaurant-server.herokuapp.com/send', {
+    //   method: 'POST',
+    //   body: JSON.stringify(booking),
+    //   headers: {
+    //     Accept: 'application/json',
+    //     'Content-Type': 'application/json',
+    //   },
+    // })
+    //   .then((response) => response.json())
+    //   .then((response) => {
+    //     if (response.status === 'success') {
+    //       setStyle('success');
+    //       setMessage('Prośba o rezerwację została pomyślnie wysłana');
+    //       setOpen(true);
+    //       setTimeout(() => {
+    //         setOpen(false);
+    //       }, 3500);
+    //       resetForm();
+    //     } else if (response.status === 'fail') {
+    //       setStyle('error');
+    //       setMessage('Prosze uzupełnić wymagane pola!');
+    //       setOpen(true);
+    //       setTimeout(() => {
+    //         setOpen(false);
+    //       }, 3500);
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     console.error('Error:', error);
+    //   });
   };
 
   //rodo
@@ -343,7 +342,6 @@ const ReservationFormAdmin = () => {
                   id='filled-basic'
                   label='Ilość osób '
                   variant='filled'
-                  type='number'
                   InputProps={{
                     className: classes.input,
                   }}

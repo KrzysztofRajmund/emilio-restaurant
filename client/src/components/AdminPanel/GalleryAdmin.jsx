@@ -37,7 +37,6 @@ export default function GalleryAdmin() {
     getImagesBucket();
   }, []);
 
-  console.log('images99', imagesItems);
   // if (imagesItems) {
   //   const mappedImages = imagesItems.map((item) => {
   //     return {
@@ -54,14 +53,12 @@ export default function GalleryAdmin() {
     setShowAddProduct(!showAddProduct);
   };
   const handleDelete = (e) => {
-    console.log('deleteing', e.currentTarget.id);
     axios
       .get(
         `https://emilio-restaurant-server.herokuapp.com/deleteObject/${e.currentTarget.id}`
       )
       .then((response) => {
         const image = response.data;
-        console.log('deleted', response);
         getImagesBucket();
       });
   };

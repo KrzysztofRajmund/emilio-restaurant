@@ -23,7 +23,6 @@ const Album = () => {
         .then((response) => {
           const images = response.data;
           setData(images);
-          console.log(response, 'images');
         });
     } catch (err) {
       console.log(err, 'error');

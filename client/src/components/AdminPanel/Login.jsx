@@ -119,7 +119,6 @@ const ReservationFormAdmin = () => {
           // //set user data in variable
           // setUser(userDecode);
           resetForm();
-          console.log('Loggin in...');
           //push user to dashboard
           history.push('/adminpanel/admin');
         }

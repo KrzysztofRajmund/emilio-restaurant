@@ -120,7 +120,6 @@ const EditMenu = ({ showEditMenu, onClose, getMenuItems, editItem }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let id = menu.id;
-    console.log('submit', id);
     let url =
       'https://emilio-restaurant-server.herokuapp.com/api/menu/update/' + id;
     let body = menu;
