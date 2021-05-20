@@ -72,12 +72,12 @@ router.get('/get', (req, res) => {
 
 //DELETE PRODUCT
 router.delete('/delete/:id', (req, res) => {
-  Menu.findOneAndRemove(req.params.id)
+  Menu.findByIdAndDelete(req.params.id)
     .then((data) => {
       if (!data) {
         return res.status(404).send({
           succes: false,
-          message: `Produkt o id:${req.params.id} nie zosyał znaleziony`,
+          message: `Produkt o id:${req.params.id} nie został znaleziony`,
         });
       }
       res.send({
@@ -113,7 +113,11 @@ router.put('/update/:id', (req, res) => {
       message: 'Wszystkie pola (z wyjątkiem opisu) są wymagane!',
     });
   }
-  Menu.findOneAndUpdate(req.params.id, { $set: req.body }, { new: true })
+  Menu.findByIdAndUpdate(
+    req.params.id,
+    { $set: req.body }
+    // , { new: true }
+  )
     .then((data) => {
       if (!data) {
         return res.status(404).send({
