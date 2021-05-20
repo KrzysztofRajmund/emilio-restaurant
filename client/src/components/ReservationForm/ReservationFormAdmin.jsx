@@ -149,38 +149,37 @@ const ReservationFormAdmin = () => {
   //submit button
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(booking, 'booking');
-    //post booking details
-    // fetch('https://emilio-restaurant-server.herokuapp.com/send', {
-    //   method: 'POST',
-    //   body: JSON.stringify(booking),
-    //   headers: {
-    //     Accept: 'application/json',
-    //     'Content-Type': 'application/json',
-    //   },
-    // })
-    //   .then((response) => response.json())
-    //   .then((response) => {
-    //     if (response.status === 'success') {
-    //       setStyle('success');
-    //       setMessage('Prośba o rezerwację została pomyślnie wysłana');
-    //       setOpen(true);
-    //       setTimeout(() => {
-    //         setOpen(false);
-    //       }, 3500);
-    //       resetForm();
-    //     } else if (response.status === 'fail') {
-    //       setStyle('error');
-    //       setMessage('Prosze uzupełnić wymagane pola!');
-    //       setOpen(true);
-    //       setTimeout(() => {
-    //         setOpen(false);
-    //       }, 3500);
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.error('Error:', error);
-    //   });
+    // post booking details
+    fetch('https://emilio-restaurant-server.herokuapp.com/send', {
+      method: 'POST',
+      body: JSON.stringify(booking),
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        if (response.status === 'success') {
+          setStyle('success');
+          setMessage('Prośba o rezerwację została pomyślnie wysłana');
+          setOpen(true);
+          setTimeout(() => {
+            setOpen(false);
+          }, 3500);
+          resetForm();
+        } else if (response.status === 'fail') {
+          setStyle('error');
+          setMessage('Prosze uzupełnić wymagane pola!');
+          setOpen(true);
+          setTimeout(() => {
+            setOpen(false);
+          }, 3500);
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   };
 
   //rodo
