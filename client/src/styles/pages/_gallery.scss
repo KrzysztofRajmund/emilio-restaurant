@@ -24,25 +24,9 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-}
-
-.gallery__col {
-  text-align: center;
-  flex: 25%;
-  max-width: 25%;
-  height: auto;
-  padding: 0 4px;
-}
-
-.gallery__col img {
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
-}
-
-//modal
+  //modal
 .modal{
-  z-index: 95;
+  z-index: 195;
   position: fixed;
   display: flex;
   align-items: center;
@@ -53,8 +37,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.605);
   transition: 0.3s;
-}
-.modal__card {
+  .modal__card {
   position: relative;
   display: flex;
   align-items: center;
@@ -99,6 +82,25 @@
     margin: 50px 50px 50px 50px;
   }
 }
+}
+}
+
+.gallery__col {
+  text-align: center;
+  flex: 25%;
+  max-width: 25%;
+  height: auto;
+  padding: 0 4px;
+}
+
+.gallery__col img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+
+
 
 //media
 @media screen and (max-width: 800px) {

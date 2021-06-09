@@ -829,24 +829,8 @@ button.navbar-toggler:focus {
       flex-wrap: wrap;
 }
 
-.gallery__col {
-  text-align: center;
-  -webkit-box-flex: 25%;
-      -ms-flex: 25%;
-          flex: 25%;
-  max-width: 25%;
-  height: auto;
-  padding: 0 4px;
-}
-
-.gallery__col img {
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
-}
-
-.modal {
-  z-index: 95;
+.gallery__row .modal {
+  z-index: 195;
   position: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -866,7 +850,7 @@ button.navbar-toggler:focus {
   transition: 0.3s;
 }
 
-.modal__card {
+.gallery__row .modal .modal__card {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -881,7 +865,7 @@ button.navbar-toggler:focus {
   height: 100vh;
 }
 
-.modal__card .modal__card-exit {
+.gallery__row .modal .modal__card .modal__card-exit {
   position: absolute;
   top: 5%;
   right: 3%;
@@ -891,7 +875,7 @@ button.navbar-toggler:focus {
   z-index: 90;
 }
 
-.modal__card .modal__card-prev {
+.gallery__row .modal .modal__card .modal__card-prev {
   position: absolute;
   top: 42%;
   left: 5%;
@@ -902,7 +886,7 @@ button.navbar-toggler:focus {
   padding: 30px 10px 30px 10px;
 }
 
-.modal__card .modal__card-next {
+.gallery__row .modal .modal__card .modal__card-next {
   position: absolute;
   top: 42%;
   right: 5%;
@@ -913,10 +897,26 @@ button.navbar-toggler:focus {
   padding: 30px 10px 30px 10px;
 }
 
-.modal__card .modal__card-image {
+.gallery__row .modal .modal__card .modal__card-image {
   width: 70%;
   height: auto;
   margin: 50px 50px 50px 50px;
+}
+
+.gallery__col {
+  text-align: center;
+  -webkit-box-flex: 25%;
+      -ms-flex: 25%;
+          flex: 25%;
+  max-width: 25%;
+  height: auto;
+  padding: 0 4px;
+}
+
+.gallery__col img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
 }
 
 @media screen and (max-width: 800px) {

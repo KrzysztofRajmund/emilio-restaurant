@@ -38,6 +38,8 @@ const Album = () => {
   const displayImage = (image) => {
     setShowModal(true);
     setImage(image);
+    let el = document.getElementsByClassName('modal')[0];
+    console.log(image, showModal, el);
   };
 
   const prevImage = (index) => {
@@ -80,28 +82,28 @@ const Album = () => {
             </div>
           ))}
         {showModal ? (
-          <div className='modalContainer'>
-            <section class='modalCard'>
+          <div className='modal'>
+            <section class='modal__card'>
               <img
-                className='modalImage'
+                className='modal__card-image'
                 src={`https://emilio-gallery.s3.eu-central-1.amazonaws.com/${image.Key}`}
                 alt={image.Key}
                 onClick={() => nextImage(data.indexOf(image) + 1)}
               />
               <img
-                className='modalPrev'
+                className='modal__card-prev'
                 src={prevIconWhite}
                 alt='prev'
                 onClick={() => prevImage(data.indexOf(image) - 1)}
               />
               <img
-                className='modalNext'
+                className='modal__card-next'
                 src={nextIconWhite}
                 alt='next'
                 onClick={() => nextImage(data.indexOf(image) + 1)}
               />
               <img
-                className='modalExit'
+                className='modal__card-exit'
                 src={Xicon}
                 alt='exit'
                 onClick={() => setShowModal(false)}
