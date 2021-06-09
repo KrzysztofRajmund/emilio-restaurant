@@ -1,0 +1,125 @@
+//BACKEND
+
+//admin signup
+.form-container.admin-signup {
+  background-image: url('../assets/background-admin.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  .form-container__input {
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    max-width: 40%;
+  }
+}
+//header nav
+.navigation.admin-headernav {
+  position: relative;
+  padding: 0;
+  height: 40px;
+  background-color: $secondaryTextColor;
+  a.navigation__nav-link {
+    margin: 5px 15px 5px 5px;
+    padding: 2px;
+  }
+}
+
+//api container
+.api-container {
+  position: relative;
+  .api-container__button--add {
+    z-index: 90;
+    position: absolute;
+    top: -2%;
+    right: 2%;
+    margin: 10px;
+  }
+  table {
+    margin: 50px auto 15px auto;
+    text-align: center;
+    min-width: 95%;
+    tr:not(:first-child) {
+      &:nth-child(odd) {
+        background-color: rgba(0, 0, 0, 0.115);
+      }
+    }
+    td:last-child {
+      text-align: right;
+      button {
+        padding: 5px;
+        min-width: 50px;
+        margin: 5px;
+        border: 0.5px solid $secondaryTextColor;
+        border-radius: 4px;
+        &:first-child {
+          background-color: $secondaryTextColor;
+          color: $primaryTextColor;
+        }
+        &:last-child {
+          background-color: $supplementaryTextColor;
+          color: $primaryTextColor;
+        }
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+
+    td {
+      text-align: left;
+      img {
+        width: 200px;
+        height: auto;
+        padding: 10px;
+      }
+    }
+  }
+
+  .admin-modal__container {
+    z-index: 95;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    .admin-modal__exit {
+      position: absolute;
+      top: 5%;
+      right: 5%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      padding: 10px;
+      z-index: 90;
+      color: $primaryTextColor;
+    }
+  }
+}
+
+
+
+//media
+@media screen and (max-width: 800px) {
+  //admin signup
+  .form-container.admin-signup {
+    .form-container__input {
+      max-width: 80%;
+    }
+  }
+}
+
+@media screen and (max-width: 520px) {
+  //admin signup
+  .form-container.admin-signup {
+    .form-container__input {
+      max-width: 100%;
+    }
+  }
+}

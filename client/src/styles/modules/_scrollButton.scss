@@ -1,0 +1,53 @@
+.scroll-container {
+  width: 50px;
+  height: 50px;
+  position: sticky;
+  bottom: 50%;
+  left: 90%;
+  background-color: transparent;
+}
+
+.scroll-container.hidden {
+  visibility: hidden;
+}
+
+.scroll-container__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 25px;
+  height: 50px;
+  background-color: transparent;
+}
+
+.scroll-container__arrow span {
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border-bottom: 6px solid rgb(255, 255, 255);
+  border-right: 6px solid rgb(255, 255, 255);
+  box-shadow: 5px 5px #1d1d1d47;
+  animation: jump-animation 1.5s alternate infinite,
+    opacity-animation 1.5s alternate infinite;
+}
+
+@keyframes opacity-animation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes jump-animation {
+  0% {
+    transform: translateY(-10px) rotate(45deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(45deg);
+  }
+}

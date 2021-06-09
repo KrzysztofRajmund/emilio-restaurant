@@ -1,0 +1,135 @@
+.gallery {
+  display: block;
+  position: relative;
+  justify-content: center;
+  background-image: url('../assets/bg-gallery.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  padding: 50px 50px 50px 50px;
+}
+
+.gallery__card-title {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 0px;
+}
+
+.gallery__row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.gallery__col {
+  text-align: center;
+  flex: 25%;
+  max-width: 25%;
+  height: auto;
+  padding: 0 4px;
+}
+
+.gallery__col img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+//modal
+.modalContainer {
+  z-index: 95;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.605);
+  transition: 0.3s;
+}
+.modalCard {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  .modalExit {
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    z-index: 90;
+  }
+
+  .modalPrev {
+    position: absolute;
+    top: 42%;
+    left: 5%;
+    width: 50px;
+    height: 90px;
+    z-index: 90;
+    opacity: 0.7;
+    padding: 30px 10px 30px 10px;
+  }
+
+  .modalNext {
+    position: absolute;
+    top: 42%;
+    right: 5%;
+    width: 50px;
+    height: 90px;
+    z-index: 90;
+    opacity: 0.7;
+    padding: 30px 10px 30px 10px;
+  }
+
+  .modalImage {
+    width: 70%;
+    height: auto;
+    margin: 50px 50px 50px 50px;
+  }
+}
+
+//media
+@media screen and (max-width: 800px) {
+  .gallery__col {
+    flex: 50%;
+    max-width: 50%;
+  }
+
+}
+
+@media screen and (max-width: 652px) {
+  .gallery__col {
+    flex: 100%;
+    max-width: 100%;
+  }
+  //video
+  div.video__frame {
+    width: 100% !important;
+    height: 40vh !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  //video
+  .video {
+    padding: 10px 0px 20px 0px;
+    width: 100%;
+    height: 100%;
+  }
+  div.video__frame {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}

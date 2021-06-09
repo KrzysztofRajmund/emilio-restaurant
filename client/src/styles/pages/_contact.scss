@@ -1,0 +1,55 @@
+.map {
+  position: relative;
+  width: 100vw;
+  height: 400px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 0px 0px 0px;
+  background-color: $primaryBackgroundColor;
+}
+
+.contact__card-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex: 100%;
+  padding: 50px 0px 50px 0px;
+}
+
+.contact__card-map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 100%;
+  border-top: 1px solid #1d1d1d;
+}
+
+.contact__content a {
+  color: $supplementaryTextColor;
+  &:hover {
+    @include hoverText($supplementaryTextColor, $hoverWeight, $hoverTransform);
+  }
+
+  span:first-of-type {
+    padding-right: 15px;
+  }
+}
+
+//media
+@media screen and (max-width: 800px) {
+  .contact {
+    display: block;
+  }
+  .contact__card-content {
+    height: 400px;
+    flex: 100%;
+  }
+
+  .contact__card-map {
+    width: 100%;
+  }
+}

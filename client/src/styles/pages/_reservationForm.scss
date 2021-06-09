@@ -1,0 +1,47 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+}
+
+.form-container__card {
+  background-image: url('../assets/reservation.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  flex: 60%;
+  padding: 50px;
+  color: $primaryTextColor;
+  min-height: 500px;
+}
+
+.form-container__input {
+  flex: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background-color: $primaryBackgroundColor;
+  border-right: 2px solid $supplementaryTextColor;
+  color: $secondaryTextColor;
+}
+
+//media
+@media screen and (max-width: 991px) {
+  //form
+  .form-container__card {
+    flex: 50%;
+  }
+  .form-container__input {
+    flex: 50%;
+  }
+}
+
+@media screen and (max-width: 652px) {
+  .form-container {
+    display: block;
+  }
+}

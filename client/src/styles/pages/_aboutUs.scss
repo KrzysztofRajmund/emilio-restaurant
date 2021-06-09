@@ -1,0 +1,136 @@
+.about {
+  max-width: 100%;
+  background-color: $primaryBackgroundColor;
+  padding: 50px 50px 50px 50px;
+  h2 {
+    padding-top: 15px;
+    font-family: $secondaryFont;
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 800;
+    color: $secondaryTextColor;
+  }
+}
+
+.about__card-container {
+  display: flex;
+  justify-content: center;
+}
+
+.about__card-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 60%;
+  text-align: center;
+  padding: 10px 50px;
+  h4 {
+    color: $supplementaryTextColor;
+    p {
+      padding: 5px 0px;
+    }
+  }
+}
+
+.about__card-image {
+  flex: 40%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 50px;
+  img {
+    width: auto;
+    height: 450px;
+  }
+}
+//aboutUs full
+.about__card-container.about__card-container--full-desc {
+  display: flex;
+  flex-direction: column;
+}
+.about__card-text.about__card-text--full-desc {
+  flex: 100%;
+  padding-bottom: 30px;
+}
+.about__card-image.about__card-image--full-desc {
+  flex: 100%;
+}
+
+//aboutUs video
+.video {
+  position: relative;
+  padding: 50px 10px;
+  width: 100%;
+  height: auto;
+}
+div.video__frame {
+  width: 100% !important;
+  height: 65vh !important;
+}
+
+//aboutUs restaurant-gallery
+.restaurant-gallery {
+  display: block;
+  position: relative;
+  justify-content: center;
+  background-image: url('../assets/bg-gallery.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  padding: 100px 50px 50px 50px;
+}
+
+//media
+@media screen and (max-width: 1140px) {
+  .about__card-image {
+    padding: 10px 20px;
+    img {
+      width: auto;
+      height: 350px;
+    }
+  }
+  .about__card-text {
+    padding: 10px 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .about__card-image {
+    img {
+      width: auto;
+      height: 250px;
+    }
+  }
+}
+
+@media screen and (max-width: 652px) {
+  .about__card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about__card-image {
+    flex: 100%;
+    img {
+      max-width: 350px;
+      height: auto;
+    }
+  }
+  .about__card-text {
+    flex: 100%;
+    padding-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  //about
+  .about__card-image {
+    img {
+      max-width: 250px;
+      height: auto;
+    }
+  }
+}
