@@ -4,7 +4,7 @@ import Logo from '../../assets/logo.png';
 import Facebook from '../../assets/facebook.png';
 import Instagram from '../../assets/instagram.png';
 //router
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const FooterComponent = () => {
   return (
@@ -42,6 +42,7 @@ const FooterComponent = () => {
               className=' footer-container__card--social-media'
               href='https://www.facebook.com/EmilioRestaurantSzczecin'
               target='_blank'
+              rel='noreferrer'
             >
               <img src={Facebook} alt='facebook' width='30px' height='30px' />{' '}
             </a>
@@ -49,6 +50,7 @@ const FooterComponent = () => {
               className=' footer-container__card--social-media'
               href='https://www.instagram.com/restauracja.emilio.szczecin/'
               target='_blank'
+              rel='noreferrer'
             >
               <img src={Instagram} alt='instagram' width='30px' height='30px' />{' '}
             </a>
@@ -56,7 +58,11 @@ const FooterComponent = () => {
               Rodzinna restauracja włoska
             </div>
             <div className='footer-bottom__title--design'>
-              <a href='http://www.rajmundtech.com/' target='_blank'>
+              <a
+                href='http://www.rajmundtech.com/'
+                target='_blank'
+                rel='noreferrer'
+              >
                 designed by rajmundtech.com
               </a>
               <br></br>

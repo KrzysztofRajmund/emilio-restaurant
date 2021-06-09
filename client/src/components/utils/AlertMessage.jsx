@@ -1,7 +1,5 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
-import MuiAlert from '@material-ui/lab/Alert';
 import Alert from '@material-ui/lab/Alert';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -18,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AlertMessage = ({ style, message, open }) => {
+const AlertMessage = ({ tabStyle, message, open }) => {
   const classes = useStyles();
   return (
     <React.Fragment>
@@ -30,7 +28,7 @@ const AlertMessage = ({ style, message, open }) => {
           horizontal: 'center',
         }}
       >
-        <Alert severity={style}>{message}</Alert>
+        <Alert severity={tabStyle}>{message}</Alert>
       </Snackbar>
     </React.Fragment>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 //bootstrap
 import { Nav, Navbar } from 'react-bootstrap';
 //router
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 //assets
 import Logo from '../../assets/logo-white.png';
 import Burger from '../../assets/burger.png';
@@ -94,6 +94,7 @@ const Navigation = () => {
             className='navigation__nav-link'
             href='https://www.facebook.com/EmilioRestaurantSzczecin'
             target='_blank'
+            rel='noreferrer'
           >
             <img width='25px' height='25px' src={Facebook} alt='facebook' />
           </a>
@@ -101,6 +102,7 @@ const Navigation = () => {
             className='navigation__nav-link'
             href='https://www.instagram.com/restauracja.emilio.szczecin/'
             target='_blank'
+            rel='noreferrer'
           >
             <img width='25px' height='25px' src={Instagram} alt='instagram' />
           </a>

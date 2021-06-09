@@ -26,7 +26,7 @@ const Admin = () => {
       <HeaderNav user={userDecoded.name} />
       <div className='adminpanel'>
         <AlertMessage
-          style='success'
+          tabStyle='success'
           message={`Witaj ${userDecoded.name} w panelu admina`.toUpperCase()}
           open={showUser}
         />

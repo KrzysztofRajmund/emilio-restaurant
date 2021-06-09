@@ -2,8 +2,6 @@ import React, { useEffect, useState, useContext } from 'react';
 //components
 import Navigation from './Navigation';
 import ThemeContext from '../utils/ThemeContext';
-//assets
-import JumbotronImageDiscover from '../../assets/jumbotron1.jpg';
 import Underline from '../../assets/underline.png';
 //anime
 import anime from 'animejs';
@@ -40,11 +38,11 @@ const HeaderJumbotron = () => {
       delay: (el, i) => 500 + 30 * i,
     });
 
-    var textWrapper = document.querySelector(
+    var textWrapperSec = document.querySelector(
       '.header-jumbotron-slider__animation-second'
     );
     const regex13 = /\S/g;
-    textWrapper.innerHTML = textWrapper.textContent.replace(
+    textWrapperSec.innerHTML = textWrapperSec.textContent.replace(
       regex13,
       "<span class='letter'>$&</span>"
     );

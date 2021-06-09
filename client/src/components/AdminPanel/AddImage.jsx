@@ -67,18 +67,6 @@ const AddImage = ({ showAddProduct, onClose, getImagesBucket }) => {
   const [open, setOpen] = useState(false);
   const [image, setImage] = useState();
 
-  //other input change
-  //   const handleInputChange = (e) => {
-  //     setImage({ ...image, [e.target.name]: e.target.value });
-  //   };
-
-  //reset form
-  //   const resetForm = () => {
-  //     setImage({
-  //       album: '',
-  //     });
-  //   };
-
   //select file
   const handleInputImage = (e) => {
     if (e.target.files[0].size > 1024000) {
@@ -144,27 +132,6 @@ const AddImage = ({ showAddProduct, onClose, getImagesBucket }) => {
             autoComplete='off'
           >
             <Grid container spacing={1}>
-              {/* <Grid item xs={12}>
-                <TextField
-                  autoFocus
-                  required
-                  type='text'
-                  name='album'
-                  value={image.album}
-                  onChange={(e) => handleInputChange(e)}
-                  fullWidth
-                  className={classes.textField}
-                  id='filled-basic'
-                  label='name '
-                  variant='filled'
-                  InputProps={{
-                    className: classes.input,
-                  }}
-                  inputProps={{
-                    minLength: 4,
-                  }}
-                />
-              </Grid> */}
               <Grid item xs={12}>
                 <TextField
                   required

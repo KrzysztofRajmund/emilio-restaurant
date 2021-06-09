@@ -1,26 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 const ScrollButton = () => {
-  const [loading, setLoading] = useState(false);
-  const scroll = document.querySelector('.scroll-container');
-
-  useEffect(() => {
-    setLoading(true);
-  }, []);
-
-  // if (loading) {
-  //   document.onscroll = function () {
-  //     if (
-  //       window.innerHeight + window.scrollY + 250 >
-  //       document.body.clientHeight
-  //     ) {
-  //       scroll.classList.add('hidden');
-  //     } else {
-  //       scroll.classList.remove('hidden');
-  //     }
-  //   };
-  // }
-
   return (
     <React.Fragment>
       {window.location.pathname === '/adminpanel/login' ||

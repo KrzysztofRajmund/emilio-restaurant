@@ -2,12 +2,7 @@ import React from 'react';
 //bootstrap
 import { Nav, Navbar } from 'react-bootstrap';
 //router
-import { Link, NavLink } from 'react-router-dom';
-//assets
-import Logo from '../../assets/logo-white.png';
-import Burger from '../../assets/burger.png';
-import Facebook from '../../assets/facebook-white.png';
-import Instagram from '../../assets/instagram-white.png';
+import { NavLink } from 'react-router-dom';
 
 const HeaderNav = ({ user }) => {
   return (

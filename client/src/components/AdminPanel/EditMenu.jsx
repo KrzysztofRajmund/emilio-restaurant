@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 //components
 import AlertMessage from '../utils/AlertMessage';
-
 //material-ui
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -10,7 +9,6 @@ import Grid from '@material-ui/core/Grid';
 import Icon from '@material-ui/core/Icon';
 //axios
 import axios from 'axios';
-
 // material-ui styling
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -90,13 +88,6 @@ const EditMenu = ({ showEditMenu, onClose, getMenuItems, editItem }) => {
       price: editItem.price,
     });
   }, [editItem]);
-  // const [menu, setMenu] = useState({
-  //   type: 'editItem.type',
-  //   category: 'editItem.category',
-  //   title: 'editItem.title',
-  //   description: 'editItem.description',
-  //   price: 'editItem.price',
-  // });
 
   //input change
   const handleInputChange = (e) => {
@@ -284,7 +275,7 @@ const EditMenu = ({ showEditMenu, onClose, getMenuItems, editItem }) => {
               </Button>
             </Grid>
           </form>
-          <AlertMessage style={style} message={message} open={open} />
+          <AlertMessage tabStyle={style} message={message} open={open} />
         </div>
       </div>
     </div>

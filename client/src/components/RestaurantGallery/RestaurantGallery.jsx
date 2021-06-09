@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 //components
 import Navigation from '../Home/Navigation';
 import SeoHelmet from './../utils/SeoHelmet';
-// //data json
-// import tileData from '../../tileData';
 //AOS
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -92,6 +90,7 @@ const RestaurantGallery = () => {
                 onClick={() => displayImage(image)}
               >
                 <img
+                  alt='data-img'
                   src={`https://emilio-gallery.s3.eu-central-1.amazonaws.com/${image.Key}`}
                 />
               </div>

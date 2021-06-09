@@ -37,18 +37,6 @@ export default function GalleryAdmin() {
     getImagesBucket();
   }, []);
 
-  // if (imagesItems) {
-  //   const mappedImages = imagesItems.map((item) => {
-  //     return {
-  //       id: item.ETag,
-  //       url: `https://emilio-gallery.s3.eu-central-1.amazonaws.com/${item.Key}`,
-  //       title: item.Key,
-  //       edit: 'edytuj',
-  //       delete: 'usuń',
-  //     };
-  //   });
-  // }
-
   const showModal = (e) => {
     setShowAddProduct(!showAddProduct);
   };
@@ -58,7 +46,6 @@ export default function GalleryAdmin() {
         `https://emilio-restaurant-server.herokuapp.com/deleteObject/${e.currentTarget.id}`
       )
       .then((response) => {
-        const image = response.data;
         getImagesBucket();
       });
   };
@@ -77,27 +64,6 @@ export default function GalleryAdmin() {
       width: 250,
     },
     { field: 'title', headerName: 'Tytuł', width: 350 },
-    // {
-    //   field: 'edit',
-    //   headerName: 'Edytuj',
-    //   sortable: false,
-    //   description: 'Edytuj produkt',
-    //   disableClickEventBubbling: true,
-    //   renderCell: (params) => {
-    //     return (
-    //       <Button
-    //         size='small'
-    //         variant='contained'
-    //         color='primary'
-    //         // data-item={params.row.id}
-    //         // onClick={(e) => editItemFunc(e)}
-    //       >
-    //         Edytuj
-    //       </Button>
-    //     );
-    //   },
-    //   width: 100,
-    // },
     {
       field: 'delete',
       headerName: 'Usuń',
@@ -159,7 +125,7 @@ export default function GalleryAdmin() {
           columns={columns}
           pageSize={8}
         />
-        <AlertMessage style={style} message={message} open={open} />
+        <AlertMessage tabStyle={style} message={message} open={open} />
       </div>
     </ThemeProvider>
   );

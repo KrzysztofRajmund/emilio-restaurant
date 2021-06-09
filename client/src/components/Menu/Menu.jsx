@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 //components
 import HeaderJumbotron from '../Home/HeaderJumbotron';
 import SeoHelmet from './../utils/SeoHelmet';
-// //json data
-// import menuData from '../../menuData';
 //AOS
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -58,13 +56,7 @@ const Menu = () => {
       />
       {window.location.pathname === '/menu' ? <HeaderJumbotron /> : ''}
       <article className='titles-container titles-container__nav-sticky'>
-        <div
-          className='titles-container__animation'
-          id='box'
-          // data-aos='flip-left'
-          // data-aos-easing='ease-out-cubic'
-          // data-aos-duration='2000'
-        >
+        <div className='titles-container__animation' id='box'>
           <section
             className='titles-container__menu-fast'
             onClick={displayFastMenu}

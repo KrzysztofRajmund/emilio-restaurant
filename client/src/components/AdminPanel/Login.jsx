@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 //components
 import AlertMessage from '../utils/AlertMessage';
 //material-ui
@@ -13,8 +13,6 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 //router
 import { useHistory } from 'react-router-dom';
-//jwt decode
-import jwt_decode from 'jwt-decode';
 
 // material-ui styling
 const useStyles = makeStyles((theme) => ({
@@ -210,7 +208,7 @@ const ReservationFormAdmin = () => {
               <Link to='/' className={classes.buttonLink}>
                 Wróć
               </Link>
-              <AlertMessage style={style} message={message} open={open} />
+              <AlertMessage tabStyle={style} message={message} open={open} />
             </Grid>
           </form>
         </div>

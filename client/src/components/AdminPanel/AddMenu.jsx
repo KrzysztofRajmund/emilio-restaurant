@@ -259,7 +259,7 @@ const AddMenu = ({ showAddMenu, onClose, getMenuItems }) => {
               </Button>
             </Grid>
           </form>
-          <AlertMessage style={style} message={message} open={open} />
+          <AlertMessage tabStyle={style} message={message} open={open} />
         </div>
       </div>
     </div>

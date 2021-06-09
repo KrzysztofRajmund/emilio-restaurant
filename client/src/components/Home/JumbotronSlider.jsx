@@ -78,11 +78,11 @@ const JumbotronSlider = () => {
         delay: (el, i) => 100 + 30 * i,
       });
 
-    var textWrapper = document.querySelector(
+    var textWrapperSec = document.querySelector(
       '.jumbotron-slider__animation-second'
     );
     const regex13 = /\S/g;
-    textWrapper.innerHTML = textWrapper.textContent.replace(
+    textWrapperSec.innerHTML = textWrapperSec.textContent.replace(
       regex13,
       "<span class='letter'>$&</span>"
     );

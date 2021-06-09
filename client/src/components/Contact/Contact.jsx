@@ -40,6 +40,7 @@ const Contact = () => {
               <h1>Odwiedź nas</h1>
               <h5>
                 <a
+                  rel='noreferrer'
                   href='https://www.google.com/maps/place/Restauracja+Emilio/@53.4318187,14.5489302,17z/data=!4m12!1m6!3m5!1s0x47aa099b0e0aa2cb:0x95950039c596143b!2sRestauracja+Emilio!8m2!3d53.431735!4d14.548714!3m4!1s0x47aa099b0e0aa2cb:0x95950039c596143b!8m2!3d53.431735!4d14.548714'
                   target='_blank'
                 >

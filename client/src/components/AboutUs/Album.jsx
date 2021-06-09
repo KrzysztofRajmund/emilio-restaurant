@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// //data json
-// import tileData from '../../tileData';
 //AOS
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -76,6 +74,7 @@ const Album = () => {
               onClick={() => displayImage(image)}
             >
               <img
+                alt={image.Key}
                 src={`https://emilio-gallery.s3.eu-central-1.amazonaws.com/${image.Key}`}
               />
             </div>

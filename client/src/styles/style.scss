@@ -1,15 +1,23 @@
-@import './variables';
-@import './functions';
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: $primaryFont;
-}
+@charset "UTF-8";
 
-body {
-  background-color: $secondaryBackgroundColor;
-}
+//utilities
+@import 'utilities/variables';
+@import 'utilities/functions';
+//base
+@import 'base/base';
+//modules
+// @import 'modules/topjumbotron';
+// @import 'modules/cards';
+//layout
+@import 'layout/navigation';
+@import 'layout/footerComponent';
+//pages
+// @import 'pages/contact';
+// @import 'pages/gallery';
+// @import 'pages/about';
+// @import 'pages/offers';
+//////////////////////////////////////
+
 
 //scroll-button
 .scroll-container {

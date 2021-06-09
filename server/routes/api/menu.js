@@ -51,7 +51,7 @@ router.get('/get', (req, res) => {
     // .then((data) => console.log(data, 'req'))
     .then((data) => {
       let message = '';
-      if (data === undefined || data.length == 0) {
+      if (data === undefined || data.length === 0) {
         message = 'Nie znaleziono żadnego produktu';
       } else {
         message = `Znaleziono ${data.length} produktów`;

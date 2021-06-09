@@ -48,7 +48,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   rodoButton: {
-    margin: theme.spacing(1),
     color: 'rgb(112, 0, 0)',
     border: 'none',
     fontSize: '0.5rem',

@@ -220,7 +220,7 @@ const ReservationFormAdmin = () => {
               >
                 Register
               </Button>
-              <AlertMessage style={style} message={message} open={open} />
+              <AlertMessage tabStyle={style} message={message} open={open} />
             </Grid>
           </form>
         </div>

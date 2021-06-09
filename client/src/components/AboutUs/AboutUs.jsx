@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect } from 'react';
 //components
 import Album from './Album';
 import HeaderJumbotron from '../Home/HeaderJumbotron';
@@ -119,7 +119,7 @@ const AboutUs = () => {
             </h4>
           </div>
           <div className='about__card-image about__card-image--full-desc'>
-            <img src={RestaurantImage} alt='restaurant-image' />
+            <img src={RestaurantImage} alt='restaurant' />
           </div>
         </div>
       </div>
