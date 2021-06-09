@@ -22,7 +22,7 @@ const MenuShort = () => {
     });
   }, []);
   return (
-    <section className='menuShort' id='menu-short'>
+    <section className='short-menu' id='menu-short'>
       <article className='titles-container'>
         <div
           className='titles-container__animation'

@@ -41,7 +41,7 @@
 }
 
 //modal
-.modalContainer {
+.modal{
   z-index: 95;
   position: fixed;
   display: flex;
@@ -54,14 +54,14 @@
   background-color: rgba(0, 0, 0, 0.605);
   transition: 0.3s;
 }
-.modalCard {
+.modal__card {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  .modalExit {
+  .modal__card-exit {
     position: absolute;
     top: 5%;
     right: 3%;
@@ -71,7 +71,7 @@
     z-index: 90;
   }
 
-  .modalPrev {
+  .modal__card-prev{
     position: absolute;
     top: 42%;
     left: 5%;
@@ -82,7 +82,7 @@
     padding: 30px 10px 30px 10px;
   }
 
-  .modalNext {
+  .modal__card-next{
     position: absolute;
     top: 42%;
     right: 5%;
@@ -93,7 +93,7 @@
     padding: 30px 10px 30px 10px;
   }
 
-  .modalImage {
+  .modal__card-image {
     width: 70%;
     height: auto;
     margin: 50px 50px 50px 50px;

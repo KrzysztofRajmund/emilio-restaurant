@@ -845,7 +845,7 @@ button.navbar-toggler:focus {
   width: 100%;
 }
 
-.modalContainer {
+.modal {
   z-index: 95;
   position: fixed;
   display: -webkit-box;
@@ -866,7 +866,7 @@ button.navbar-toggler:focus {
   transition: 0.3s;
 }
 
-.modalCard {
+.modal__card {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -881,7 +881,7 @@ button.navbar-toggler:focus {
   height: 100vh;
 }
 
-.modalCard .modalExit {
+.modal__card .modal__card-exit {
   position: absolute;
   top: 5%;
   right: 3%;
@@ -891,7 +891,7 @@ button.navbar-toggler:focus {
   z-index: 90;
 }
 
-.modalCard .modalPrev {
+.modal__card .modal__card-prev {
   position: absolute;
   top: 42%;
   left: 5%;
@@ -902,7 +902,7 @@ button.navbar-toggler:focus {
   padding: 30px 10px 30px 10px;
 }
 
-.modalCard .modalNext {
+.modal__card .modal__card-next {
   position: absolute;
   top: 42%;
   right: 5%;
@@ -913,7 +913,7 @@ button.navbar-toggler:focus {
   padding: 30px 10px 30px 10px;
 }
 
-.modalCard .modalImage {
+.modal__card .modal__card-image {
   width: 70%;
   height: auto;
   margin: 50px 50px 50px 50px;
@@ -1061,7 +1061,7 @@ button.navbar-toggler:focus {
   padding-left: 10px;
 }
 
-.menuShort {
+.short-menu {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
