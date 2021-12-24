@@ -26,7 +26,6 @@ export default function GalleryAdmin() {
         .then((response) => {
           const images = response.data;
           setImagesItems(images);
-          console.log(response, 'images');
         });
     } catch (err) {
       console.log(err, 'error');
@@ -78,7 +77,6 @@ export default function GalleryAdmin() {
             color='secondary'
             id={params.row.title}
             onClick={(e) => {
-              console.log('params', params);
               handleDelete(e);
             }}
           >
