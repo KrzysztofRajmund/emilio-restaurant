@@ -21,6 +21,9 @@ const MenuSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  priceB: {
+    type: Number,
+  },
   date: {
     type: Date,
     default: Date.now,

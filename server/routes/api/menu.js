@@ -15,7 +15,7 @@ router.post('/post', (req, res) => {
   ) {
     return res.status(400).send({
       success: false,
-      message: 'Wszystkie pola (w wyjątkiem opisu) są wymagane!',
+      message: 'Wszystkie pola (z wyjątkiem opisu, ceny B) są wymagane!',
     });
   }
   //create a product
@@ -25,6 +25,8 @@ router.post('/post', (req, res) => {
     title: req.body.title,
     description: req.body.description,
     price: req.body.price,
+    priceB: req.body.priceB,
+    date: req.body.date
   });
   //save product in database
   // menu
@@ -110,7 +112,7 @@ router.put('/update/:id', (req, res) => {
   ) {
     return res.status(400).send({
       success: false,
-      message: 'Wszystkie pola (z wyjątkiem opisu) są wymagane!',
+      message: 'Wszystkie pola (z wyjątkiem opisu, ceny B) są wymagane!',
     });
   }
   Menu.findByIdAndUpdate(

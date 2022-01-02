@@ -53,6 +53,8 @@ const Menu = () => {
         title='Kuchnia Włoska'
         description='Emilio Restauracja, włoskie smaki, kuchnia włoska, ristorante emilio.
         Makarony, pasta, ravioli, antipasti, wino.'
+        imageUrl='http://www.emiliorestauracja.com/1%20(16).jpg'
+        imageAlt='Restauracja Emilio'
       />
       {window.location.pathname === '/menu' ? <HeaderJumbotron /> : ''}
       <article className='titles-container titles-container__nav-sticky'>
@@ -560,17 +562,40 @@ const Menu = () => {
           data-aos-duration='2000'
         >
           <h1 className='titles-container__title'>dania sezonowe</h1>
-          <h4 className='titles-container__subtitle'>
-            <p>Dalszy wybór dań sezonowych znajdą Państwo na naszej tablicy.</p>
-            <p>
-              A further selection of seasonal dishes can be found on our board.
-            </p>
-            <p>
-              Eine weitere Auswahl an saisonalen Gerichten finden Sie auf
-              unserer Tafel.
-            </p>
-          </h4>
-        </div>
+          </div>
+          {menu &&
+          menu.map((product) => {
+            if (product.category.toLowerCase() === 'sezonowe') {
+              return (
+                <div
+                  key={product.id}
+                  className='titles-container__food-container'
+                >
+                  {/* TODO: Perhaps will be added later in sesonal menu */}
+                  {/* <h3 className='titles-container__food-name'>
+                    {product.title}
+                  </h3> */}
+                  <h4 className='titles-container__food-description titles-container__food-description--polish'>
+                    {product.description.includes('/')
+                      ? product.description.substring(
+                          0,
+                          product.description.indexOf('/')
+                        )
+                      : product.description}
+                  </h4>
+                  <h4 className='titles-container__food-description'>
+                    {product.description.substring(
+                      product.description.indexOf('/') + 1,
+                      product.description.length + 1
+                    )}
+                  </h4>
+                  <h4 className='titles-container__food-price'>
+                    {product.price} pln
+                  </h4>
+                </div>
+              );
+            }
+          })}
       </article>
       <article className='titles-container titles-container__menu' id='dodatki'>
         <div
