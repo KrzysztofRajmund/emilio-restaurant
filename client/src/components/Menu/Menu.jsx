@@ -33,7 +33,6 @@ const Menu = () => {
     });
     getMenuItems();
   }, []);
-
   const displayFastMenu = () => {
     const targetMenuNav = document.getElementsByClassName(
       'titles-container__menu-nav'

@@ -75,6 +75,7 @@ const EditMenu = ({ showEditMenu, onClose, getMenuItems, editItem }) => {
       title: '',
       description: '',
       price: null,
+      priceB: null,
     });
   };
 
@@ -86,13 +87,13 @@ const EditMenu = ({ showEditMenu, onClose, getMenuItems, editItem }) => {
       title: editItem.title,
       description: editItem.description,
       price: editItem.price,
+      priceB: editItem.priceB,
     });
   }, [editItem]);
 
   //input change
   const handleInputChange = (e) => {
     if (e.target.name === 'price' && e.target.value < 0) {
-      console.log(e.target.name);
       setStyle('error');
       setMessage('Cena nie może być mniejsza niż 0');
       setOpen(true);
@@ -104,7 +105,6 @@ const EditMenu = ({ showEditMenu, onClose, getMenuItems, editItem }) => {
     }
 
     setMenu({ ...menu, [e.target.name]: e.target.value });
-    console.log(menu, 'menu');
   };
 
   //submit file
@@ -250,6 +250,25 @@ const EditMenu = ({ showEditMenu, onClose, getMenuItems, editItem }) => {
                   className={classes.textField}
                   id='filled-basic'
                   label='cena'
+                  variant='filled'
+                  InputProps={{
+                    className: classes.input,
+                  }}
+                  inputProps={{
+                    minLength: 0,
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  type='number'
+                  name='priceB'
+                  value={menu.priceB}
+                  onChange={(e) => handleInputChange(e)}
+                  fullWidth
+                  className={classes.textField}
+                  id='filled-basic'
+                  label='cena B'
                   variant='filled'
                   InputProps={{
                     className: classes.input,

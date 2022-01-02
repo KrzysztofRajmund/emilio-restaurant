@@ -71,6 +71,7 @@ const AddMenu = ({ showAddMenu, onClose, getMenuItems }) => {
     title: '',
     description: '',
     price: null,
+    priceB: null,
   });
 
   //reset form
@@ -81,6 +82,7 @@ const AddMenu = ({ showAddMenu, onClose, getMenuItems }) => {
       title: '',
       description: '',
       price: null,
+      priceB: null,
     });
   };
 
@@ -237,6 +239,22 @@ const AddMenu = ({ showAddMenu, onClose, getMenuItems }) => {
                   className={classes.textField}
                   id='filled-basic'
                   label='cena'
+                  variant='filled'
+                  InputProps={{
+                    className: classes.input,
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  type='number'
+                  name='priceB'
+                  value={menu.priceB}
+                  onChange={(e) => handleInputChange(e)}
+                  fullWidth
+                  className={classes.textField}
+                  id='filled-basic'
+                  label='cena B'
                   variant='filled'
                   InputProps={{
                     className: classes.input,
